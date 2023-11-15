@@ -11,6 +11,10 @@ td a {
   color: blue;
 }
 
+ul a {
+  display: block;
+}
+
 td,
 th {
   text-align: center;
