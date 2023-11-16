@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paragrafai-box-model</title>
+    <style>
+      :root {
+        --sepia: rgb(228, 169, 93);
+        --rnd: 169;
+      }
+      html {
+        background-color: var(--sepia);
+      }
+      .card {
+        padding: 3em;
+        margin: 5em;
+        background-color: white;
+        text-align: center;
+      }
+      button {
+        cursor: pointer;
+        padding: 1em 2em;
+        background-color: rgb(228, var(--rnd), 93);
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Lorem, ipsum dolor.</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius tempore
+        autem quos quasi qui aspernatur est quis accusamus vero impedit,
+        repellat, iste architecto explicabo doloremque, praesentium voluptatum
+        necessitatibus animi laboriosam.
+      </p>
+      <button onclick="changeBtnCol()">Plačiau</button>
+    </div>
+    <div class="card">
+      <h2>Lorem, ipsum dolor.</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius tempore
+        autem quos quasi qui aspernatur est quis accusamus vero impedit,
+        repellat, iste architecto explicabo doloremque, praesentium voluptatum
+        necessitatibus animi laboriosam.
+      </p>
+      <button onclick="changeBtnCol()">Plačiau</button>
+    </div>
+    <div class="card">
+      <h2>Lorem, ipsum dolor.</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius tempore
+        autem quos quasi qui aspernatur est quis accusamus vero impedit,
+        repellat, iste architecto explicabo doloremque, praesentium voluptatum
+        necessitatibus animi laboriosam.
+      </p>
+      <button onclick="changeBtnCol()">Plačiau</button>
+    </div>
+    <div class="card">
+      <h2>Lorem, ipsum dolor.</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius tempore
+        autem quos quasi qui aspernatur est quis accusamus vero impedit,
+        repellat, iste architecto explicabo doloremque, praesentium voluptatum
+        necessitatibus animi laboriosam.
+      </p>
+      <button onclick="changeBtnCol()">Plačiau</button>
+    </div>
+    <div class="card">
+      <h2>Lorem, ipsum dolor.</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius tempore
+        autem quos quasi qui aspernatur est quis accusamus vero impedit,
+        repellat, iste architecto explicabo doloremque, praesentium voluptatum
+        necessitatibus animi laboriosam.
+      </p>
+      <button onclick="changeBtnCol()">Plačiau</button>
+    </div>
+
+    <script>
+      function changeBtnCol() {
+        let randNr = Math.round(255 * Math.random());
+        let styliausTagas = document.getElementsByTagName("style");
+        console.log(randNr, styliausTagas);
+        document.documentElement.style.setProperty("--rnd", randNr);
+      }
+      changeBtnCol();
+    </script>
+  </body>
+</html>

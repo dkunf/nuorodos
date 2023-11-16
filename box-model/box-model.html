@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>box model</title>
+    <style>
+      /* bootstrap tailwind mui */
+      div {
+        border: 1px solid green;
+        padding: 10px;
+        margin: 10px;
+        background-color: orange;
+      }
+      a {
+        border: 1px solid mediumseagreen;
+        /* užeina ant kitų elementų */
+        padding: 20px;
+        /* tik į šonus veikia bet ne vertikaliai nes tai inline element */
+        margin: 30px;
+      }
+
+      p {
+        margin: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam
+      veritatis corporis, corrupti officiis dolor vero cum officia enim magni
+      eligendi unde exercitationem. Consequatur nemo sunt iste maxime et,
+      obcaecati deleniti?
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam
+      veritatis corporis, corrupti officiis dolor vero cum officia enim magni
+      eligendi unde exercitationem. Consequatur nemo sunt iste maxime et,
+      obcaecati deleniti?
+    </div>
+    <!-- linkai ikišti į blokinį el kad margin galėtu būti taikoma ir vertikaliai-->
+    <p>
+      <a href="#">link</a>
+      <a href="#">link</a>
+      <a href="#">link</a>
+    </p>
+  </body>
+</html>

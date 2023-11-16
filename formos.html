@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formos</title>
     <style>
-      input,
-      textarea {
-        width: 96%;
+      /* paselektintą textą raudonai ant geltono */
+      ::selection {
+        color: red;
+        background: yellow;
       }
       img {
         height: 4em;
@@ -16,14 +17,20 @@
         border: 1px solid grey;
       }
       /* kaip padaryti kad 1st child butu platus o 2nd child siauras? */
-      .siauras {
+      /* nes tada nereikia žymėti kas antra td siauras ,o likusius td žymėti platus */
+      /* tai yra pirmas tr vaikas turi buti siauras, o antras vaikas platus */
+      td:nth-child(1) {
         width: 30%;
       }
-      .platus {
+      td:nth-child(2) {
         width: 70%;
       }
+
       td {
         text-align: center;
+      }
+      .norm {
+        display: inline-block;
       }
     </style>
   </head>
@@ -31,12 +38,12 @@
     <form action="./formos.html">
       <table border="3">
         <tr>
-          <td class="siauras">
+          <td>
             <label for="vrd"
               ><img class="remas" src="./pics/vardas.jpeg" alt=""
             /></label>
           </td>
-          <td class="platus">
+          <td>
             <input
               type="text"
               placeholder="vardas pavardė"
@@ -46,11 +53,11 @@
           </td>
         </tr>
         <tr>
-          <td class="siauras">
+          <td>
             slaptažodis (ypač slaptas, tik nežiūrėk kas parašyta URL po mygtuko
             paspaudimo):
           </td>
-          <td class="platus">
+          <td>
             <input
               type="password"
               placeholder="slaptažodis"
@@ -59,10 +66,10 @@
           </td>
         </tr>
         <tr>
-          <td class="siauras"><p>Išsipasakok:</p></td>
-          <td class="platus">
+          <td><p>Išsipasakok:</p></td>
+          <td>
             <textarea
-              placeholder="Išliek dūšią"
+              placeholder="Išsiliek dūšią"
               name="tekstas"
               cols="30"
               rows="10"
@@ -71,8 +78,8 @@
           </td>
         </tr>
         <tr>
-          <td class="siauras"></td>
-          <td class="platus">
+          <td></td>
+          <td>
             <h3>Pasirink lytį</h3>
             <input type="radio" name="lytis" value="mot" id="m" />
             <label for="m">mot</label>
@@ -81,8 +88,8 @@
           </td>
         </tr>
         <tr>
-          <td class="siauras"></td>
-          <td class="platus">
+          <td></td>
+          <td>
             <label for="sl">Kuri raidė?</label>
             <select name="hhh" id="sl">
               <option value="A">A</option>
@@ -91,8 +98,8 @@
           </td>
         </tr>
         <tr>
-          <td class="siauras"></td>
-          <td class="platus">
+          <td></td>
+          <td>
             <input type="checkbox" name="Ska" id="1" />
             <label for="1">1</label>
             <input type="checkbox" name="Ska" id="2" />
@@ -103,8 +110,8 @@
           </td>
         </tr>
         <tr>
-          <td class="siauras"></td>
-          <td class="platus"><input type="submit" value="Siūsti žinutę" /></td>
+          <td></td>
+          <td><input type="submit" value="Siūsti žinutę" /></td>
         </tr>
       </table>
     </form>
