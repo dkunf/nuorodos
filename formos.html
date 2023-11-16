@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formos</title>
+    <style>
+      input,
+      textarea {
+        width: 96%;
+      }
+      img {
+        height: 4em;
+      }
+      table {
+        border: 1px solid grey;
+      }
+      /* kaip padaryti kad 1st child butu platus o 2nd child siauras? */
+      .siauras {
+        width: 30%;
+      }
+      .platus {
+        width: 70%;
+      }
+      td {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="./formos.html">
+      <table border="3">
+        <tr>
+          <td class="siauras">
+            <label for="vrd"
+              ><img class="remas" src="./pics/vardas.jpeg" alt=""
+            /></label>
+          </td>
+          <td class="platus">
+            <input
+              type="text"
+              placeholder="vardas pavardė"
+              name="vardas"
+              id="vrd"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="siauras">
+            slaptažodis (ypač slaptas, tik nežiūrėk kas parašyta URL po mygtuko
+            paspaudimo):
+          </td>
+          <td class="platus">
+            <input
+              type="password"
+              placeholder="slaptažodis"
+              name="slaptazodis"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="siauras"><p>Išsipasakok:</p></td>
+          <td class="platus">
+            <textarea
+              placeholder="Išliek dūšią"
+              name="tekstas"
+              cols="30"
+              rows="10"
+              name="zinute"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td class="siauras"></td>
+          <td class="platus">
+            <h3>Pasirink lytį</h3>
+            <input type="radio" name="lytis" value="mot" id="m" />
+            <label for="m">mot</label>
+            <input type="radio" name="lytis" value="vyr" id="v" />
+            <label for="v">vyr</label>
+          </td>
+        </tr>
+        <tr>
+          <td class="siauras"></td>
+          <td class="platus">
+            <label for="sl">Kuri raidė?</label>
+            <select name="hhh" id="sl">
+              <option value="A">A</option>
+              <option value="B">B</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="siauras"></td>
+          <td class="platus">
+            <input type="checkbox" name="Ska" id="1" />
+            <label for="1">1</label>
+            <input type="checkbox" name="Ska" id="2" />
+            <label for="2">2</label>
+            <input type="checkbox" name="Ska" id="3" />
+            <label for="3">3</label>
+            <input type="checkbox" name="Ska" id="4" /> <label for="4">4</label>
+          </td>
+        </tr>
+        <tr>
+          <td class="siauras"></td>
+          <td class="platus"><input type="submit" value="Siūsti žinutę" /></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
