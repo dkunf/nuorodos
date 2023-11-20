@@ -1,0 +1,33 @@
+.image-wrap {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../pics/brown.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+.topic {
+  color: white;
+  width: 50%;
+  font-size: 3rem;
+  background-color: rgb(87, 87, 180, 0.5);
+  padding: 1rem;
+}
+
+.caption {
+  position: relative;
+  top: -0.7rem;
+  left: 0.5rem;
+  color: white;
+  background-color: black;
+  opacity: 0.7;
+  padding: 0 2rem 0.5rem;
+  line-height: 1.5rem;
+}
+.text-wrap {
+  position: absolute;
+  bottom: 6rem;
+  left: 5rem;
+  width: 50%;
+}

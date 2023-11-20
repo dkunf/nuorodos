@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petals</title>
+    <style>
+      .petal {
+        margin: 0;
+        border: 1px solid white;
+        margin: auto;
+        height: 200px;
+        width: 200px;
+        background-color: aqua;
+        transform: rotate(20deg);
+      }
+      .visible {
+        margin: 0;
+        padding: 10px;
+        height: 100px;
+        width: 200px;
+        background-color: beige;
+      }
+      .covering {
+        margin: 0;
+        transform: rotate(0.5rad);
+        translate: 0 -40px;
+        height: 100px;
+        width: 240px;
+        background-color: pink;
+      }
+
+      .triangle {
+        border-top: 70px solid red;
+        border-left: 20px solid transparent;
+        border-right: 50px solid transparent;
+        /* border-bottom: 20px solid transparent; */
+        height: 0;
+        width: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="petal">
+      <div class="visible"></div>
+      <div class="covering"></div>
+    </div>
+    <div class="triangle"></div>
+  </body>
+</html>
