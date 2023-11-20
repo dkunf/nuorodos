@@ -9,12 +9,14 @@
   background-position: center center;
 }
 
+h1 {
+  font-size: 3rem;
+  padding: 1rem;
+}
 .topic {
   color: white;
   width: 50%;
-  font-size: 3rem;
   background-color: rgb(87, 87, 180, 0.5);
-  padding: 1rem;
   box-shadow: 10px 10px 18px -7px rgba(0, 0, 0, 0.8);
   border-radius: 7px;
 }
@@ -42,4 +44,9 @@
   background-color: black;
   line-height: 1.7rem;
   padding: 2rem;
+}
+
+.right {
+  text-align: right;
+  margin-right: 5rem;
 }
