@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #e2e1e1;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.card {
+  margin: 90px auto;
+  background-color: #fff;
+  width: 276px;
+  border: 1px solid;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.cd-shadow-default {
+  box-shadow: 0px 2px 4px 0px rgba(96, 97, 112, 0.16),
+    0px 0px 1px 0px rgba(40, 41, 61, 0.04);
+  border-color: white;
+}
+.cd-shadow-blue {
+  border: 3px solid #3e7fe1;
+  box-shadow: 8px 13px 23px 9px rgba(62, 127, 225, 0.3);
+}
+
+.description {
+  background-color: #fff;
+  margin: 2rem 1rem;
+}
+.description h2 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 120% */
+}
+.img {
+  background-image: url("./pics/Image.png");
+  background-size: cover;
+  width: 276px;
+  height: 176px;
+  position: relative;
+}
+.calendar {
+  position: absolute;
+  bottom: -10%;
+  right: 5%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0px 1px 4px 0px rgba(96, 97, 112, 0.16),
+    0px 1px 1px 0px rgba(40, 41, 61, 0.04);
+  text-align: center;
+}
+.day {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.month {
+  font-size: 0.7rem;
+  letter-spacing: 0.2px;
+  font-weight: 400;
+}
+
+.caption {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  color: #959393;
+}
+
+.btns {
+  margin-top: 1rem;
+}
+
+.btns span {
+  display: inline-block;
+  border: 1px solid #959393;
+  border-radius: 100%;
+  padding: 0.2rem;
+}
+
+.btns span:hover {
+  background-color: #ddd;
+}
+.btns span:hover svg {
+  fill: white;
+}
+
+.btns span:active {
+  background-color: #999;
+}
+.btns span:active svg {
+  fill: #ccc;
+}
