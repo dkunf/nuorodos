@@ -35,16 +35,28 @@ body {
   font-weight: 700;
   line-height: 24px; /* 120% */
 }
+
 .img {
-  background-image: url("./pics/Image.png");
-  background-size: cover;
   width: 276px;
   height: 176px;
   position: relative;
 }
+.pic-1 {
+  background-image: url("./pics/Image.png");
+  background-size: cover;
+}
+.pic-2 {
+  background-image: url("./pics/Image\(1\).png");
+  background-size: cover;
+}
+.pic-3 {
+  background-image: url("./pics/Image\(2\).png");
+  background-size: cover;
+}
+
 .calendar {
   position: absolute;
-  bottom: -10%;
+  bottom: -15%;
   right: 5%;
   background-color: white;
   padding: 1rem;
