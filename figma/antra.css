@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  font-size: 20px;
+}
+body {
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  background: #e2e1e1;
+  width: 796px;
+  height: 355px;
+  margin: 94px auto;
+  text-align: center;
+  border: 1px solid grey;
+}
+
+.text-and-pic {
+  position: relative;
+  top: 94px;
+}
+.text-and-pic svg {
+  fill: #cc4feb;
+  position: absolute;
+  left: 34.3rem;
+  bottom: 8%;
+  transform: rotate(7deg);
+}
+.text-and-pic h1 {
+  font-weight: 700;
+  font-size: 128px;
+  font-size: 6rem;
+}
+.top-writing {
+  color: #959393;
+  position: relative;
+  bottom: -1.5rem;
+}
+.bottom-writing {
+  position: relative;
+  bottom: -1rem;
+}
