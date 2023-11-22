@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 15px;
+  font-family: Inter, Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background: #131417;
+}
+.small-container {
+  position: relative;
+  border-radius: 12px;
+  background: rgba(34, 34, 37, 0.7);
+  width: 600px;
+  height: 290px;
+  margin: calc((100vh - 290px) / 2) auto;
+  text-align: left;
+  padding: 2rem 2rem;
+}
+.small-container h1 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 48px */
+  letter-spacing: 0.42px;
+}
+.small-container p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 173.333% */
+}
+.small-container button {
+  display: block;
+  border-radius: 12px;
+  border: 2px solid #f17965;
+  padding: 8px 16px;
+  color: #f17965;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px; /* 173.333% */
+  letter-spacing: -0.75px;
+  background-color: inherit;
+}
+
+.garsiakalbis {
+  position: absolute;
+  top: -7rem;
+  left: -6rem;
+  width: 195px;
+  height: 195px;
+  transform: rotate(11deg);
+}
+
+.star {
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  z-index: 10;
+}
+.blue-ball {
+  position: absolute;
+  bottom: -3rem;
+  right: 0.3rem;
+  z-index: 2;
+}
+.red-ball {
+  position: absolute;
+  bottom: 2.2rem;
+  right: -1rem;
+  z-index: 7;
+}
