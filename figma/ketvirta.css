@@ -2,14 +2,29 @@
   box-sizing: border-box;
   font-size: 14px;
 }
+/* body {
+  overflow: hidden;
+} */
 .btns {
+  width: 40rem;
   position: fixed;
   bottom: 2rem;
-  text-align: center;
-  margin: 1rem 10rem;
+
+  /* tegul pats skaiciuoja */
+  /* puse ekrano horizontaliai 
+  minus puse btns width */
+  left: calc(50% - 20rem);
 }
 .scr {
   height: 100vh;
+  /* be border neveikia margin-top span tagui*/
+  border: 1px solid transparent;
+  font-size: 4rem;
+  text-align: center;
+}
+.scr span {
+  display: block;
+  margin: calc((100vh - 4rem) / 2) calc((100vw - 4rem) / 2);
 }
 #white {
   background-color: white;
