@@ -28,6 +28,7 @@ body {
 .small-container p {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  padding: 0 1rem;
   color: #fff;
   font-family: Inter;
   font-style: normal;
