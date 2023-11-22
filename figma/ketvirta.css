@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.btns {
+  position: fixed;
+  bottom: 2rem;
+  text-align: center;
+  margin: 1rem 10rem;
+}
+.scr {
+  height: 100vh;
+}
+#white {
+  background-color: white;
+}
+#green {
+  background: #51cb65;
+}
+#blue {
+  background: #816ef5;
+}
+#red {
+  background: #ea7b7b;
+}
+#grey {
+  background: #d9d9d9;
+}
+.btn a {
+  text-decoration: none;
+  color: #f17965;
+}
+.btn {
+  border-radius: 12px;
+  border: 2px solid #f17965;
+  padding: 0.5rem 1rem;
+}
+
+.btn-arrow {
+  margin-left: 4rem;
+  border-radius: 200px;
+  border: 3px solid #959393;
+}

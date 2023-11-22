@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colored Screens w. fixed buttons</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./ketvirta.css" />
+  </head>
+  <body>
+    <div class="btns">
+      <button class="btn"><a href="#white">Section 1</a></button>
+      <button class="btn"><a href="#green">Section 2</a></button>
+      <button class="btn"><a href="#blue">Section 3</a></button>
+      <button class="btn"><a href="#red">Section 4</a></button>
+      <button class="btn"><a href="#grey">Section 5</a></button>
+      <button class="btn-arrow">
+        <a href="#white">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_1_1263)">
+              <path
+                d="M16 27V5M16 5L7 14M16 5L25 14"
+                stroke="#959393"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_1_1263">
+                <rect width="32" height="32" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+      </button>
+    </div>
+
+    <div class="scr" id="white"></div>
+    <div class="scr" id="green"></div>
+    <div class="scr" id="blue"></div>
+    <div class="scr" id="red"></div>
+    <div class="scr" id="grey"></div>
+  </body>
+</html>
