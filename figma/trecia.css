@@ -47,6 +47,10 @@ body {
   letter-spacing: -0.75px;
   background-color: inherit;
 }
+.small-container button:hover {
+  background-color: #f17965;
+  color: white;
+}
 
 .garsiakalbis {
   position: absolute;
