@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  font-size: 14px;
+}
+body {
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: #ddd;
+}
+.container {
+  width: 796px;
+  margin: 3rem auto;
+  text-align: center;
+}
+.img {
+  width: 796px;
+  height: 373px;
+  background-image: url("./pics/cuvakas.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+.about {
+  font-size: 3rem;
+  background: linear-gradient(
+      180deg,
+      #afbacb 0%,
+      rgba(175, 186, 203, 0) 110.33%
+    ),
+    #fff;
+}
+.container p {
+  padding: 1rem 14rem 0 9rem;
+}
+.textas {
+  padding-top: 4rem;
+  padding-bottom: 9rem;
+  background-color: white;
+}
