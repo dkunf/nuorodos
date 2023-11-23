@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  font-size: 24px;
+}
+
+body {
+  font-family: "Caveat", cursive;
+  background-color: #9eb2d5;
+}
+.hello {
+  font-size: 13rem;
+  color: #fdfdfd;
+  font-weight: 700;
+}
+.title {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  font-weight: 400;
+}
+.text {
+  font-family: "Poppins", sans-serif;
+}
+
+.card {
+  margin-left: 10rem;
+  border: 1px solid black;
+  position: relative;
+  background-color: #9eb2d5;
+  height: auto;
+  z-index: 1;
+}
+.text-box {
+  border: 2px solid black;
+  margin-top: calc(50% - 10rem);
+  width: 50%;
+  height: 20rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: inherit;
+  z-index: 2;
+}
+
+.img-box {
+  border: 5px solid black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 60rem;
+  background-color: inherit;
+  z-index: 12;
+}
+
+.img-box img {
+  border: 2px dashed brown;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.pic-rectangle {
+  width: 757px;
+  height: 1426px;
+}
+.pic-planet {
+  width: 1331.531px;
+  height: 1614.493px;
+}
+.pic-man {
+  width: 582px;
+  height: 869px;
+}
