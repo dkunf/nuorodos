@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  font-size: 24px;
+}
+
+body {
+  font-family: "Caveat", cursive;
+  background-color: #9eb2d5;
+}
+
+.card {
+  background-color: #9eb2d5;
+  height: 97vh;
+}
+
+.text-box {
+  display: inline-block;
+  width: 49%;
+  padding: 5rem;
+  background-color: inherit;
+  z-index: 10;
+}
+
+.hello {
+  font-size: 13rem;
+  color: #fdfdfd;
+  font-weight: 700;
+}
+.title {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  font-weight: 400;
+  z-index: 100;
+}
+.text {
+  font-family: "Poppins", sans-serif;
+}
+
+.img-box {
+  position: relative;
+  display: inline-block;
+  width: 49%;
+  height: 100%;
+  background-color: #9eb2d5;
+}
+
+.pic-rectangle {
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  height: 90%;
+  object-fit: cover;
+}
+.pic-planet {
+  position: absolute;
+  transform: rotate(38deg);
+  right: -1rem;
+  bottom: -19rem;
+  height: 70%;
+  object-fit: cover;
+}
+.pic-man {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 4rem;
+  height: 70%;
+  object-fit: cover;
+}
+
+/* o kur dar vaikiną dėti? */
+
+@media (max-width: 1000px) {
+  .text-box {
+    display: block;
+    width: 100%;
+    margin: 10rem 3vw 2rem 3vw;
+  }
+  .img-box {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transform: rotate(45deg);
+    translate: -100px -100vh;
+    opacity: 40%;
+  }
+}
