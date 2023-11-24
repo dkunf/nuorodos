@@ -3,7 +3,7 @@
 }
 body {
   font-size: 25px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Times New Roman", Times, serif;
 }
 
 main {
@@ -57,7 +57,7 @@ li {
   margin-left: 0.5rem;
 }
 .screenshots {
-  width: 48%;
+  width: 30%;
   height: auto;
   object-fit: cover;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
