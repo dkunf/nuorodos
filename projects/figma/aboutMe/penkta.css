@@ -15,7 +15,7 @@ body {
 .img {
   width: 796px;
   height: 373px;
-  background-image: url("./pics/cuvakas.jpeg");
+  background-image: url("../pics/cuvakas.jpeg");
   background-size: cover;
   background-position: center;
 }
