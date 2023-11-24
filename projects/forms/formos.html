@@ -35,12 +35,15 @@
     </style>
   </head>
   <body>
+    <!-- į šį URL dės formos parametrus po ? ženklo -->
+    <!-- tos parametrus galima js pagalba nuskaityti -->
+    <!-- ir atitinkamai atvaizduoti tą puslapį -->
     <form action="./formos.html">
       <table border="3">
         <tr>
           <td>
             <label for="vrd"
-              ><img class="remas" src="./pics/vardas.jpeg" alt=""
+              ><img class="remas" src="../pics/vardas.jpeg" alt=""
             /></label>
           </td>
           <td>
@@ -111,6 +114,8 @@
         </tr>
         <tr>
           <td></td>
+          <!-- paspaudimas prideda formos laukelių reikšmes -->
+          <!-- prie URL nurodyto <form  action= -->
           <td><input type="submit" value="Siūsti žinutę" /></td>
         </tr>
       </table>
