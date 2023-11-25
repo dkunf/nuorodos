@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  --shadows: 4px 3px 5px 1px rgba(0, 0, 0, 0.24);
+  --contents-width: 20rem;
 }
 body {
   font-size: 25px;
@@ -11,10 +13,12 @@ main {
   top: 0;
   bottom: 0;
   right: 0;
-  width: calc(100vw - 20rem);
+  width: calc(100vw - var(--contents-width));
   overflow-y: scroll;
   padding: 1rem;
   line-height: 2rem;
+  /* background-color: #ff8800;
+  color: white; */
 }
 
 #contents-box {
@@ -22,7 +26,7 @@ main {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 20rem;
+  width: var(--contents-width);
   border: 1px solid #ddd;
   overflow-y: scroll;
   padding: 1rem 0.5rem;
@@ -47,10 +51,16 @@ h1 {
   font-size: 3rem;
   margin-bottom: 3rem;
   text-align: center;
+  line-height: 3rem;
 }
 h2 {
   font-size: 2rem;
-  margin: 2rem;
+  padding: 1rem;
+  text-align: center;
+  /* box-shadow: var(--shadows); */
+}
+h2::before {
+  content: "✦ ";
 }
 /* just to have li numbering */
 ol {
@@ -67,12 +77,28 @@ ol ol li:before {
   content: counters(item, ".") " ";
   counter-increment: item;
 }
+
 li {
   margin-left: 0.5rem;
 }
+li::before {
+  content: "✧ ";
+}
 .screenshots {
-  width: 30%;
+  width: calc(30% - 1.5rem);
   height: auto;
   object-fit: cover;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  margin: 1rem;
+  box-shadow: var(--shadows);
+}
+.figma-tasks {
+  text-align: center;
+}
+section {
+  box-shadow: var(--shadows);
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+a {
+  text-decoration: none;
 }

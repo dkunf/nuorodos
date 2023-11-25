@@ -4,40 +4,93 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mano Konspektas</title>
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
       integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
+    /> -->
+    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <main>
-      <button class="hide-btn hide" onclick="hideContents()">Turinys</button>
-      <h1>Konspektas</h1>
+      <button class="hide-btn hide" onclick="toggleTOCsection()">
+        Turinys
+      </button>
+      <h1>
+        Web development konspektas. Fullstack kursai: HTML, CSS, javascript.
+      </h1>
       <p>under construction ...</p>
       <br />
-      <ul>
-        <li><a href="./projects/links/contacts.html">Darbas su nuorodom</a></li>
-        <li>
-          <a href="./projects/tables/lenteles.html">Darbas su lentelėm</a>
-        </li>
-        <li>
-          <a href="./projects/tables/lenteles.html"
-            >Kelių lygių sąrašas (toje pačioje lentelėje)</a
-          >
-        </li>
-        <li><a href="./projects/forms/formos.html">Darbas su formomis</a></li>
-        <li>
-          <a href="./projects/positions/textOverPic.html"
-            >Elementų išdėstymas puslapyje</a
-          >
-        </li>
-      </ul>
-      <h2>Iš figma į html/css</h2>
-      <div class="figma-tasks">
+      <section>
+        <h2 id="setup">Pasiruošimas, įrankiai ⛏</h2>
+        <ul>
+          <li>
+            Visual Studio Code
+            <p>
+              -naudojamas kaip kodo rašymo įrankis. Randa klaidas, pasakinėja
+              tinkamą kodą, formatuoja kodą ir turi daug extensions, kurių
+              pagalba galima žymiai palengvinti ir pagreitinti kodo rašymą.
+            </p>
+          </li>
+          <li>
+            git
+            <p>
+              -naudojamas aplanko su failais pasikeitimų sekimui. Galima
+              įsiminti aplanko būsenas skirtingais laikais: kokie šiuo metu yra
+              failai aplanke ir kas juose yra, o po to sugrįžti į bet kurią
+              būseną jeigu kas...
+            </p>
+          </li>
+          <li>
+            github
+            <p>
+              -naudojamas kaip nuotolinis git ir komandiniam darbui kuriant
+              programinę įrangą.
+            </p>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2 id="resourses">Naudingi resursai</h2>
+        <ul>
+          <li>
+            <a target="_blank" href="https://www.w3schools.com/"
+              >https://www.w3schools.com/</a
+            >
+          </li>
+          <li>
+            <a target="_blank" href="https://chat.openai.com/">ChatGPT</a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2 id="first-tasks">Pirmosios užduotėlės</h2>
+        <ul>
+          <li>
+            <a href="./projects/links/contacts.html">Darbas su nuorodom</a>
+          </li>
+          <li>
+            <a href="./projects/tables/lenteles.html">Darbas su lentelėm</a>
+          </li>
+          <li>
+            <a href="./projects/tables/lenteles.html#nested-list"
+              >Kelių lygių sąrašas (toje pačioje lentelėje)</a
+            >
+          </li>
+          <li><a href="./projects/forms/formos.html">Darbas su formomis</a></li>
+          <li>
+            <a href="./projects/positions/textOverPic.html"
+              >Elementų išdėstymas puslapyje</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section class="figma-tasks">
+        <h2 id="figma-tasks">Iš figma į html/css</h2>
         <a href="./projects/figma/dreamTrip/dreamTripPage.html"
           ><img class="screenshots" src="./images/figma/dream.png" alt=""
         /></a>
@@ -73,7 +126,7 @@
             src="./images/figma/matiuhalnikas.png"
             alt=""
         /></a>
-      </div>
+      </section>
       <br />
 
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi culpa
@@ -163,14 +216,12 @@
     </main>
 
     <div id="contents-box">
-      <button class="hide-btn" onclick="hideContents()">Paslėpti</button>
+      <button class="hide-btn" onclick="toggleTOCsection()">Paslėpti</button>
       <h1>Turinys</h1>
-      <ol>
-        <li>HTML</li>
-        <ol>
-          <li>Pradžia</li>
-        </ol>
-        <li>CSS</li>
+      <ol id="toc">
+        <!-- čia susigeneruos nuorodos į h2, 
+          kuriems bus suteikti random id 
+        (tada nebus galima turėti nuoroda į konspekto dalį) -->
       </ol>
       <br />
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos
@@ -281,7 +332,7 @@
       incidunt, vel modi quae. Consectetur assumenda molestiae earum.
     </div>
     <script>
-      function hideContents() {
+      function toggleTOCsection() {
         let btn = document.getElementsByClassName("hide-btn");
         btn[0].classList.toggle("hide");
         btn[1].classList.toggle("hide");
@@ -289,6 +340,26 @@
         contents.classList.toggle("hide");
         let main = document.getElementsByTagName("main");
         main[0].classList.toggle("widen");
+      }
+    </script>
+    <script>
+      createTOC();
+      function createTOC() {
+        tocList = document.getElementById("toc");
+        h2 = document.querySelectorAll("h2");
+        h2.forEach((el) => {
+          if (el.id) newId = el.id;
+          else {
+            newId = Math.random().toString().slice(2, 9);
+            el.id = newId;
+          }
+          linkToH2 = document.createElement("a");
+          linkToH2.href = "#" + newId;
+          linkToH2.textContent = el.textContent;
+          let li = document.createElement("li");
+          li.appendChild(linkToH2);
+          tocList.appendChild(li);
+        });
       }
     </script>
   </body>
