@@ -16,17 +16,23 @@ body {
   border-radius: 12px;
   overflow: hidden;
 }
+.card:hover {
+  border: 3px solid #3e7fe1;
+  box-shadow: 8px 13px 23px 9px rgba(62, 127, 225, 0.3);
+}
 /* pirmai kortelei ir trečiai */
 .cd-shadow-default {
   box-shadow: 0px 2px 4px 0px rgba(96, 97, 112, 0.16),
     0px 0px 1px 0px rgba(40, 41, 61, 0.04);
   border-color: white;
 }
-/* antrai kortelei */
-.cd-shadow-blue {
+/* antrai kortelei. 
+Perdariau, kad šis šėšėlis
+atsirastų kai užvedi pelę  */
+/* .cd-shadow-blue {
   border: 3px solid #3e7fe1;
   box-shadow: 8px 13px 23px 9px rgba(62, 127, 225, 0.3);
-}
+} */
 
 .description {
   background-color: #fff;
