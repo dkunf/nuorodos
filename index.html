@@ -15,6 +15,7 @@
   </head>
   <body>
     <main>
+      <button class="hide-btn hide" onclick="hideContents()">Turinys</button>
       <h1>Konspektas</h1>
       <p>under construction ...</p>
       <br />
@@ -162,6 +163,7 @@
     </main>
 
     <div id="contents-box">
+      <button class="hide-btn" onclick="hideContents()">Paslėpti</button>
       <h1>Turinys</h1>
       <ol>
         <li>HTML</li>
@@ -278,5 +280,16 @@
       quidem, quae in accusamus, eaque consectetur saepe. Quidem atque inventore
       incidunt, vel modi quae. Consectetur assumenda molestiae earum.
     </div>
+    <script>
+      function hideContents() {
+        let btn = document.getElementsByClassName("hide-btn");
+        btn[0].classList.toggle("hide");
+        btn[1].classList.toggle("hide");
+        let contents = document.getElementById("contents-box");
+        contents.classList.toggle("hide");
+        let main = document.getElementsByTagName("main");
+        main[0].classList.toggle("widen");
+      }
+    </script>
   </body>
 </html>

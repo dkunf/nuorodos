@@ -29,10 +29,24 @@ main {
   font-size: 1.5rem;
   line-height: 2rem;
 }
+.hide {
+  visibility: collapse;
+}
+.widen {
+  width: 100vw;
+}
 
+.hide-btn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 30%;
+  margin: 0.2rem 0.2rem;
+}
 h1 {
   font-size: 3rem;
   margin-bottom: 3rem;
+  text-align: center;
 }
 h2 {
   font-size: 2rem;
