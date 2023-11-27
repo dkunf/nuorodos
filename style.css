@@ -19,6 +19,7 @@ main {
   line-height: 2rem;
   /* background-color: #ff8800;
   color: white; */
+  border: 1px solid transparent;
 }
 
 #contents-box {
@@ -32,6 +33,7 @@ main {
   padding: 1rem 0.5rem;
   font-size: 1.5rem;
   line-height: 2rem;
+  border: 1px solid transparent;
 }
 .hide {
   visibility: collapse;
@@ -96,9 +98,78 @@ li::before {
 }
 section {
   box-shadow: var(--shadows);
-  padding: 2rem 0;
+  padding: 2rem 0 2rem 1rem;
   margin: 2rem 0;
 }
 a {
   text-decoration: none;
+}
+p {
+  text-indent: 2em;
+  padding: 0 2em 1em 2em;
+}
+.highlight {
+  background-color: rgb(234, 238, 28);
+}
+code {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #ddd;
+  color: black;
+}
+/* jeigu reikia teksto 
+naujos eilutės centre*/
+.center {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+}
+.big {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.img-center {
+  display: block;
+  margin: 1em auto;
+  box-shadow: var(--shadows);
+}
+.l2 {
+  margin-left: 2rem;
+}
+.code-snippet {
+  padding: 1em;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #ddd;
+  color: black;
+}
+.tag {
+  color: rgb(79, 79, 204);
+}
+.epi {
+  padding: 2rem;
+  font-size: 1rem;
+  position: relative;
+  right: -50%;
+  width: 50%;
+  transform: rotate(-1deg);
+  box-shadow: var(--shadows);
+}
+.r {
+  text-align: right;
+}
+.tiny {
+  font-size: 0.7rem;
+}
+.pamokslas:before {
+  content: "pamokslo pradžia";
+  position: relative;
+  left: -2em;
+  background-color: rgb(211, 127, 58);
+  transform: rotate(-2deg);
+  box-shadow: var(--shadows);
+  font-size: 0.7em;
 }

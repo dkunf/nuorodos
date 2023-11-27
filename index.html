@@ -20,10 +20,18 @@
         Turinys
       </button>
       <h1>
-        Web development konspektas. Fullstack kursai: HTML, CSS, javascript.
+        <strike
+          >Web development konspektas. Fullstack kursai: HTML, CSS,
+          Javascript.</strike
+        ><br /><small
+          >Mano pamokslavimai (net ir man neįdomūs) apie px ir kitus matavimo
+          vienetus.</small
+        >
       </h1>
-      <p>under construction ...</p>
-      <br />
+      <div class="epi">
+        <cite> Geriausiai išmoksti kai mokai kitus. </cite>
+        <p class="r">Pavėl S.</p>
+      </div>
       <section>
         <h2 id="setup">Pasiruošimas, įrankiai ⛏</h2>
         <ul>
@@ -38,10 +46,10 @@
           <li>
             git
             <p>
-              -naudojamas aplanko su failais pasikeitimų sekimui. Galima
-              įsiminti aplanko būsenas skirtingais laikais: kokie šiuo metu yra
-              failai aplanke ir kas juose yra, o po to sugrįžti į bet kurią
-              būseną jeigu kas...
+              -naudojamas aplanko ir failų pokyčių sekimui. Galima įsiminti
+              aplanko būsenas skirtingais laikais: kokie tuo metu buvo failai
+              aplanke ir kas buvo juose, o po to sugrįžti į bet kurią būseną
+              jeigų prireiktų.
             </p>
           </li>
           <li>
@@ -51,6 +59,11 @@
               programinę įrangą.
             </p>
           </li>
+          <li>naršyklės "developer tools"</li>
+          <p>
+            -leidžia neišeinant iš brauzerio derinti kodo galutinį pavydalą.
+            Pasikeitimai dingsta kai langas atnaujinamas.
+          </p>
         </ul>
       </section>
       <section>
@@ -60,17 +73,319 @@
             <a target="_blank" href="https://www.w3schools.com/"
               >https://www.w3schools.com/</a
             >
+            - HTML, CSS, JS mokykla. Ten galima išbandyti savo kodą ir pažiūrėti
+            kaip kas daroma.
           </li>
           <li>
-            <a target="_blank" href="https://chat.openai.com/">ChatGPT</a>
+            <a target="_blank" href="https://chat.openai.com/">ChatGPT</a> -
+            moka paaiškinti kodą, sąvokas ir ne tik.
           </li>
         </ul>
       </section>
       <section>
+        <h2 id="pradines">Pradinės žinios</h2>
+        <p class="pamokslas">
+          Nuėjus į kurį nors tinklapį, naršyklė parsisiunčia visus reikalingus
+          failus į mūsų įrenginį. Tai gali buti html, css, javascript failai,
+          paveiksliukai, cookies ir t.t.
+        </p>
+        <p>
+          HTML failuose aprašoma puslapio loginė struktūra. Jeigu pavyzdžiui
+          HTML failas atvaizduotų knygą, tai jis turėtų pavadinimą, viršelį,
+          turinį, iliustracijas, antraštes, puslapius, pastraipas ir t.t. HTML
+          neaprašinėja kaip viskas turi atrodyti, bet tiesiog suskirsto puslapio
+          turinį į semantiškai susijusias dalis ir nurodo jų tarpusavio ryšius.
+        </p>
+        <p>
+          CSS nurodo kaip tos dalys turi atrodyti, pvz. spalvos, dydžiai,
+          šriftai ir kuriose ekrano vietose jos bus patalpintos.
+        </p>
+        <p>
+          HTML elemento prasmė ir jo išvaizda yra labai susiję dalykai, bet
+          reikia nepamiršti, kad tinklapis gali būti stebimas tiesiog tekstiniam
+          režime ar jo turinys gali būti išklausomas, o ne skaitomas ir mūsų
+          styliai bus visiškai neaktualūs vartotojui, bet loginė struktūra bus
+          visiems svarbi. Paieškos varykliai indeksuoja puslapius pagal HTML
+          failo strukturą ir bando iš jos "suprasti" apie ką yra puslapis, kas
+          jame svarbiausia ir panašiai. Puslapio turinys aišku yra svarbiausia,
+          bet blogai pateiktas jis nepasieks auditorijos.
+        </p>
+      </section>
+      <section>
+        <h2 id="html-tags">HTML tagai</h2>
+        <p>
+          Tinklapio kontentas yra rašomas tarp tagų. Užrašę
+          <code> &lt;h1&gt;Puslapio pavadinimas&lt;/h1&gt;</code>
+
+          į kurį nors failą ir atidarę šį failą savo naršyklėje mes pamatysime
+          užrašą:
+
+          <span class="center big">Puslapio pavadinimas</span>
+
+          didesnėmis raidėmis. Failo pavadinimas turi turėti gale ".html",
+          kitaip ne visos naršyklės suprąs, kad mes norėjom parašyti butent html
+          kodą, o ne šiaip tekstą.
+        </p>
+        <p>
+          Žemiau į mūsų failą pridėkime tokią eilutę:
+          <code>&lt;a href="./"&gt;linkas&lt;/a&gt;</code>
+
+          Dabar atnaujinkime naršyklę (refresh). Rezultate matysime:
+          <img class="img-center" src="./images/html-1st-steps.png" alt="" />
+          Paspaudę "linkas" pereisime į savo aplanką iš kur paleidome mūsų html
+          failą ir pamatysime kitus failus.
+        </p>
+        <p>
+          Pakeiskime <code>href="./"</code>
+          <span class="center">į</span>
+          <code>href="https://www.google.lt/"</code>
+          dabar paspaudę "linkas" pereisime į Google paiešką. Argi ne magija?!
+        </p>
+        <p>
+          Tam kad valdyti šitą magiją reikia vieno paprasto dalyko: žinoti kokie
+          būna html tagai ir kaip jie rašomi.
+        </p>
+        <p class="pamokslas">
+          Geriausias būdas išmokti - tai kurti savo puslapius ir nagrinėti kaip
+          padaryti kiti tinklapiai naršyklėje pasirinkus "inspect page".
+        </p>
+        <p>
+          HTML tagai rašomi tarp &lt; ir &gt; ženklų, o turinį (tai ką norime
+          atvaizduoti mūsų tinklapyje) rašome tarp atidaromojo ir uždaromojo
+          tago. Uždaromasis tagas atrodo lygiai taip pat kaip ir atidaromasis,
+          išskyrus "/" simbolį. Pvz.
+          <code>&lt;a&gt; - yra atidaromasis tagas</code>
+          <code> &lt;/a&gt; - yra uždaromasis tagas</code>
+          tarp jų galime parašyti tekstą, kuris bus atvaizduotas mūsų puslapyje
+          kaip nuoroda.
+          <code>&lt;a&gt;Mano pirmoji nuoroda&lt;/a&gt;</code>
+          , bet ši nuoroda dar niekur neveda, nes mes nepasakėme naršyklei kur
+          ta nuoroda turi vęsti. Tą galima padaryti per atributus, kurie rašomi
+          atidaromajame tage per tarpą nuo tago pavadinimo. Vienas tarpas
+          naudojamas ar daugiau - nesvarbu.
+          <code
+            >&lt;a
+            <span class="highlight">href</span
+            >="https://pigu.lt"&gt;Spausk&lt;/a&gt;</code
+          >
+          , po atributo statomas lygybės ženklas ir kabutėse suteikiama tam
+          atributui viena iš galimų reikšmių.
+        </p>
+        <ol class="l2">
+          Šiuo atveju mes norėjome kad brauzeris
+          <li>parašytų naršyklėje žodį "Spausk"</li>
+          <li>
+            nueitų į https://pigu.lt tinklapį jeigu ši nuoroda bus paspausta
+          </li>
+        </ol>
+        <p>
+          <a href="https://pigu.lt">Spausk</a> nuoroda mus nuves į pigu.lt
+          tinklapį ir mes paliksime mūsų tinklapį. O kaip padaryti, kad pigu.lt
+          atsidarytų kitame tabe?
+        </p>
+        <p>Tam yra kitas atributas, vadinamas "target"</p>
+        <p>
+          jis gali turėti keletą reikšmių kontroliojančių brauzerio langų ir
+          tabų elgseną
+        </p>
+        <p>
+          mums tinka reikšmė "_blank", kuri pasakys brauzeriui kad reiktų
+          atidaryti naują tabą ir pereiti į jį kai kažkas paspaus mūsų "Spausk"
+          nuorodą.
+        </p>
+        <p>
+          Kievienas sekantis atributas rašomas per tarpą.
+          <code
+            >&lt;a href="https://pigu.lt"
+            target="_blank"&gt;Spausk&lt;/a&gt;</code
+          >
+          Dabar <a href="https://pigu.lt" target="_blank">Spausk</a> nuoroda
+          atidarys naują tabą naršyklėje.
+        </p>
+        <p>
+          tagas gali turėti daug atributų atskirtų tarpais. Galima vietoje tarpo
+          tęsti rašymą iš naujos eilutės. Taip pat galima perkelti &gt; &lt;į
+          naują eilutę
+          <code id="nuorodos-pvz"
+            >&lt;a href="https://pigu.lt" <br />
+            target="_blank" <br />
+            id="pigu-linkas" <br />&gt;Spausk&lt;/a<br />&gt;<br />
+
+            <a class="tiny" href="#nuorodos">plačiau apie nuorodas</a>
+          </code>
+        </p>
+        <p>Tik tiek ir reikia kad pradėti kurti puslapių struktūrą.</p>
+        <p>
+          Tinkamus tavo puslapiui tagus rasi
+          <a
+            href="https://www.w3schools.com/TAGs/ref_byfunc.asp"
+            target="_blank"
+            >čia</a
+          >
+          , o pasirinkus dominantį tagą gali surasti ir atributus, kurie valdo
+          tago elgseną.
+        </p>
+        <p>
+          Gali drąsiai klausti chatGPT kuris tagas tinkamiausias tavo atveju
+          arba ieškoti google ir kt. pvz: tinkamiausias html tagas tekstui
+        </p>
+      </section>
+      <section>
+        <h2 id="html-structure">HTML failo struktūra</h2>
+        <p>
+          Kiekvienas HTML puslapis būtinai turi turėti tokią struktūrą
+          (mažiausiai):
+        </p>
+
+        <div class="code-snippet">
+          <pre>
+         &lt;<span class="tag">!DOCTYPE</span> html&gt;
+         &lt;<span class="tag">html</span> lang="en"&gt;
+          &lt;<span class="tag">head</span>&gt;
+            &lt;<span class="tag">meta</span> charset="UTF-8"&gt;
+            &lt;<span class="tag">meta</span> name="viewport" 
+            content="width=device-width, initial-scale=1.0"&gt;
+            &lt;<span class="tag">title</span>&gt;Document&lt;<span class="tag">/title</span>&gt;
+          &lt;<span class="tag">/head</span>&gt;
+          &lt;<span class="tag">body</span>&gt;
+           
+          &lt;<span class="tag">/body</span>&gt;
+         &lt;<span class="tag">/html</span>&gt;
+       </pre>
+        </div>
+        <p>
+          Savo puslapio turinį mes rašome tarp &lt;body&gt; tagų. Jie bus
+          atvaizduoti dokumento "kūne".
+        </p>
+        <p>
+          &lt;html&gt; tagas tai viso matomo ir nematomo kontento namai.
+          &lt;head&gt; aprašo pagrinde nematomus dalykus, nustatymus, o
+          &lt;body&gt; matomus puslapyje.
+        </p>
+        <p>
+          &lt;title&gt;'e nurodome viso puslapio pavadinimą, kuris
+          atvaizduojamas ant kiekvieno tabo.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="nuorodos">Darbas su nuorodom</h2>
+        Tu jau matei kaip daroma nuorodą <a href="#nuorodos-pvz">aukščiau</a>.
+        Pakanka nurodyti kur reiks keliauti naudojant href atributą ir tekstą
+        ant kurio norime kad spaustų. pvz.
+        <code>&lt;a href="https://pigu.lt"&gt;Spausk&lt;/a&gt;</code>
+        <ol>
+          <li>
+            Naudojant href atributą galima nurodyti kelią į kitą interneto
+            puslapį kaip pavyzdyje aukščiau.
+          </li>
+          <li>
+            galima nurodyti kelią į savo puslapio kitą eilutę taip:
+            <code
+              >&lt;a href="<span class="highlight">#apie-web-dizaina</span
+              >"&gt;Web dizainas&lt;/a&gt;</code
+            >
+            tokiu atveju mes peršoksime ant elemento mūsų puslapyje, kuris turi
+            id="apie-web-dizaina", pvz.
+            <code
+              >&lt;h3 id="<span class="highlight">apie-web-dizaina</span
+              >"&gt;Pakalbėkime apie tinklapių kurimą&lt;/h3&gt;</code
+            >
+          </li>
+          <li id="paths-syntax">
+            galima nurodyti kelią į kitą failą mūsų tinklapyje.
+          </li>
+        </ol>
+        <h2 id="path-writing">Kelias į failą</h2>
+        <p>
+          Kadangi mes nenorėtume kad mūsų tinklapis veiktų arba neveiktų
+          priklausomai nuo to koks aplanko vardas į kurį pateko mūsų tinklapis
+          pas klientą, mes turime nurodyti ne absoliutų, o santykinį kelią to
+          failo kuriame mes dabar esame atžvilgiu.
+        </p>
+        <p>
+          Tai daroma naudojant vieną arba du taškus ir simbolį / , pvz. mes
+          turime tokią failų strukturą:
+        </p>
+        <!-- 
+        
+        o toliau mes rašome įprastinį kelia kaip pvz. -->
+        <!-- <code>
+          ./public/index.html - veda iš mūsų failo (kuriame radome šią nuorodą)
+          į index.html failą, kuris yra public folderyje. Čia matome kad
+          aplankas public randasi tame pačiame aplanke kaip ir mūsų failas iš
+          kuriuo mes dabar rašome nuorodą</code
+        >
+        <code>
+          ../visi/ten/kuku.png - išveda iš aplanko kuriame mūsų failas, o tada
+          veda į aplanką visi, tada į aplanką ten ir tada į paveiksliuką
+          kuku.png, kuriame gal pavaizduota gegutė
+        </code>
+
+        Aš paprašiau chatGPT nupiešti atsitiktinę aplankų struktūrą: -->
+
+        <pre>
+  📁 Root
+  ├── 📁 Documents
+  │      ├── 📄 Resume.txt
+  │      ├── 📄 <span class="highlight">mes-čia.html</span>
+  │      └── 📁 Projects
+  │               ├── 📁 ProjectA
+  │               │      ├── 📄 README.md
+  │               │      └── 📄 CoverLetter.docx
+  │               └── 📁 ProjectB
+  │                       ├── 📄 Design.pdf
+  │                       └── 📄 data.csv
+  ├── 📁 Pictures
+  │      ├── 🖼️ Vacation
+  │      │       ├── 📷 Beach.jpg
+  │      │       └── 📷 Mountains.jpg
+  │      └── 🖼️ Family
+  │                ├── 📷 FamilyPortrait.jpg
+  │                └── 📷 PetDog.jpg
+  └── 📁 Music
+            ├── 🎵 Pop
+            │      ├── 🎶 Song1.mp3
+            │      └── 🎶 Song2.mp3
+            └── 🎵 Rock
+                     ├── 🎶 ClassicRock.mp3
+                     └── 🎶 IndieRock.mp3
+              </pre>
+
+        Apsimeskime, kad mes esame mes-čia.html faile ir jame rašome
+        nuorodas.<br />
+        Tarkime nuorodą į Resume.txt failą atrodytų taip:
+        <code>&lt;a href="./Resume.txt"&gt;Spausk&lt;/a&gt;</code>
+        į Beach.jpg:
+        <code
+          >&lt;a
+          href="../../Pictures/Vacation/Beach.jpg"&gt;Spausk&lt;/a&gt;</code
+        >
+        <code
+          >./ reiškia kad mes kreipiames į failą ar aplanką kuris yra tame
+          pačiame aplanke kaip ir failas iš kurio mes rašome nuorodą</code
+        >
+        <code
+          >../ reiškia kad mes norime išeiti iš dabartinio aplanko vienu lygiu
+          atgal į aplanką kuriame yra aplankas su tuo failų iš kuriuo veda
+          nuoroda</code
+        >
+
+        Pabandykite dabar sukurti nuorodas į README.md, Mountains.jpg,
+        Design.pdf, Song2.mp3.
+        <p class="pamokslas">
+          Tikrai verta pasipraktikuoti, nes tai pravers ir darbui su
+          paveiksliukais ir skaidant savo failus į patogesnius gabalus
+        </p>
+      </section>
+
+      <section>Kol kas tiek teorijos..............</section>
+
+      <section>
         <h2 id="first-tasks">Pirmosios užduotėlės</h2>
         <ul>
           <li>
-            <a href="./projects/links/contacts.html">Darbas su nuorodom</a>
+            <a href="./projects/news/naujienos.html">Darbas su nuorodom</a>
           </li>
           <li>
             <a href="./projects/tables/lenteles.html">Darbas su lentelėm</a>
@@ -127,92 +442,6 @@
             alt=""
         /></a>
       </section>
-      <br />
-
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi culpa
-      consectetur optio? Molestiae cumque nam sapiente error vel asperiores
-      reprehenderit eum deleniti deserunt? Soluta quod inventore consectetur,
-      cumque, itaque laboriosam nobis non fuga, perspiciatis culpa id obcaecati?
-      Voluptas aperiam nemo quia hic, nostrum fugiat, tenetur qui placeat
-      veritatis quibusdam in magnam repellat dignissimos expedita vel
-      consectetur quod. Iusto, eaque odio molestias itaque eum pariatur et
-      officiis ab assumenda, debitis voluptatum. Perspiciatis aspernatur, soluta
-      ipsa est facilis veniam quidem? Et, officia, sequi minus obcaecati est
-      voluptates facilis enim corrupti vero beatae inventore dolorum
-      consequuntur voluptatem assumenda. Neque consectetur cupiditate error
-      dolorum enim sapiente voluptatem necessitatibus sit molestiae? Totam iure
-      nostrum abiosam cupiditate aut. Animi nesciunt quo, nobis voluptatum quia
-      dolorem eaque facere excepturi! Tenetur, distinctio! Illo ea, distinctio
-      optio iusto doloremque velit animi nulla sit, iste sapiente repellat
-      quidem tempora a nisi id ad voluptatem dolor culpa assumenda enim eaque
-      odio? Voluptates quo iure dicta, maiores tenetur corporis aspernatur velit
-      laudantium? Beatae enim incidunt dolorem nihil velit maxime. Ipsam
-      accusamus eligendi dolorum ab facilis. Consectetur architecto fugit
-      tempora ad ex reprehenderit ea inventore rerum deleniti optio sapiente
-      voluptatem, corrupti odio cupiditate veritatis aliquam similique. Aliquid
-      quae, minus qui quos optio quidem facere veniam enim, ullam debitis
-      laborum eius similique! Distinctio itaque facere tempore modi at et
-      architecto corrupti fugiat magnam, eius quod. Consectetur nostrum itaque
-      ad explicabo nihil. Harum quos, incidunt ullam iusto alias ipsam quisquam
-      nam magni blanditiis? Veritatis rerum quidem ratione commodi voluptate
-      illum, repellendus, laboriosam quia dolorem sint assumenda sed. Molestiae
-      vero laudantium facilis eaque alias tenetur ipsum voluptatibus dicta
-      quisquam autem illum omnis fugit natus, consequatur ipsam cumque
-      voluptate, distinctio cupiditate est expedita consequuntur aperiam. Cumque
-      animi veniam quae id consequatur, eaque necessitatibus incidunt aliquid
-      porro possimus impedit hic obcaecati dicta delectus quis natus,
-      perspiciatis iusto beatae laboriosam. Voluptas iure, veniam voluptatem
-      repellendus dignissimos aut consectetur laborum blanditiis beatae fugit
-      fugiat sint repudiandae. Tempora, quia beatae. Sapiente excepturi vero,
-      obcaecati, alias assumenda deleniti aspernatur cumque nesciunt tempora
-      consequuntur temporibus, dolorem delectus? Blanditiis quibusdam vel error,
-      asperiores quasi voluptate. Temporibus dolorum architecto ut ex fugit
-      beatae delectus nemo nostrum labore, voluptatem ipsa impedit eum velit
-      perferendis illo. Sed assumenda doloribus expedita voluptates tempore
-      dolorem harum reiciendis eum quibusdam odit, iure inventore? Autem optio
-      aliquid iure est odit, earum delectus deleniti dicta facilis! Similique
-      consectetur deleniti sed tempore eveniet provident corrupti, quos enim
-      velit eum dolorum eaque animi est beatae assumenda, architecto quam
-      laudantium numquam fuga molestias distinctio alias ullam? Dignissimos
-      obcaecati error optio? Laborum quaerat officia non quo animi aliquam
-      explicabo pariatur eaque amet laboriosam quia molestias temporibus unde,
-      nam veritatis corporis autem laudantium maxime totam minima, delectus,
-      inventore et. Voluptatibus, ipsam molestias ipsum magnam nesciunt mollitia
-      minus, rem ratione nulla maxime odit rerum voluptates expedita eum, earum
-      sunt dolore animi quidem unde consequuntur minima dolores? Consectetur
-      mollitia quis porro repellat rerum sint beatae optio, nihil tempora
-      reiciendis fugiat saepe impedit cumque, perspiciatis amet quas perferendis
-      iure modi, aliquid minima. Ea unde quod dignissimos blanditiis temporibus
-      odit recusandae est asperiores? Reprehenderit omnis accusantium officiis
-      eveniet repudiandae est dignissimos? Maiores sint quisquam odit quis
-      cumque provident dicta harum, consequuntur laudantium perspiciatis porro
-      totam consectetur itaque expedita, enim nesciunt rem deserunt magnam
-      libero cum? Ruam fugit. Nesciunt quibusdam praesentium cum accusamus.
-      Obcaecati ea eligendi rerum, odit perferendis consequatur error pariatur
-      consectetur incidunt, veritatis sunt, cumque unde dolore tempore ullam
-      numquam animi optio? Ad autem optio deserunt aut minima, labore eos quidem
-      libero obcaecati. At quibusdam, natus voluptates commodi pariatur delectus
-      repellendus modi fuga laboriosam dolore ad perspiciatis ipsam, officia
-      quisquam facere minima omnis! Incidunt corrupti similique facilis dolore
-      minima autem quae corporis nobis fugit saepe, quasi adipisci esse
-      dignissimos nam magnam veritatis enim doloremque voluptatum! Error
-      voluptas deseecessitatibus deserunt odit, voluptatem dolore tenetur,
-      tempora ea recusandae pariatur dolores nam quasi perspiciatis magnam
-      commodi? Porro ex iure, placeat incidunt commodi optio aut eaque. Illo,
-      officiis explicabo. Quam blanditiis libero adipisci. Quidem illum
-      distinctio magnam fugiat totam quasi deserunt sapiente dicta, aperiam
-      tempora blanditiis laboriosam culpa! Excepturi, optio. Magni mollitia quas
-      dolorem magnam alias hic facere nihil possimus fugiat perferendis nesciunt
-      pariatur ut, ratione unde non assumenda, dignissimos necessitatibus
-      doloribus et aliquam aspernatur quia excepturi? Aut, vel eius, dolores
-      quos magni esse ex consequatur porro tenetur ut nostrum eum, laborum hic
-      non velit animi! Vel repudiandae placeat nisi cum rem veniam quibusdam
-      eligendi debitis? Non enim eos quae consectetur architecto ea id
-      voluptatibus, quo accusantium, quia, soluta deserunt beatae rem doloremque
-      cupiditate vero at! Temporibus adipisci, eaque ullam iste earum neque quo
-      nemo numqu.m optio cupiditate nesciunt. Delectus dolorum similique fuga a
-      mollitia earum neque hic deleniti veniam, ullam rerum, impedit ducimus
-      fugiat odio qeat provident saepe beatae. Nostrum, nihil.
     </main>
 
     <div id="contents-box">
@@ -220,116 +449,9 @@
       <h1>Turinys</h1>
       <ol id="toc">
         <!-- čia susigeneruos nuorodos į h2, 
-          kuriems bus suteikti random id 
+          kuriems bus suteikti random id jeigu nėra id
         (tada nebus galima turėti nuoroda į konspekto dalį) -->
       </ol>
-      <br />
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos
-      deserunt fugit ea, incidunt corporis doloribus dicta aliquam excepturi
-      impedit optio debitis reprehenderit autem nobis consequuntur hic. Suscipit
-      in, natus laudantium itaque veniam explicabo nulla dolores, hic veritatis
-      ea soluta vitae modi sint velit cumque porro vel similique obcaecati esse
-      voluptates libero numquam ipsam. Illum ipsum voluptatem voluptas ex
-      placeat, ipsa voluptatibus voluptatum vero asperiores illo sunt. Qui
-      reprehenderit beatae, corporis exercitationem rem ratione! Veniam, sed
-      voluptas rem saepe voluptate fugiat unde blanditiis cupiditate, atque
-      molestias iste quisquam eum nesciunt vero libero minima inventore fuga
-      non, quidem possimus recusandae modi eaque assumenda consequatur. Officia
-      aut obcaecati odit nemo aperiam recusandae harum porro molestias, minima,
-      numquam delectus veritatis voluptatem quidem eveniet iusto dolore. Minus
-      esse accusantium ratione quam quo impedit amet quidem temporibus doloribus
-      ipsa, perspiciatis ullam, praesentium deleniti fugiat beatae molestiae
-      dolores. Nulla ratione saepe provident repellendus, rerum consectetur odio
-      officia beatae nobis natus repudiandae voluptates sunt quae. Autem vero
-      minima ratione quia libero, consectetur eos error in ipsam. Tempore
-      mollitia delectus officiis voluptatem omnis? Doloremque quidem beatae
-      provident! Recusandae, velit. Et nulla cupiditate eos suscipit numquam
-      possimus maiores delectus. Unde, laboriosam officiis tempore rem inventore
-      magnam quidem omnis architecto dolorum voluptatibus quae nihil pariatur
-      voluptate aspernatur explicabo expedita similique ut magni saepe
-      voluptatum dolore aliquam ratione quis fuga? Alias modi earum dolorum
-      natus ducimus, eius perspiciatis vitae assumenda fugit recusandae ad saepe
-      voluptates distinctio autem sequi molestias? Totam est optio iste dolor
-      eius animi adipisci voluptatem, quas voluptatum tenetur! Consequatur id
-      dicta sint nulla. Perferendis animi adipisci aliquam aut dolorum quisquam
-      labore corporis sequi dolorem nihil, accusantium quod minus similique!
-      Asperiores quisquam exercitationem sequi quidem ullam temporibus magni aut
-      necessitatibus ipsum, ad dolores facilis nam saepe autem ea omnis, beatae
-      iure, voluptas nobis consequatur expedita debitis unde vel? Corrupti
-      voluptatum laboriosam maxime fugiat amet aperiam odit quos corporis
-      nesciunt culpa ipsum, aliquid eligendi facilis quisquam minima eveniet
-      voluptas iusto quod dolores et! Tempore incidunt, veritatis in impedit
-      sint magni accusamus ullam? Maxime omnis sunt non debitis dolore eligendi
-      fugiat, nobis sint quasi modi doloremque cupiditate labore facere.
-      Cupiditate iste sint id sequi, sed quod! Laudantium odit neque hic dolorem
-      explicabo beatae magnam facere culpa rem voluptatum. Odio error
-      perspiciatis maiores quos porro voluptate suscipit, iusto illo, rem qui
-      nam quo alias voluptatibus corrupti est ipsam optio distinctio itaque quod
-      voluptates? Quo, ea voluptatibus? Impedit pariatur eius iure dicta ullam,
-      molestias temporibus alias at ab quidem porro illum cumque odio adipisci
-      similique ut sint esse totam exercitationem consectetur veritatis
-      praesentium. Dolore non ipsa amet reprehenderit. A animi consequuntur
-      magnam veniam repellendus voluptatem tenetur eius tempore! Fugiat dicta
-      voluptates voluptatum molestiae exercitationem quam accusantium tempora.
-      Numquam dolor sapiente tempore ab possimus odio doloremque vitae quidem
-      neque, accusamus voluptate. Corporis unde perferendis quae voluptate rem
-      deserunt quia quasi sequi obcaecati excepturi amet eveniet id, nesciunt
-      odio placeat aliquid expedita repudiandae fugit eaque quod necessitatibus
-      a nisi corrupti! Doloremque cum tempore atque impedit magnam facere culpa
-      voluptatem amet ex officiis! Quos incidunt veniam saepe possimus, aliquid
-      magni blanditiis itaque eius nostrum perspiciatis quas esse consequatur
-      est eos hic doloremque delectus tempora enim placeat! Mollitia culpa
-      expedita ipsa, praesentium officia voluptates ex sapiente harum tempora
-      magnam adipisci doloribus at libero eum earum. Modi eveniet nisi ipsam
-      quis. Vel repellendus placeat eos eaque recusandae accusamus. Magnam
-      fugiat officia voluptatem deleniti dolore laboriosam explicabo nam quas
-      libero, vitae officiis veritatis dolores facere? Corporis illum deleniti,
-      explicabo aliquid voluptatum laborum recusandae consequatur modi nihil.
-      Debitis provident vel, dolore ut id ab neque, iusto adipisci rerum
-      cupiditate aperiam necessitatibus sequi, temporibus cumque fuga voluptate
-      inventore optio? Tempore reiciendis animi quia possimus facilis, dolore
-      quam libero quis molestiae, nihil vero ipsa corrupti quas beatae vel
-      necessitatibus, aliquam rem delectus ex minus nam ad praesentium. Sed,
-      corporis voluptatem iure possimus quia earum dolore magni? Odio commodi
-      nihil laborum, ea ut ipsam voluptate tempora nostrum quam error quo animi
-      atque, dolore veritatis nemo ratione fugiat repellat voluptas distinctio.
-      Qui quibusdam tempora debitis est cumque ea minus, repudiandae
-      voluptatibus non adipisci voluptatum culpa veritatis et possimus facere
-      eos quae in asperiores. Animi cupiditate neque maxime sunt obcaecati,
-      dicta ea eveniet esse, non alias quaerat suscipit facilis aut placeat.
-      Expedita voluptatibus ipsam recusandae beatae soluta rerum vero qui,
-      provident commodi minus iusto blanditiis suscipit doloremque quasi
-      temporibus quo corrupti esse, illum sint ratione accusamus architecto
-      sequi! Sit voluptates beatae dolorum veniam, voluptatem suscipit? Harum
-      necessitatibus aperiam tenetur earum possimus eius totam excepturi, iure
-      explicabo obcaecati libero dolores incidunt repellendus nostrum
-      laudantium, quae vero! Voluptatum culpa voluptates modi excepturi nostrum
-      aliquam perspiciatis officiis, blanditiis cumque dolores dolorum, delectus
-      debitis corrupti nihil! Eius, sapiente? Adipisci ex molestiae unde modi
-      tenetur, quo repudiandae suscipit natus voluptatem dicta eaque animi
-      quibusdam recusandae reprehenderit sapiente quisquam! Facilis harum
-      eligendi dignissimos voluptate numquam cum ratione culpa quibusdam nam
-      doloremque vitae eos ea at accusantium explicabo nobis, blanditiis ipsam
-      iste velit. Ad voluptas laboriosam quasi tempora in, nam ipsa quod commodi
-      nesciunt quaerat, recusandae explicabo assumenda repellat et quidem ullam
-      saepe blanditiis ducimus voluptate quis voluptatem quo? Vero vitae odit ex
-      veniam nihil ab, libero reiciendis consequatur mollitia eaque? Aliquid
-      laboriosam corrupti dolorum, voluptatum esse iste labore excepturi, odio
-      quidem quos, tempore atque explicabo tempora voluptate ab quasi a nobis
-      assumenda earum facilis! Fugit perferendis nihil, architecto fuga tempore
-      autem totam qui alias in odio! Distinctio magni sapiente omnis odit maxime
-      praesentium eum voluptatem eaque vero eligendi, saepe voluptates nemo
-      tempore asperiores magnam deleniti eveniet accusantium, perferendis in.
-      Odio ducimus id architecto facilis suscipit explicabo dolorum modi
-      molestias corporis accusamus vel ut fuga asperiores quo omnis accusantium
-      sed minus consectetur nihil sit impedit, sequi voluptatum soluta
-      provident. Beatae ut officiis veritatis, voluptatem impedit, quam esse id
-      nemo sunt, placeat accusamus ab earum deleniti reprehenderit ipsam
-      dignissimos harum facere labore perspiciatis quis sapiente eius voluptas
-      deserunt. Natus doloremque laudantium eos, eum similique sint animi
-      blanditiis voluptatem earum nostrum debitis ipsa quasi minus vero et
-      quidem, quae in accusamus, eaque consectetur saepe. Quidem atque inventore
-      incidunt, vel modi quae. Consectetur assumenda molestiae earum.
     </div>
     <script>
       function toggleTOCsection() {
