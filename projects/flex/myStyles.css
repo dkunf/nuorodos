@@ -1,0 +1,110 @@
+.bg {
+  position: absolute;
+  width: 100vw;
+  opacity: 0.2;
+  object-fit: contain;
+
+  z-index: -3;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  /* lol, will figure out later */
+  border-bottom: 10000px solid white;
+}
+nav,
+.shelves,
+footer {
+  background: #000;
+  color: #fff;
+}
+.logo {
+  box-sizing: content-box;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  padding: 5px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+nav a:hover {
+  color: #9661e8;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+}
+.shelves {
+  margin: 4.5rem auto;
+  text-align: center;
+  padding: 3rem;
+}
+.shelves h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.slogan {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.card-img {
+  height: 127px;
+  width: 127px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 100%;
+}
+.card-section {
+  margin-top: 2.7rem;
+  display: flex;
+}
+.card {
+  width: 293px;
+  border: 1px solid white;
+  margin: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.card:hover {
+  border: 2px solid #9661e8;
+}
+.card * {
+  padding-bottom: 0.5rem;
+}
+.card-title {
+  padding: 1rem 0 1rem 0;
+}
+.dash {
+  font-size: xx-large;
+  background-color: #000;
+  color: #fff;
+}
+.card-description {
+  font-weight: 500;
+  line-height: 1.5rem;
+  letter-spacing: 0.03rem;
+  padding: 1rem 0 0 0;
+}
+.for-more {
+  font-weight: 800;
+  color: #9661e8;
+  padding: 1rem;
+
+  margin-top: 1rem;
+}
+.for-more:hover {
+  border: 1px solid #9661e8;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+}
