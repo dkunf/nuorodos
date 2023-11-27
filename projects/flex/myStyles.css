@@ -1,18 +1,18 @@
 .bg {
-  position: absolute;
-  width: 100vw;
-  opacity: 0.2;
-  object-fit: contain;
-
-  z-index: -3;
+  background-image: url(../pics/gelato-bg.png);
+  background-repeat: repeat;
+  z-index: 1;
+}
+.overlay {
+  background-color: #ffffffc0;
+  z-index: 2;
 }
 .container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-content: center;
-  /* lol, will figure out later */
-  border-bottom: 10000px solid white;
+  z-index: 3;
 }
 nav,
 .shelves,
