@@ -52,20 +52,22 @@ nav ul {
 .slogan {
   font-size: 1.1rem;
   font-weight: 500;
+  margin-bottom: 2.7rem;
 }
 .card-img {
-  height: 127px;
-  width: 127px;
+  height: 7rem;
+  width: 7rem;
   object-fit: cover;
   object-position: center;
   border-radius: 100%;
 }
-.card-section {
-  margin-top: 2.7rem;
+.cards-section {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .card {
-  width: 293px;
+  width: 16.5rem;
   border: 1px solid white;
   margin: 1rem;
   padding: 2rem;
