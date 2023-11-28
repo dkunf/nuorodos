@@ -1,0 +1,129 @@
+html {
+  --dark-red: #e12e60;
+  --lighter-red: #ef5d69;
+  --lightest-red: #fcdfe1;
+}
+body {
+  font-size: 19px;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--lightest-red);
+}
+header {
+  padding: 1rem 4rem 3rem 4rem;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    ),
+    url("./pics/header-bg.jpeg"),
+    lightgray 0px -915.438px / 100% 580.343% no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.logo {
+  width: 4rem;
+  height: 4rem;
+}
+nav {
+  height: 4.2rem;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+}
+.links {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+.links a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+nav button {
+  background-color: var(--dark-red);
+  font-weight: 800;
+  font-variant: small-caps;
+  padding: 0.8rem;
+  color: white;
+  border: 1px solid var(--dark-red);
+  border-radius: 8px;
+}
+
+h1 {
+  margin-top: 3.4rem;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: white;
+}
+.subheader {
+  background-color: var(--lighter-red);
+  border: 1px solid var(--lighter-red);
+}
+.t1 {
+  width: 40%;
+  min-width: 15rem;
+  padding: 1rem;
+}
+.t2 {
+  width: 20%;
+  min-width: 15rem;
+  padding: 1rem;
+}
+.t3 {
+  width: 24%;
+  min-width: 15rem;
+  padding: 1rem;
+}
+.text-box {
+  background-color: var(--lightest-red);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 3rem 0 3rem 0;
+  margin: 4rem 3rem 4rem 3rem;
+}
+.art-ws-img {
+  width: 60%;
+  height: auto;
+}
+main {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  align-items: stretch;
+  margin: 7rem 0;
+}
+article {
+  width: 400px;
+  padding: 1.3rem 2.6rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.smaller-logo {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+footer {
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+.social-btn-bar img {
+  border: 1px solid white;
+  background-color: var(--lightest-red);
+  border-radius: 1rem;
+}
+.legal {
+  text-align: center;
+}
+.legal p {
+  font-size: 0.6rem;
+}

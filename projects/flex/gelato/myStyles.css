@@ -1,5 +1,10 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+
 .bg {
-  background-image: url(../pics/gelato-bg.png);
+  background-image: url(../../pics/gelato-bg.png);
   background-repeat: repeat;
   z-index: 1;
 }

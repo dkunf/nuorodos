@@ -1,0 +1,14 @@
+<svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="LinkedinLogo" clip-path="url(#clip0_1_262)">
+<path id="Vector" d="M27 4.51172H5C4.44772 4.51172 4 4.95943 4 5.51172V27.5117C4 28.064 4.44772 28.5117 5 28.5117H27C27.5523 28.5117 28 28.064 28 27.5117V5.51172C28 4.95943 27.5523 4.51172 27 4.51172Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M15 14.5117V22.5117" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M11 14.5117V22.5117" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M15 18.0117C15 17.0835 15.3687 16.1932 16.0251 15.5368C16.6815 14.8805 17.5717 14.5117 18.5 14.5117C19.4283 14.5117 20.3185 14.8805 20.9749 15.5368C21.6313 16.1932 22 17.0835 22 18.0117V22.5117" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M11 12.5117C11.8284 12.5117 12.5 11.8401 12.5 11.0117C12.5 10.1833 11.8284 9.51172 11 9.51172C10.1716 9.51172 9.5 10.1833 9.5 11.0117C9.5 11.8401 10.1716 12.5117 11 12.5117Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_1_262">
+<rect width="32" height="32" fill="white" transform="translate(0 0.511719)"/>
+</clipPath>
+</defs>
+</svg>
