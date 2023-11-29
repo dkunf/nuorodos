@@ -12,6 +12,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
@@ -25,8 +31,7 @@
           >Web development konspektas. Fullstack kursai: HTML, CSS,
           Javascript.</strike
         ><br /><small
-          >Mano pamokslavimai (net ir man neįdomūs) apie px ir kitus matavimo
-          vienetus.</small
+          >Mano pamokslavimai apie px ir kitus matavimo vienetus.</small
         >
       </h1>
       <div class="epi">
@@ -324,8 +329,8 @@
         </code>
 
         Aš paprašiau chatGPT nupiešti atsitiktinę aplankų struktūrą: -->
-
-        <pre>
+        <div class="insert-container">
+          <pre>
   📁 Root
   ├── 📁 Documents
   │      ├── 📄 Resume.txt
@@ -352,16 +357,19 @@
                      ├── 🎶 ClassicRock.mp3
                      └── 🎶 IndieRock.mp3
               </pre>
-
-        Apsimeskime, kad mes esame mes-čia.html faile ir jame rašome
-        nuorodas.<br />
-        Tarkime nuorodą į Resume.txt failą atrodytų taip:
-        <code>&lt;a href="./Resume.txt"&gt;Spausk&lt;/a&gt;</code>
-        į Beach.jpg:
-        <code
-          >&lt;a
-          href="../../Pictures/Vacation/Beach.jpg"&gt;Spausk&lt;/a&gt;</code
-        >
+          <div class="insert">
+            Apsimeskime, kad mes esame
+            <span class="highlight">mes-čia.html</span> faile ir jame rašome
+            nuorodas.<br />
+            Nuorodą į Resume.txt failą atrodytų taip:
+            <code>&lt;a href="./Resume.txt"&gt;Spausk&lt;/a&gt;</code>
+            į Beach.jpg:
+            <code
+              >&lt;a
+              href="../../Pictures/Vacation/Beach.jpg"&gt;Spausk&lt;/a&gt;</code
+            >
+          </div>
+        </div>
         <code
           >./ reiškia kad mes kreipiames į failą ar aplanką kuris yra tame
           pačiame aplanke kaip ir failas iš kurio mes rašome nuorodą</code

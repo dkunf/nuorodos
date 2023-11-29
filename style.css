@@ -3,9 +3,13 @@
   --shadows: 4px 3px 5px 1px rgba(0, 0, 0, 0.24);
   --contents-width: 20rem;
 }
+html {
+  font-size: 20px;
+  line-height: 1.6rem;
+}
 body {
-  font-size: 25px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Roboto", sans-serif;
+  background-color: #d2b48c;
 }
 
 main {
@@ -23,6 +27,7 @@ main {
 }
 
 #contents-box {
+  font-size: 0.8rem;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -31,7 +36,6 @@ main {
   border: 1px solid #ddd;
   overflow-y: scroll;
   padding: 1rem 0.5rem;
-  font-size: 1.5rem;
   line-height: 2rem;
   border: 1px solid transparent;
 }
@@ -52,7 +56,6 @@ main {
 h1 {
   font-size: 3rem;
   margin-bottom: 3rem;
-  text-align: center;
   line-height: 3rem;
 }
 h2 {
@@ -100,6 +103,8 @@ section {
   box-shadow: var(--shadows);
   padding: 5rem 2rem 5rem 2rem;
   margin: 2rem 0;
+  max-width: 40em;
+  margin: 0 auto;
 }
 a {
   text-decoration: none;
@@ -113,12 +118,14 @@ p {
 }
 code {
   display: block;
-  text-align: center;
+  /* text-align: center; */
+  overflow-wrap: break-word;
   padding: 1rem;
   margin: 1rem;
-  font-family: "Courier New", Courier, monospace;
-  background-color: #ddd;
-  color: black;
+  font-family: "Fira Code", monospace;
+  /* font-family: "Courier New", Courier, monospace; */
+  background-color: #ccc;
+  color: #333;
 }
 /* jeigu reikia teksto 
 naujos eilutės centre*/
@@ -142,9 +149,11 @@ naujos eilutės centre*/
 }
 .code-snippet {
   padding: 1em;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Fira Code", monospace;
   background-color: #ddd;
   color: black;
+  overflow-wrap: break-word;
+  overflow-x: scroll;
 }
 .tag {
   color: rgb(79, 79, 204);
@@ -172,4 +181,23 @@ naujos eilutės centre*/
   transform: rotate(-2deg);
   box-shadow: var(--shadows);
   font-size: 0.7em;
+  padding: 0.3rem;
+}
+.insert-container {
+  position: relative;
+}
+
+.insert {
+  position: absolute;
+  right: 0;
+  top: 5rem;
+  width: 40%;
+  max-height: 80%;
+  border: 2px dashed #efefef;
+  overflow-y: scroll;
+  padding: 1rem;
+  box-shadow: var(--shadows);
+}
+.insert code {
+  font-size: 0.7rem;
 }
