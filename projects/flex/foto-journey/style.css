@@ -1,10 +1,12 @@
 /* čia paveiksliukai turi fiksuotus matmenis */
 /* o kaip kitaip padaryti? pvz kaip img padaryti 
 lanksčių dydžių? gal div background? ant tel? */
+html {
+  font-size: 20px;
+}
 body {
   background: #d4f1e6;
   font-family: "Inter", sans-serif;
-  font-size: 20px;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -55,9 +57,12 @@ h1 {
 .text {
   height: 26rem;
   width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
 }
 .text h2 {
   font-size: 1.6rem;
   font-weight: 700;
-  padding-bottom: 1rem;
 }
