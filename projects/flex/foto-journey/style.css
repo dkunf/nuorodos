@@ -1,0 +1,63 @@
+/* čia paveiksliukai turi fiksuotus matmenis */
+/* o kaip kitaip padaryti? pvz kaip img padaryti 
+lanksčių dydžių? gal div background? ant tel? */
+body {
+  background: #d4f1e6;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  gap: 3rem;
+}
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 3.6rem;
+  margin-top: 6rem;
+  text-align: center;
+}
+.fotos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.fotos img {
+  border-radius: 3rem;
+  height: 23rem;
+  object-fit: cover;
+}
+.siaura {
+  width: 23rem;
+}
+.plati {
+  width: 33rem;
+}
+.text-pic-box {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 4rem;
+  border-radius: 1rem;
+  margin-bottom: 6rem;
+}
+.text-pic-box img {
+  width: 17rem;
+  height: 26rem;
+  object-fit: cover;
+  border-radius: 3rem;
+}
+.text {
+  height: 26rem;
+  width: 30rem;
+}
+.text h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}

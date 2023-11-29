@@ -98,7 +98,7 @@ li::before {
 }
 section {
   box-shadow: var(--shadows);
-  padding: 2rem 0 2rem 1rem;
+  padding: 5rem 2rem 5rem 2rem;
   margin: 2rem 0;
 }
 a {
