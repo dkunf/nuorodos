@@ -68,6 +68,7 @@ h2 {
 h2::before {
   content: "✦ ";
 }
+/* links to tasks */
 #link-to-tasks {
   font-size: 1.5rem;
   background-color: rgb(165, 108, 42);
