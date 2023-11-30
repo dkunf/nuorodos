@@ -30,9 +30,7 @@
         <strike
           >Web development konspektas. Fullstack kursai: HTML, CSS,
           Javascript.</strike
-        ><br /><small
-          >Mano pamokslavimai apie px ir kitus matavimo vienetus.</small
-        >
+        ><br /><small>Pamokslavimai apie px ir kitus matavimo vienetus.</small>
       </h1>
       <div class="epi">
         <cite> Geriausiai išmoksti kai mokai kitus. </cite>
@@ -45,8 +43,9 @@
             Visual Studio Code
             <p>
               -naudojamas kaip kodo rašymo įrankis. Randa klaidas, pasakinėja
-              tinkamą kodą, formatuoja kodą ir turi daug extensions, kurių
-              pagalba galima žymiai palengvinti ir pagreitinti kodo rašymą.
+              tinkamą kodą, formatuoja kodą ir turi daug išplėtimų (?)
+              (extensions), kurių pagalba galima žymiai palengvinti ir
+              pagreitinti kodo rašymą.
             </p>
           </li>
           <li>
@@ -148,7 +147,7 @@
           dabar paspaudę "linkas" pereisime į Google paiešką. Argi ne magija?!
         </p>
         <p>
-          Tam kad valdyti šitą magiją reikia vieno paprasto dalyko: žinoti kokie
+          Tam kad valdyti šią magiją reikia vieno paprasto dalyko: žinoti kokie
           būna html tagai ir kaip jie rašomi.
         </p>
         <p class="pamokslas">
@@ -162,8 +161,11 @@
           išskyrus "/" simbolį. Pvz.
           <code>&lt;a&gt; - yra atidaromasis tagas</code>
           <code> &lt;/a&gt; - yra uždaromasis tagas</code>
-          tarp jų galime parašyti tekstą, kuris bus atvaizduotas mūsų puslapyje
-          kaip nuoroda.
+          Bėje, kai kurie tagai užsidaro atidaromajame tage, pvz. &lt;img
+          src="./foto.jpg" /&gt;.
+          <br />
+          Tarp tagų (žymų) galime parašyti tekstą, kuris bus atvaizduotas mūsų
+          puslapyje kaip nuoroda.
           <code>&lt;a&gt;Mano pirmoji nuoroda&lt;/a&gt;</code>
           , bet ši nuoroda dar niekur neveda, nes mes nepasakėme naršyklei kur
           ta nuoroda turi vęsti. Tą galima padaryti per atributus, kurie rašomi
@@ -174,6 +176,16 @@
             <span class="highlight">href</span
             >="https://pigu.lt"&gt;Spausk&lt;/a&gt;</code
           >
+
+          arba
+          <code
+            >&lt;a
+            <span class="highlight"
+              >&ThinSpace;&ThinSpace;&ThinSpace;&ThinSpace;&ThinSpace; </span
+            ><br />
+            <span>href</span>="https://pigu.lt"&gt;Spausk&lt;/a&gt;</code
+          >
+
           , po atributo statomas lygybės ženklas ir kabutėse suteikiama tam
           atributui viena iš galimų reikšmių.
         </p>
