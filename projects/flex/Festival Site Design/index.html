@@ -56,7 +56,7 @@
       </p>
     </div>
     <section class="artists">
-      <div class="section-intro">
+      <div class="section-intro" id="artists">
         <h2>ARTISTS</h2>
         <div class="line"></div>
         <p class="p-under">
@@ -89,7 +89,7 @@
       </div>
     </section>
     <section class="galery">
-      <div class="section-intro">
+      <div class="section-intro" id="gallery">
         <h2>GALLERY</h2>
         <div class="line"></div>
         <p class="p-under">
@@ -110,7 +110,7 @@
       </div>
     </section>
     <section>
-      <div class="section-intro">
+      <div class="section-intro" id="tickets">
         <h2>TICKETS</h2>
         <div class="line"></div>
         <p class="p-under">
@@ -171,7 +171,7 @@
       </div>
     </section>
     <section>
-      <div class="section-intro">
+      <div class="section-intro" id="location">
         <h2>LOCATION</h2>
         <div class="line"></div>
         <p class="p-under">
@@ -203,13 +203,12 @@
         </div>
       </div>
     </section>
-    <section>
-      <div class="section-intro">
-        <h2>CONTACT US</h2>
-        <div class="line"></div>
-      </div>
-
+    <section class="cont-and-form-box">
       <div class="contact-card">
+        <div class="section-intro" id="contacts">
+          <h2>CONTACT US</h2>
+          <div class="line"></div>
+        </div>
         <h4>Contact Information</h4>
         <p>Nibh habitant sed id tellus sem turpis commodo nulla sed eget.</p>
 
@@ -308,6 +307,38 @@
           </div>
         </div>
       </div>
+      <div class="form">
+        <div>
+          <label for="name">Name, Surname</label>
+          <input type="text" name="name" placeholder="Kattie_Schamberger" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" placeholder="Kattie_Schamberger" />
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea
+            name="message"
+            id="text-area"
+            rows="15"
+            placeholder="Kattie_Schamberger"
+          ></textarea>
+        </div>
+        <button class="btn">SEND</button>
+      </div>
+    </section>
+    <section>
+      <footer>
+        <div class="footer-links">
+          <a href="#artists">ARTISTS</a>
+          <a href="#location">LOCATION</a>
+          <a href="#gallery">GALLERY</a>
+          <a href="#tickets">TICKETS</a>
+          <a href="#contacts">CONTACTS</a>
+        </div>
+        Festival ABC, Copyright, 2022
+      </footer>
     </section>
   </body>
 </html>

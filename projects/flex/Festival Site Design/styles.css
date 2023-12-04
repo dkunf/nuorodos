@@ -1,12 +1,19 @@
+/* see whats going on */
+/* div {
+  border: 1px solid #333;
+}
+section {
+  border: 3px dashed #914848;
+} */
+/* until here */
 html {
   font-size: 16px;
-}
-body {
-  /* font-family: "Lato", sans-serif; */
   font-family: "Open Sans", sans-serif;
+  --lato: "Lato", sans-serif;
 }
+
 nav {
-  font-family: "Lato", sans-serif;
+  font-family: var(--lato);
   font-weight: 700;
   font-size: 1.4rem;
   display: flex;
@@ -60,7 +67,7 @@ nav {
   text-align: center;
 }
 .title-text h1 {
-  font-family: "Lato", sans-serif;
+  font-family: var(--lato);
   font-weight: 700;
   font-size: 2.5rem;
 }
@@ -96,8 +103,6 @@ nav {
   font-weight: 400;
 }
 
-/* artists */
-
 section {
   display: flex;
   flex-direction: column;
@@ -110,7 +115,7 @@ section {
 }
 
 .section-intro h2 {
-  font-family: "Lato", sans-serif;
+  font-family: var(--lato);
   font-weight: 700;
   font-size: 2rem;
   letter-spacing: 2px;
@@ -150,7 +155,7 @@ section {
   /* flex-basis: 12.5rem; */
 }
 .artist {
-  width: 12rem;
+  width: 12.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -159,7 +164,7 @@ section {
 }
 .artist h3 {
   margin-top: 2rem;
-  font-family: "Lato", sans-serif;
+  font-family: var(--lato);
   font-weight: 700;
   font-size: 1.25rem;
   letter-spacing: 2px;
@@ -199,7 +204,7 @@ section {
 .a-ticket-box h3 {
   color: #222;
   text-align: center;
-  font-family: "Lato", sans-serif;
+  font-family: var(--lato);
   font-size: 1.3rem;
   font-style: normal;
   font-weight: 700;
@@ -226,7 +231,7 @@ section {
   height: 2.6rem;
 }
 .price {
-  font-family: "Lato", sans-serif;
+  font-family: var(--lato);
   font-size: 1.3rem;
   font-style: normal;
   font-weight: 700;
@@ -260,7 +265,7 @@ section {
 }
 .contact-card h4 {
   margin-top: 2rem;
-  font-family: "Lato", sans-serif;
+  font-family: var(--lato);
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
@@ -291,4 +296,56 @@ section {
 .soc-bar {
   display: flex;
   gap: 1.25rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  width: 21.5rem;
+  align-items: flex-start;
+  background: rgba(34, 34, 34, 0.02);
+}
+.form label {
+  display: block;
+  text-align: left;
+  padding: 0.6rem 0;
+  color: #eb5757;
+  font-family: var(--lato);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.form input {
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.form > div {
+  width: 100%;
+}
+#text-area {
+  width: calc(100% - 2rem);
+  margin: 1rem;
+}
+
+.cont-and-form-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: flex-start;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.footer-links a {
+  text-decoration: none;
+  color: #222;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
