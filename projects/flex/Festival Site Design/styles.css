@@ -1,12 +1,19 @@
+/* see whats going on */
+/* div {
+  border: 1px solid #333;
+}
+section {
+  border: 3px dashed #914848;
+} */
+/* until here */
 html {
   font-size: 16px;
-}
-body {
-  /* font-family: "Lato", sans-serif; */
   font-family: "Open Sans", sans-serif;
+  --lato: "Lato", sans-serif;
 }
+
 nav {
-  font-family: "Lato", sans-serif;
+  font-family: var(--lato);
   font-weight: 700;
   font-size: 1.4rem;
   display: flex;
@@ -16,13 +23,29 @@ nav {
 .text-red {
   color: #eb5757;
 }
+.bg-soc {
+  background-color: #eb5757;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #sandwich-menu {
   background-color: white;
   border: 0px;
 }
 .banner {
   /* color: white; */
-  background-image: url(./assets/pics/festival-header-pic.jpeg);
+  /* background-image: url(./assets/pics/festival-header-pic.jpeg); */
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    url("./assets/pics/festival-header-pic.jpeg"),
+    lightgray 50% / cover no-repeat;
   background-position: center;
   background-size: cover;
   width: 100%;
@@ -31,17 +54,298 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  column-gap: 2.7rem;
+  gap: 2.7rem;
 }
 .title-text {
-  text-align: center;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.3rem;
+  align-items: center;
+  /* margin-bottom: 2.7rem; */
+  text-align: center;
 }
 .title-text h1 {
-  font-family: "Lato", sans-serif;
+  font-family: var(--lato);
   font-weight: 700;
   font-size: 2.5rem;
 }
-/* .btns-header-container{
 
+.btns-header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+.btn {
+  padding: 1rem 3rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: white;
+  background-color: #eb5757;
+  border: #eb5757;
+}
+
+.view-btn {
+  color: #eb5757;
+  background-color: white;
+}
+
+/* header finished */
+
+.slogan {
+  background: #eb5757;
+  padding: 3.1rem 0.4rem;
+  color: white;
+  line-height: 1.25rem;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: rgba(34, 34, 34, 0.5);
+  text-align: center;
+  line-height: 1.25rem;
+  padding-bottom: 5.25rem;
+}
+
+.section-intro h2 {
+  font-family: var(--lato);
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin: 3.6rem auto 1rem auto;
+  color: black;
+}
+
+.line {
+  margin: 0 auto;
+  width: 2rem;
+  height: 0.3rem;
+  background-color: #eb5757;
+}
+.p-under {
+  margin: 2rem auto;
+}
+.section-main-part {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 3rem;
+}
+/* .section-main-part * {
+  flex-basis: 12.5rem;
 } */
+
+.artist img {
+  width: 12.5rem;
+  height: 12.5rem;
+  border: 2px solid #fff;
+  border-radius: 12.5rem;
+  object-fit: cover;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  /* margin-top: 3rem; */
+  /* flex-basis: 12.5rem; */
+}
+.artist {
+  width: 12.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3rem;
+}
+.artist h3 {
+  margin-top: 2rem;
+  font-family: var(--lato);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  color: black;
+}
+.artist p {
+  margin-top: 0.5rem;
+  font-family: "Open Sans", sans-serif;
+}
+/* galery */
+.imgs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  justify-content: center;
+}
+
+.imgs img {
+  width: 182px;
+  height: 158px;
+  object-fit: cover;
+  flex-basis: 12.5rem;
+  flex-shrink: 2;
+}
+.a-ticket-box {
+  flex-basis: 22rem;
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
+}
+.a-ticket-box > *:not(.wide-line) {
+  flex-basis: 18rem;
+}
+.a-ticket-box h3 {
+  color: #222;
+  text-align: center;
+  font-family: var(--lato);
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 700;
+}
+.wide-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(34, 34, 34, 0.05);
+}
+.price-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.btn-ticket {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  color: white;
+  background-color: #eb5757;
+  border: #eb5757;
+  width: 12.75rem;
+  height: 2.6rem;
+}
+.price {
+  font-family: var(--lato);
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 2px;
+}
+.eur {
+  padding-left: 1rem;
+}
+.map {
+  width: 343px;
+  height: 443px;
+  margin: 1rem;
+  background-image: url("./assets/pics/map.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.map svg {
+  margin-top: -5rem;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  width: 21.5rem;
+}
+.contact-card h4 {
+  margin-top: 2rem;
+  font-family: var(--lato);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  color: #222;
+}
+
+.contact-category {
+  color: rgba(34, 34, 34, 0.5);
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 146%; /* 23.36px */
+  padding-left: 0.75rem;
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5rem;
+}
+.a-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0 0.6rem;
+}
+.soc-bar {
+  display: flex;
+  gap: 1.25rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  width: 21.5rem;
+  align-items: flex-start;
+  background: rgba(34, 34, 34, 0.02);
+}
+.form label {
+  display: block;
+  text-align: left;
+  padding: 0.6rem 0;
+  color: #eb5757;
+  font-family: var(--lato);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.form input {
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.form > div {
+  width: 100%;
+}
+#text-area {
+  width: calc(100% - 2rem);
+  margin: 1rem;
+}
+
+.cont-and-form-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: flex-start;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.footer-links a {
+  text-decoration: none;
+  color: #222;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
