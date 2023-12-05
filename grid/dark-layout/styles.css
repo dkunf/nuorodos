@@ -1,0 +1,50 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 1rem;
+  color: white;
+}
+.container > * {
+  border: 2px solid black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header,
+footer {
+  background-color: #8e6ee8;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(142, 110, 232, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  grid-area: span 1 / span 3;
+}
+nav {
+  background-color: #00aea5;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 174, 165, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  grid-area: span 2;
+}
+.content-1 {
+  grid-area: span 1 / span 2;
+}
+article {
+  background-color: #008ff8;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 143, 248, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
