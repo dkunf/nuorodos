@@ -1,44 +1,33 @@
-/* see whats going on */
-/* div {
-  border: 1px solid #333;
-}
-section {
-  border: 3px dashed #914848;
-} */
-/* until here */
 html {
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
   --lato: "Lato", sans-serif;
 }
-
-nav {
-  font-family: var(--lato);
-  font-weight: 700;
-  font-size: 1.4rem;
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-}
 .text-red {
   color: #eb5757;
 }
-.bg-soc {
-  background-color: #eb5757;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
+/* header */
+nav {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  font-family: var(--lato);
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding: 1rem;
 }
+
 #sandwich-menu {
   background-color: white;
   border: 0px;
 }
 .banner {
-  /* color: white; */
-  /* background-image: url(./assets/pics/festival-header-pic.jpeg); */
+  width: 100%;
+  height: 38rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.7rem;
   background: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.4) 0%,
@@ -48,22 +37,14 @@ nav {
     lightgray 50% / cover no-repeat;
   background-position: center;
   background-size: cover;
-  width: 100%;
-  height: 38rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2.7rem;
 }
 .title-text {
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1.3rem;
   align-items: center;
-  /* margin-bottom: 2.7rem; */
+  gap: 1.3rem;
+  color: white;
   text-align: center;
 }
 .title-text h1 {
@@ -95,22 +76,23 @@ nav {
 
 .slogan {
   background: #eb5757;
-  padding: 3.1rem 0.4rem;
   color: white;
-  line-height: 1.25rem;
+  padding: 3.1rem 0.4rem;
   text-align: center;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
+  line-height: 1.25rem;
 }
 
+/* all page has many same sections */
 section {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  color: rgba(34, 34, 34, 0.5);
   text-align: center;
   line-height: 1.25rem;
+  color: rgba(34, 34, 34, 0.5);
   padding-bottom: 5.25rem;
 }
 
@@ -124,9 +106,9 @@ section {
 }
 
 .line {
-  margin: 0 auto;
   width: 2rem;
   height: 0.3rem;
+  margin: 0 auto;
   background-color: #eb5757;
 }
 .p-under {
@@ -139,10 +121,9 @@ section {
   align-content: center;
   gap: 3rem;
 }
-/* .section-main-part * {
-  flex-basis: 12.5rem;
-} */
+/* general section styles finished */
 
+/* artists */
 .artist img {
   width: 12.5rem;
   height: 12.5rem;
@@ -151,8 +132,6 @@ section {
   object-fit: cover;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  /* margin-top: 3rem; */
-  /* flex-basis: 12.5rem; */
 }
 .artist {
   width: 12.5rem;
@@ -163,23 +142,23 @@ section {
   margin-top: 3rem;
 }
 .artist h3 {
-  margin-top: 2rem;
   font-family: var(--lato);
   font-weight: 700;
   font-size: 1.25rem;
   letter-spacing: 2px;
+  margin-top: 2rem;
   color: black;
 }
 .artist p {
-  margin-top: 0.5rem;
   font-family: "Open Sans", sans-serif;
+  margin-top: 0.5rem;
 }
 /* galery */
 .imgs {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.6rem;
   justify-content: center;
+  gap: 1.6rem;
 }
 
 .imgs img {
@@ -187,27 +166,27 @@ section {
   height: 158px;
   object-fit: cover;
   flex-basis: 12.5rem;
-  flex-shrink: 2;
 }
+
+/* tickets */
 .a-ticket-box {
-  flex-basis: 22rem;
-  padding: 2rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  flex-basis: 22rem;
+  padding: 2rem 0;
   box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
 }
 .a-ticket-box > *:not(.wide-line) {
   flex-basis: 18rem;
 }
 .a-ticket-box h3 {
-  color: #222;
-  text-align: center;
   font-family: var(--lato);
   font-size: 1.3rem;
-  font-style: normal;
   font-weight: 700;
+  text-align: center;
+  color: #222;
 }
 .wide-line {
   width: 100%;
@@ -222,40 +201,41 @@ section {
   gap: 2rem;
 }
 .btn-ticket {
+  width: 12.75rem;
+  height: 2.6rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   color: white;
   background-color: #eb5757;
   border: #eb5757;
-  width: 12.75rem;
-  height: 2.6rem;
 }
 .price {
   font-family: var(--lato);
   font-size: 1.3rem;
-  font-style: normal;
   font-weight: 700;
-  color: #222;
   letter-spacing: 2px;
+  color: #222;
 }
 .eur {
   padding-left: 1rem;
 }
+
+/* location */
 .map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 343px;
   height: 443px;
   margin: 1rem;
   background-image: url("./assets/pics/map.png");
   background-position: center;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .map svg {
   margin-top: -5rem;
 }
-
+/* contacts */
 .contact-card {
   display: flex;
   flex-direction: column;
@@ -264,22 +244,19 @@ section {
   width: 21.5rem;
 }
 .contact-card h4 {
-  margin-top: 2rem;
   font-family: var(--lato);
   font-size: 1.5rem;
-  font-style: normal;
   font-weight: 700;
+  margin-top: 2rem;
   color: #222;
 }
 
 .contact-category {
-  color: rgba(34, 34, 34, 0.5);
   font-family: Open Sans;
-  font-size: 16px;
-  font-style: normal;
   font-weight: 700;
-  line-height: 146%; /* 23.36px */
-  padding-left: 0.75rem;
+  line-height: 1.5rem;
+  padding-left: 1rem;
+  color: rgba(34, 34, 34, 0.5);
 }
 .contacts {
   display: flex;
@@ -297,22 +274,32 @@ section {
   display: flex;
   gap: 1.25rem;
 }
+.bg-soc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #eb5757;
+}
+/* contact form */
 .form {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 1.8rem;
   width: 21.5rem;
-  align-items: flex-start;
   background: rgba(34, 34, 34, 0.02);
 }
 .form label {
   display: block;
-  text-align: left;
-  padding: 0.6rem 0;
-  color: #eb5757;
   font-family: var(--lato);
   font-weight: 700;
   font-size: 0.9rem;
+  text-align: left;
+  padding: 0.6rem 0;
+  color: #eb5757;
 }
 .form input {
   width: calc(100% - 2rem);
@@ -323,6 +310,11 @@ section {
 .form > div {
   width: 100%;
 }
+.form button {
+  width: 12.75rem;
+  height: 2.6rem;
+  margin-left: 1rem;
+}
 #text-area {
   width: calc(100% - 2rem);
   margin: 1rem;
@@ -331,21 +323,89 @@ section {
 .cont-and-form-box {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 3rem;
-  align-items: flex-start;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+/* bottom of page */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 2.5rem;
 }
 .footer-links {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2.5rem;
 }
 .footer-links a {
   text-decoration: none;
   color: #222;
 }
-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+/* these items shown on bigger screens */
+.tablet-shown {
+  display: none;
+}
+.pc-shown {
+  display: none;
+}
+.nav-links {
+  display: none;
+}
+/* styles for tablet */
+@media screen and (min-width: 750px) {
+  .tablet-shown {
+    display: flex;
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .map {
+    width: 720px;
+    height: 443px;
+    background-size: cover;
+    background-image: url("./assets/pics/map-tab.png");
+  }
+}
+/* styles for pc */
+/* originally 1920, but i changed to 1200px */
+@media screen and (min-width: 1200px) {
+  .pc-shown {
+    display: flex;
+  }
+  #sandwich-menu {
+    display: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  .nav-links a {
+    font-size: 0.875rem;
+    text-decoration: none;
+    color: #222;
+  }
+  nav {
+    justify-content: space-around;
+  }
+  .map {
+    width: 1170px;
+    height: 443px;
+    background-size: cover;
+    background-image: url("./assets/pics/map-pc.png");
+  }
+  footer {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+  }
 }
