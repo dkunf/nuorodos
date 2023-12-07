@@ -10,13 +10,6 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <div id="note-box" class="hidden">
-      <textarea name="a-note" id="a-note" placeholder="atmintinė"> </textarea>
-      <div>
-        <button id="save-btn">išsaugoti</button>
-        <button id="cancel-btn">atšaukti</button>
-      </div>
-    </div>
     <div class="container">
       <div class="pic-container">
         <img src="./pics/december.avif" class="banner" alt="" />
@@ -25,6 +18,16 @@
       </div>
 
       <div class="calendar">
+        <!-- ikišam čia textarea, nes bandysiu naudotis tuo paciu
+        eventlistener ant viso calendar  -->
+        <div id="note-box" class="hidden">
+          <textarea name="a-note" id="a-note" placeholder="atmintinė">
+          </textarea>
+          <div>
+            <button id="save-btn">išsaugoti</button>
+            <button id="cancel-btn">atšaukti</button>
+          </div>
+        </div>
         <div class="weeknames">Pr</div>
         <div class="weeknames">An</div>
         <div class="weeknames">Tr</div>
@@ -90,6 +93,7 @@
             <span id="note-${i}"></span>`;
             if ((i - 3) % 7 == 0) aDay.classList.add("sunday");
             document.querySelectorAll(".calendar")[0].appendChild(aDay);
+
             aDay.addEventListener("click", function handleDayClick(e) {
               let calendar = document.querySelectorAll(".calendar")[0];
               // console.log(e.currentTarget.id); //pvz cell-5 ar cell-26
