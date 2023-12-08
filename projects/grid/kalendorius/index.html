@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
+    <div id="note-box" class="hidden">
+      <h3 id="note-title"></h3>
+      <textarea name="a-note" id="a-note"> </textarea>
+      <div>
+        <button id="save-btn">išsaugoti</button>
+        <button id="cancel-btn">atšaukti</button>
+      </div>
+    </div>
     <div class="container">
       <div class="pic-container">
         <img src="./pics/december.avif" class="banner" alt="" />
@@ -18,16 +26,6 @@
       </div>
 
       <div class="calendar">
-        <!-- ikišam čia textarea, nes bandysiu naudotis tuo paciu
-        eventlistener ant viso calendar  -->
-        <div id="note-box" class="hidden">
-          <textarea name="a-note" id="a-note" placeholder="atmintinė">
-          </textarea>
-          <div>
-            <button id="save-btn">išsaugoti</button>
-            <button id="cancel-btn">atšaukti</button>
-          </div>
-        </div>
         <div class="weeknames">Pr</div>
         <div class="weeknames">An</div>
         <div class="weeknames">Tr</div>
@@ -39,103 +37,9 @@
         <div class="cell-28l old-month">28</div>
         <div class="cell-29l old-month">29</div>
         <div class="cell-30lold-month">30</div>
-        <!-- <div class="cell-1">1</div>
-        <div class="cell-2">2</div>
-        <div class="cell-3 sunday">3</div>
-        <div class="cell-4">4</div>
-        <div class="cell-5">5</div>
-        <div class="cell-6">6</div>
-        <div class="cell-7 today">7</div>
-        <div class="cell-8">8</div>
-        <div class="cell-9">9</div>
-        <div class="cell-10 sunday">10</div>
-        <div class="cell-11">11</div>
-        <div class="cell-12">12</div>
-        <div class="cell-13">13</div>
-        <div class="cell-14">14</div>
-        <div class="cell-15">15</div>
-        <div class="cell-16">16</div>
-        <div class="cell-17 sunday">17</div>
-        <div class="cell-18">18</div>
-        <div class="cell-19">19</div>
-        <div class="cell-20">20</div>
-        <div class="cell-21">21</div>
-        <div class="cell-22">22</div>
-        <div class="cell-23">23</div>
-        <div class="cell-24 sunday">24</div>
-        <div class="cell-25 holiday">25</div>
-        <div class="cell-26 holiday">26</div>
-        <div class="cell-27">27</div>
-        <div class="cell-28">28</div>
-        <div class="cell-29">29</div>
-        <div class="cell-30">30</div>
-        <div class="cell-31 sunday">31</div> -->
+        <!-- more days will be added by script -->
       </div>
-      <script>
-        drawDaysOfDecember23();
-        markToday();
-
-        function addNote(id, text) {
-          console.log(id);
-          //kreipsimes pagal parent id ir vaikui irasysime texta
-          let cell = document.getElementById(id);
-          cell.lastChild.textContent = text;
-          //o tada pridesime nauja span kad galima butu ateity atmintine prideti
-          let newSpan = document.createElement("span");
-          cell.appendChild(newSpan);
-        }
-        //REIK PAKEISTI I VIENA EVENT LISTENER ON ALL CALENDAR
-        function drawDaysOfDecember23() {
-          for (let i = 1; i < 32; i++) {
-            let aDay = document.createElement("div");
-            aDay.id = `cell-${i}`;
-            aDay.innerHTML = `<span>${i}</span>
-            <span id="note-${i}"></span>`;
-            if ((i - 3) % 7 == 0) aDay.classList.add("sunday");
-            document.querySelectorAll(".calendar")[0].appendChild(aDay);
-
-            aDay.addEventListener("click", function handleDayClick(e) {
-              let calendar = document.querySelectorAll(".calendar")[0];
-              // console.log(e.currentTarget.id); //pvz cell-5 ar cell-26
-              // isimenam kur esam
-              let currentId = e.currentTarget.id;
-              console.log(currentId);
-              //reikia atidengti textarea, paimti teksta ir iskviesti addNote
-
-              //atidengiam tekstarea
-              let noteBox = document.getElementById("note-box");
-              noteBox.classList.remove("hidden");
-
-              let textarea = document.getElementById("a-note");
-              //2mygtukai
-              let cancelBtn = document.getElementById("cancel-btn");
-              let saveBtn = document.getElementById("save-btn");
-
-              // jei spaudzia cancel, uzdarom textarea
-              cancelBtn.addEventListener("click", () => {
-                textarea.value = "";
-                noteBox.classList.add("hidden");
-                calendar.classList.remove("hidden");
-              });
-
-              // jei spaudzia save, tai issaugom note kalendoriuje ir localstorage
-              //ir irgi uzdarom textarea
-              saveBtn.addEventListener("click", () => {
-                addNote(currentId, textarea.value);
-                textarea.value = "";
-                noteBox.classList.add("hidden");
-                calendar.classList.remove("hidden");
-              });
-            });
-          }
-        }
-
-        function markToday() {
-          let currentDate = new Date();
-          let dayOfMonth = currentDate.getDate();
-          document.getElementById(`cell-${dayOfMonth}`).classList.add("today");
-        }
-      </script>
+      <script src="./index.js"></script>
     </div>
   </body>
 </html>

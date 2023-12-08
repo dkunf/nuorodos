@@ -3,9 +3,34 @@
 }
 #note-box {
   position: fixed;
-  top: 30vh;
+  top: 5vh;
   left: 10vw;
+  padding: 0.5rem;
+  background-color: #afa2a2ee;
+
   z-index: 3;
+}
+#note-title {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0.5rem;
+  background-color: #afa2a2e8;
+  text-align: center;
+}
+#save-btn,
+#cancel-btn {
+  padding: 0.3rem;
+  color: whitesmoke;
+  border-radius: 1rem;
+  margin-top: 0.3rem;
+}
+#save-btn {
+  background-color: rgb(23, 184, 23);
+  border: 1px solid rgb(23, 184, 23);
+}
+#cancel-btn {
+  background-color: rgb(100, 0, 38);
+  border: 1px solid rgb(100, 0, 38);
 }
 
 #a-note {
