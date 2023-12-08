@@ -1,3 +1,6 @@
+//ooops, global,but otherwise i cannot remove event listeners from save btn
+let dayId;
+
 addDaysOfDecember2023();
 //set eventlistener on calendar and get id of clicked day
 let calendar = document.querySelectorAll(".calendar")[0];
@@ -7,8 +10,14 @@ function addDaysOfDecember2023() {
   for (let i = 1; i < 32; i++) {
     let aDay = document.createElement("div");
     aDay.id = `cell-${i}`;
-    aDay.innerHTML = `<span>${i}</span>
-    <span id="note-${i}"></span>`;
+    txt = localStorage.getItem(aDay.id) || "";
+    if (txt && txt !== "null") {
+      aDay.innerHTML = `<h2>${i}</h2>
+      <img src="./pics/bin.svg" class="del-btn" alt="bin" /><span>${txt}</span><span></span>`;
+    } else {
+      aDay.innerHTML = `<h2>${i}</h2>
+      <span></span>`;
+    }
     if ((i - 3) % 7 == 0) aDay.classList.add("sunday");
     document.querySelectorAll(".calendar")[0].appendChild(aDay);
   }
@@ -21,74 +30,75 @@ function markToday() {
   document.getElementById(`cell-${dayOfMonth}`).classList.add("today");
 }
 function calendarClickHandler(event) {
+  //first of all if there was text area open, we need to
+  // close it and remove button listeners
+  let noteBox = document.getElementById("note-box");
+  if (!noteBox.classList.contains("hidden")) closeOldTextarea();
+
   let calendar = document.querySelectorAll(".calendar")[0];
   //we need id of element that was clicked
   //it could be whole div with id like cell-23
   //or span without id
   //or a note with id like note-23
+  //or a class "del-btn" to remove note
   //anything else is not of our interest so we return
   console.log(event.target);
 
   let clickedElement = event.target;
-  let dayId;
+
+  if (clickedElement.classList.contains("del-btn")) {
+    let spanToRemove = clickedElement.nextElementSibling;
+    id = clickedElement.id || clickedElement.parentElement.id;
+    if (!id) return;
+    else removeFromStorage(id, spanToRemove.textContent);
+
+    clickedElement.remove();
+    if (spanToRemove) spanToRemove.remove();
+    return;
+  }
   dayId = clickedElement.id || clickedElement.parentElement.id;
   console.log("extracted id: ", dayId);
   if (!dayId) return;
-  //open popup textarea with placeholder="Atmintinė Gruodžio id-ai d."
-  //reikia atidengti textarea, paimti teksta ir iskviesti addNote
 
-  //atidengiam tekstarea
-  let noteBox = document.getElementById("note-box");
+  //atidengiam tekstarea ir mygtus
   noteBox.classList.remove("hidden");
-
-  // let textarea = document.getElementById("a-note");
 
   let dayNr = dayId.split("-")[1];
   let title = document.getElementById("note-title");
   title.textContent = `Atmintinė Gruodžio ${dayNr}-ai d.`;
 
-  // textarea.placeholder = `Atmintinė Gruodžio ${dayNr}-ai d.`;
   //2mygtukai
   let cancelBtn = document.getElementById("cancel-btn");
   let saveBtn = document.getElementById("save-btn");
 
   cancelBtn.addEventListener("click", backToCalendar);
 
-  //i will need to remove event handler, so it needs a name
-  //but also i need to pass 2 arguments to handler: id and text
-  //it means i need a wrapper function which returns my handler
-  // let textarea = document.getElementById("a-note");
-  // let text = textarea.value;
-  // console.log("here is text i got originally: ", text);
-  saveBtn.addEventListener("click", saveNote);
-  function saveNote() {
-    let clickedElement = event.target;
-    let id;
-    id = clickedElement.id || clickedElement.parentElement.id;
-    console.log("extracted id: ", id);
-    if (!id) return;
+  saveBtn.addEventListener("click", saveBtnHandler);
+}
+function saveBtnHandler() {
+  console.log("extracted id before : ", dayId);
+  if (!dayId) return;
 
-    //kreipsimes pagal parent id ir vaikui irasysime texta
-    let cell = document.getElementById(id);
+  //kreipsimes pagal parent id ir vaikui irasysime texta
+  let cell = document.getElementById(dayId);
 
-    console.log("new id: ", id);
-    // console.log("here is id i got: ", id);
-    // console.log("here is element i got: ", cell);
-    // console.log("here is text i got passed: ", text);
+  let textarea = document.getElementById("a-note");
+  let text = textarea.value;
+  console.log(text);
 
-    let textarea = document.getElementById("a-note");
-    let text = textarea.value;
+  cell.lastChild.textContent = text;
+  if (text) addBin(cell.lastChild);
+  //o tada pridesime nauja span kad galima butu ateity atmintine prideti
+  let newSpan = document.createElement("span");
+  cell.appendChild(newSpan);
 
-    cell.lastChild.textContent = text;
-    //o tada pridesime nauja span kad galima butu ateity atmintine prideti
-    let newSpan = document.createElement("span");
-    cell.appendChild(newSpan);
+  //we add to localstorage too
+  addToStorage(dayId, text);
 
-    cleanUp();
+  cleanUp();
 
-    let saveBtn = document.getElementById("save-btn");
-    saveBtn.removeEventListener("click", saveNote);
-  }
+  let saveBtn = document.getElementById("save-btn");
+  saveBtn.removeEventListener("click", saveBtnHandler);
 }
 
 function backToCalendar() {
@@ -102,4 +112,34 @@ function cleanUp() {
   textarea.value = "";
   let noteBox = document.getElementById("note-box");
   noteBox.classList.add("hidden");
+}
+// function assumes that now textarea is open
+function closeOldTextarea() {
+  let cancelBtn = document.getElementById("cancel-btn");
+  cancelBtn.removeEventListener("click", backToCalendar);
+  let saveBtn = document.getElementById("save-btn");
+  saveBtn.removeEventListener("click", saveBtnHandler);
+  let noteBox = document.getElementById("note-box");
+  noteBox.classList.add("hidden");
+}
+//sometimes need to append
+function addToStorage(key, value) {
+  let oldValue = localStorage.getItem(key);
+  if (oldValue) localStorage.setItem(key, oldValue + "\n" + value);
+  else localStorage.setItem(key, value);
+}
+
+function addBin(el) {
+  let binIcon = document.createElement("img");
+  binIcon.src = "./pics/bin.svg";
+  binIcon.classList.add("del-btn");
+  el.insertAdjacentElement("beforebegin", binIcon);
+}
+function removeFromStorage(id, text) {
+  let storedVal = localStorage.getItem(id);
+  if (storedVal === text) localStorage.removeItem(id);
+  else {
+    let updVal = storedVal.replace(text, "");
+    localStorage.setItem(id, updVal);
+  }
 }
