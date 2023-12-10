@@ -1,11 +1,10 @@
-//ooops, global,but otherwise i cannot remove event listeners from save btn
+//it holds id of latest clicked day in the calendar
 let dayId;
-
-addDaysOfDecember2023();
-//set eventlistener on calendar and get id of clicked day
 let calendar = document.querySelectorAll(".calendar")[0];
 calendar.addEventListener("click", calendarClickHandler);
+addDaysOfDecember2023();
 
+// ---------------------------------------------------------
 function addDaysOfDecember2023() {
   for (let i = 1; i < 32; i++) {
     let aDay = document.createElement("div");
@@ -19,11 +18,11 @@ function addDaysOfDecember2023() {
       <span></span>`;
     }
     if ((i - 3) % 7 == 0) aDay.classList.add("sunday");
-    document.querySelectorAll(".calendar")[0].appendChild(aDay);
+    // document.querySelectorAll(".calendar")[0].appendChild(aDay);
+    calendar.appendChild(aDay);
   }
   markToday();
 }
-
 function markToday() {
   let currentDate = new Date();
   let dayOfMonth = currentDate.getDate();
@@ -35,34 +34,26 @@ function calendarClickHandler(event) {
   let noteBox = document.getElementById("note-box");
   if (!noteBox.classList.contains("hidden")) closeOldTextarea();
 
-  let calendar = document.querySelectorAll(".calendar")[0];
-  //we need id of element that was clicked
-  //it could be whole div with id like cell-23
-  //or span without id
-  //or a note with id like note-23
-  //or a class "del-btn" to remove note
-  //anything else is not of our interest so we return
-  console.log(event.target);
-
   let clickedElement = event.target;
 
   if (clickedElement.classList.contains("del-btn")) {
     let spanToRemove = clickedElement.nextElementSibling;
     id = clickedElement.id || clickedElement.parentElement.id;
     if (!id) return;
-    else removeFromStorage(id, spanToRemove.textContent);
+
+    removeFromStorage(id, spanToRemove.textContent);
 
     clickedElement.remove();
     if (spanToRemove) spanToRemove.remove();
     return;
   }
   dayId = clickedElement.id || clickedElement.parentElement.id;
-  console.log("extracted id: ", dayId);
   if (!dayId) return;
 
   //atidengiam tekstarea ir mygtus
   noteBox.classList.remove("hidden");
 
+  //dayId is like cell-3, cell-23,..
   let dayNr = dayId.split("-")[1];
   let title = document.getElementById("note-title");
   title.textContent = `Atmintinė Gruodžio ${dayNr}-ai d.`;
@@ -100,7 +91,6 @@ function saveBtnHandler() {
   let saveBtn = document.getElementById("save-btn");
   saveBtn.removeEventListener("click", saveBtnHandler);
 }
-
 function backToCalendar() {
   cleanUp();
   let cancelBtn = document.getElementById("cancel-btn");
@@ -128,7 +118,6 @@ function addToStorage(key, value) {
   if (oldValue) localStorage.setItem(key, oldValue + "\n" + value);
   else localStorage.setItem(key, value);
 }
-
 function addBin(el) {
   let binIcon = document.createElement("img");
   binIcon.src = "./pics/bin.svg";
