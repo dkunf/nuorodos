@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator-front</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+  />
+  <link rel="stylesheet" href="../../../reset.css" />
+  <link rel="stylesheet" href="../../../base.css" />
+  <link rel="stylesheet" href="./styles.css" />
+  <body>
+    <div class="container">
+      <div id="screen">1000 000</div>
+      <div id="keyboard">
+        <button class="util span-2col greyout"></button>
+        <button class="util">OFF</button>
+        <button class="util">CE</button>
+        <button class="util red">ON</button>
+        <button class="util">C</button>
+        <button class="util">MC</button>
+        <button class="util">MR</button>
+        <button class="util">M-</button>
+        <button class="util">M+</button>
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button class="function">&percnt;</button>
+        <button class="function">&radic;</button>
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button class="function">&times;</button>
+        <button class="function">&divide;</button>
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button class="function span-2row">&plus;</button>
+        <button class="function">&minus;</button>
+        <button class="number">0</button>
+        <button class="number">.</button>
+        <button class="number">+/-</button>
+        <button class="function">&equals;</button>
+      </div>
+    </div>
+    <script>
+      //   let keyboard = document.getElementById("keyboard");
+      //   for (let i = 1; i < 31; i++) {
+      //     let key = document.createElement("button");
+      //     if (i <= 10) key.classList.add("util");
+      //     if (i > 10 && ((i - 10 + 1) % 5 == 0 || (i - 10) % 5 == 0))
+      //       key.classList.add("function");
+      //     if (
+      //       i > 10 &&
+      //       ((i - 10 + 4) % 5 == 0 ||
+      //         (i - 10 + 3) % 5 == 0 ||
+      //         (i - 10 + 2) % 5 == 0)
+      //     ) {
+      //       key.classList.add("number");
+      //       key.textContent = i - 10;
+      //     }
+      //     keyboard.appendChild(key);
+      //   }
+    </script>
+  </body>
+</html>

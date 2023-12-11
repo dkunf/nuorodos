@@ -29,8 +29,9 @@
   gap: 1px 2px;
 }
 .itemC img {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
 }
 .itemD {
   background-color: lightblue;
@@ -51,9 +52,8 @@
   overflow-x: scroll !important;
 }
 .itemE img {
-  width: 20%;
-  height: auto;
-  padding-top: 3rem;
+  height: 80%;
+  width: auto;
 }
 
 .itemF {
