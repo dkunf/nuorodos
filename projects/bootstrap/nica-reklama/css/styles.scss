@@ -1,6 +1,6 @@
 // font-family: 'Roboto', sans-serif;
-// font-weights:
 // 400,500,700,900
+
 // font-family: 'Roboto Condensed', sans-serif;
 // 700
 
@@ -27,7 +27,7 @@ body {
         rgba(98, 100, 113, 0.5),
         rgba(98, 100, 113, 0.5)
       ),
-      url("../pics/header-380.jpeg");
+      url("../pics/header-768.jpeg");
     background-size: cover;
     background-position: center;
     p {
@@ -39,6 +39,22 @@ body {
       margin-bottom: 1.5rem;
       font-size: 34px;
       font-weight: 700;
+    }
+    .centravimo {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      svg {
+        align-self: center;
+        justify-self: center;
+        grid-area: 2/2/3/3;
+        z-index: 2;
+      }
+      img {
+        justify-self: center;
+        align-self: center;
+        grid-area: 1/1/4/4;
+      }
     }
   }
   h2 {
@@ -66,7 +82,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     h3 {
       font-size: 22px;
       font-weight: 700;
@@ -98,8 +113,9 @@ body {
     }
     .line-200 {
       width: 200px;
-      height: 1px;
-      background: #707070;
+      // 1px išnyksta kartais
+      height: 2px;
+      border-top: 1px solid #707070;
       margin-bottom: 1rem;
       margin-top: 1rem;
     }
@@ -114,22 +130,10 @@ body {
     color: white;
   }
 }
-.centravimo {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  svg {
-    align-self: center;
-    justify-self: center;
-    grid-area: 2/2/3/3;
-    z-index: 2;
-  }
-  img {
-    justify-self: center;
-    align-self: center;
-    grid-area: 1/1/4/4;
-  }
-}
+
+/***********************************
+          UTILITIES
+************************************/
 
 .bg-dark-grey {
   background-color: #2f323b;
@@ -166,10 +170,7 @@ body {
 .ff-condensed {
   font-family: "Roboto Condensed", sans-serif;
 }
-//default
-// .fs-16 {
-//   font-size: 16px;
-// }
+
 .fs-18 {
   font-size: 18px;
 }
