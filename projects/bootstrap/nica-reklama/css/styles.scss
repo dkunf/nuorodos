@@ -114,6 +114,22 @@ body {
     color: white;
   }
 }
+.centravimo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  svg {
+    align-self: center;
+    justify-self: center;
+    grid-area: 2/2/3/3;
+    z-index: 2;
+  }
+  img {
+    justify-self: center;
+    align-self: center;
+    grid-area: 1/1/4/4;
+  }
+}
 
 .bg-dark-grey {
   background-color: #2f323b;
