@@ -1,3 +1,6 @@
+/************************
+      ELEMENTS
+************************/
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -39,11 +42,7 @@ body h2 {
   font-weight: 500;
   margin-top: 1rem;
 }
-body .a-stat iconify-icon {
-  display: block;
-}
 body .a-stat span {
-  display: block;
   font-size: 25px;
   font-weight: 500;
   padding-top: 0.8rem;
@@ -65,6 +64,9 @@ body .a-project h3 {
 }
 body .a-project p {
   font-size: 18px;
+}
+body .persona {
+  padding: 0;
 }
 body .persona h3 {
   font-size: 22px;
@@ -183,4 +185,36 @@ body a {
 
 .fw-900 {
   font-weight: 900;
+}
+
+@media only screen and (min-width: 768px) {
+  .business-description div * {
+    padding-left: 1rem;
+    align-self: flex-start;
+  }
+  .a-project img {
+    height: 262px;
+  }
+  .form-subscribe {
+    display: grid;
+    grid-template-columns: 2fr 6fr 3fr 2fr;
+  }
+  .form-subscribe input {
+    justify-self: end;
+    align-self: center;
+    grid-column: 2/3;
+    border-radius: 0 !important;
+    border-bottom-left-radius: 0.375rem !important;
+    border-top-left-radius: 0.375rem !important;
+  }
+  .form-subscribe button {
+    width: 100%;
+    justify-self: start;
+    align-self: center;
+    text-align: center;
+    grid-column: 3/4;
+    border-radius: 0 !important;
+    border-bottom-right-radius: 0.375rem !important;
+    border-top-right-radius: 0.375rem !important;
+  }
 }/*# sourceMappingURL=styles.css.map */

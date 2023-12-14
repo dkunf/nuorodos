@@ -38,8 +38,10 @@
       <button class="btn btn-success-custom col-6 mt-5">susisiekti</button>
     </header>
     <main>
-      <section class="py-5 d-flex flex-column align-items-center">
-        <div class="d-flex flex-column align-items-center mb-4">
+      <section
+        class="business-description row py-5 d-flex align-items-center justify-content-center"
+      >
+        <div class="col-md-6 d-flex flex-column align-items-center mb-4">
           <iconify-icon
             icon="simple-line-icons:bubbles"
             style="color: #49c0fc"
@@ -48,11 +50,9 @@
           ></iconify-icon>
 
           <h2>Socialinių tinklų reklama</h2>
-          <p class="text-center">
-            Mes siūlome reklamą įvairiuose socialiniuose tinkluose.
-          </p>
+          <p>Mes siūlome reklamą įvairiuose socialiniuose tinkluose.</p>
         </div>
-        <div class="d-flex flex-column align-items-center mb-4">
+        <div class="col-md-6 d-flex flex-column align-items-center mb-4">
           <iconify-icon
             icon="simple-line-icons:direction"
             style="color: #49c0fc"
@@ -61,11 +61,9 @@
           ></iconify-icon>
 
           <h2>Reklama lauke</h2>
-          <p class="text-center">
-            Mes siūlome reklamą įvairiuose stenduose ar plakatuose lauke.
-          </p>
+          <p>Mes siūlome reklamą įvairiuose stenduose ar plakatuose lauke.</p>
         </div>
-        <div class="d-flex flex-column align-items-center mb-4">
+        <div class="col-md-6 d-flex flex-column align-items-center mb-4">
           <iconify-icon
             icon="simple-line-icons:earphones"
             style="color: #49c0fc"
@@ -74,11 +72,9 @@
           ></iconify-icon>
 
           <h2>Reklama per radiją</h2>
-          <p class="text-center">
-            Mūsų sukurtas reklamas galėsite išgirsti per radiją.
-          </p>
+          <p>Mūsų sukurtas reklamas galėsite išgirsti per radiją.</p>
         </div>
-        <div class="d-flex flex-column align-items-center mb-4">
+        <div class="col-md-6 d-flex flex-column align-items-center mb-4">
           <iconify-icon
             icon="simple-line-icons:call-end"
             style="color: #49c0fc"
@@ -87,7 +83,7 @@
           ></iconify-icon>
 
           <h2>Reklama telefonu</h2>
-          <p class="text-center">
+          <p>
             Reklamuosime jūsų paslaugas skambindami jūsų tikslinei auditorijai.
           </p>
         </div>
@@ -134,7 +130,9 @@
         <!-- line -->
 
         <div class="row border-top py-5">
-          <div class="a-stat col-6 d-flex flex-column justify-content-between">
+          <div
+            class="a-stat col-6 col-md-3 d-flex flex-column justify-content-between"
+          >
             <iconify-icon
               icon="simple-line-icons:basket"
               style="color: #49c0fc"
@@ -145,7 +143,7 @@
             <span>145</span>
             <p>Įgyvendinti projektai</p>
           </div>
-          <div class="a-stat col-6 d-flex flex-column">
+          <div class="a-stat col-6 col-md-3 d-flex flex-column">
             <iconify-icon
               icon="simple-line-icons:cup"
               style="color: #49c0fc"
@@ -156,9 +154,9 @@
             <span>345</span>
             <p>Kavos puodeliai</p>
           </div>
-        </div>
-        <div class="row">
-          <div class="a-stat col-6 d-flex flex-column">
+
+          <!-- <div class="row"> -->
+          <div class="a-stat col-6 col-md-3 d-flex flex-column">
             <iconify-icon
               icon="simple-line-icons:diamond"
               style="color: #49c0fc"
@@ -169,7 +167,7 @@
             <span>87</span>
             <p>Patenkinti klientai</p>
           </div>
-          <div class="a-stat col-6 d-flex flex-column">
+          <div class="a-stat col-6 col-md-3 d-flex flex-column">
             <iconify-icon
               icon="simple-line-icons:briefcase"
               style="color: #49c0fc"
@@ -190,31 +188,37 @@
           Amet rutrum molestie nibh sed nulla facilisis commodo, dui in viverra
           lectus quis faucibus volutpat leo ut sed dignissim egestas
         </p>
-        <div class="a-project">
-          <img class="img-fluid col-10" src="./pics/fotographer.jpeg" alt="" />
-          <h3>Pirmas projektas</h3>
-          <p class="col-10">
-            In proin odio pellentesque vitae, fringilla parturient nulla
-            dignissim turpis mauris maecenas mattis phasellus eu, bibendum
-            viverra curabitur elementum viverra.
-          </p>
-        </div>
-        <div class="a-project">
-          <img class="img-fluid col-10" src="./pics/desert.jpeg" alt="" />
-          <h3>Antras projektas</h3>
-          <p class="col-10">
-            Euismod maecenas magna purus nibh mi, sagittis ultrices orci
-            ultrices vel tempus viverra non tempus tincidunt sed donec cursus
-            cras.
-          </p>
-        </div>
-        <div class="a-project">
-          <img class="img-fluid col-10" src="./pics/concert.jpeg" alt="" />
-          <h3>Trečias projektas</h3>
-          <p class="col-10">
-            Nisl eget sem vestibulum, sollicitudin at tortor, nunc porttitor
-            vestibulum, id urna, at sit a nulla eget sed aliquet amet.
-          </p>
+        <div class="row">
+          <div class="a-project col-md-6">
+            <img
+              class="img-fluid col-10"
+              src="./pics/fotographer.jpeg"
+              alt=""
+            />
+            <h3>Pirmas projektas</h3>
+            <p class="col-10">
+              In proin odio pellentesque vitae, fringilla parturient nulla
+              dignissim turpis mauris maecenas mattis phasellus eu, bibendum
+              viverra curabitur elementum viverra.
+            </p>
+          </div>
+          <div class="a-project col-md-6">
+            <img class="img-fluid col-10" src="./pics/desert.jpeg" alt="" />
+            <h3>Antras projektas</h3>
+            <p class="col-10">
+              Euismod maecenas magna purus nibh mi, sagittis ultrices orci
+              ultrices vel tempus viverra non tempus tincidunt sed donec cursus
+              cras.
+            </p>
+          </div>
+          <div class="a-project col-md-6">
+            <img class="img-fluid col-10" src="./pics/concert.jpeg" alt="" />
+            <h3>Trečias projektas</h3>
+            <p class="col-10">
+              Nisl eget sem vestibulum, sollicitudin at tortor, nunc porttitor
+              vestibulum, id urna, at sit a nulla eget sed aliquet amet.
+            </p>
+          </div>
         </div>
       </section>
       <div
@@ -225,46 +229,53 @@
           Amet tristique et integer dolor mi nullam risus id dapibus ornare in
           morbi non adipiscing pellentesque facilisis sed amet, porta
         </p>
-        <input
-          class="col-10 py-3 my-3 rounded"
-          placeholder="Jūsų el. pašto adresas"
-        />
-        <button class="btn btn-success-custom text-center col-10 fs-18">
-          Prenumeruoti
-        </button>
+        <div class="form-subscribe row">
+          <input
+            class="col-12 py-3 my-3 rounded"
+            placeholder="Jūsų el. pašto adresas"
+          />
+          <button class="col-12 btn btn-success-custom text-center fs-18">
+            Prenumeruoti
+          </button>
+        </div>
       </div>
-      <section class="py-5 d-flex flex-column align-items-center text-center">
+      <section
+        class="container py-5 d-flex flex-column align-items-center text-center"
+      >
         <h3 class="">Komanda</h3>
         <p class="col-10 fs-18">
           Gravida arcu consectetur ut fringilla augue risus enim sit mattis
           lacinia libero netus lectus aenean proin lobortis praesent lobortis at
         </p>
-        <div class="persona bg-light-grey my-2">
-          <img class="img-fluid" src="./pics/director.jpeg" alt="" />
 
-          <h3>Ona Onutienė</h3>
-          <h4>Direktorė</h4>
-        </div>
+        <div class="row d-flex gap-5 justify-content-center">
+          <div class="persona col-md-5 bg-light-grey">
+            <img class="img-fluid" src="./pics/director.jpeg" alt="" />
 
-        <div class="persona bg-light-grey my-2">
-          <img class="img-fluid" src="./pics/reklamos-vadovas.jpeg" alt="" />
+            <h3>Ona Onutienė</h3>
+            <h4>Direktorė</h4>
+          </div>
 
-          <h3>Petras Petrauskas</h3>
-          <h4>Reklamos vadovas</h4>
-        </div>
+          <div class="persona col-md-5 bg-light-grey">
+            <img class="img-fluid" src="./pics/reklamos-vadovas.jpeg" alt="" />
 
-        <div class="persona bg-light-grey my-2">
-          <img class="img-fluid" src="./pics/marketingo-vadove.jpeg" alt="" />
+            <h3>Petras Petrauskas</h3>
+            <h4>Reklamos vadovas</h4>
+          </div>
 
-          <h3>Inga Ingauskienė</h3>
-          <h4>Marketingo vadovė</h4>
-        </div>
+          <div class="persona col-md-5 bg-light-grey">
+            <img class="img-fluid" src="./pics/marketingo-vadove.jpeg" alt="" />
 
-        <div class="persona bg-light-grey my-2">
-          <img class="img-fluid" src="./pics/seo-spec.jpeg" alt="" />
+            <h3>Inga Ingauskienė</h3>
+            <h4>Marketingo vadovė</h4>
+          </div>
 
-          <h3>Giedrius Giedriauskas</h3>
-          <h4>SEO specialistas</h4>
+          <div class="persona col-md-5 bg-light-grey">
+            <img class="img-fluid" src="./pics/seo-spec.jpeg" alt="" />
+
+            <h3>Giedrius Giedriauskas</h3>
+            <h4>SEO specialistas</h4>
+          </div>
         </div>
       </section>
       <section
