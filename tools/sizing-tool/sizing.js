@@ -8,8 +8,19 @@ let menuBtns = createMenu(
   "margin-adj-mode-btn",
   "save-exit-btn"
 );
+// el=f(#id)
+let saveBtn = createSaveBtn("save-btn");
+saveBtn.classList.add("invisible");
 
 document.addEventListener("click", globalEventHandler);
+
+function createSaveBtn(saveBtnId) {
+  let saveBtn = document.createElement("button");
+  document.body.appendChild(saveBtn);
+  saveBtn.id = saveBtnId;
+  saveBtn.textContent = "Save";
+  return saveBtn;
+}
 
 function createMenu(
   heightAdjBtnId,
@@ -51,7 +62,9 @@ function globalEventHandler(event) {
 
   if (LAST_CLICKED_EL == menuBtns.height) {
     console.log("height adjustment clicked");
+    enterHeightAdjustmentMode();
   }
+
   if (LAST_CLICKED_EL == menuBtns.padding) {
     console.log("padding adjustment clicked");
   }
@@ -61,4 +74,24 @@ function globalEventHandler(event) {
   if (LAST_CLICKED_EL == menuBtns.exit) {
     console.log("exit clicked");
   }
+}
+
+function enterHeightAdjustmentMode() {
+  prepareForNewMode();
+  document.addEventListener("click", heightAdjuster);
+
+  function heightAdjuster(e) {
+    LAST_CLICKED_EL.classList.remove("selected");
+    LAST_CLICKED_EL = e.target;
+    LAST_CLICKED_EL.classList.add("selected");
+    console.log(LAST_CLICKED_EL);
+  }
+}
+
+function prepareForNewMode() {
+  document.removeEventListener("click", globalEventHandler);
+  Object.values(menuBtns).forEach((btn) => {
+    btn.classList.add("invisible");
+  });
+  saveBtn.classList.remove("invisible");
 }
