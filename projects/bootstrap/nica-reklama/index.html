@@ -35,7 +35,7 @@
       <p class="my-3 fs-26 text-intro-grey">
         Įmonės pristatymas keliais sakiniais, pagrindinės veiklos apibūdinimas
       </p>
-      <button class="btn btn-success-custom col-6 mt-5">susisiekti</button>
+      <button class="btn btn-success-custom mt-5">susisiekti</button>
     </header>
     <main>
       <section
@@ -123,7 +123,7 @@
       </section>
       <section class="container py-5">
         <h3 class="mt-5 mb-4 fs-22">Mūsų statistika</h3>
-        <p class="fw-bold fs-34 fw-500">
+        <p class="fs-34 fw-500">
           Non sapien egestas mi, faucibus dis vel velit eu, quisque ultrices
           aliquet diam faucibus ridiculus.
         </p>
@@ -248,33 +248,45 @@
           lacinia libero netus lectus aenean proin lobortis praesent lobortis at
         </p>
 
-        <div class="row d-flex gap-5 justify-content-center">
-          <div class="persona col-md-5 bg-light-grey">
+        <div class="row d-flex gap-5 justify-content-center align-items-center">
+          <div
+            class="persona col-10 col-md-5 d-flex flex-column align-items-stretch"
+          >
             <img class="img-fluid" src="./pics/director.jpeg" alt="" />
-
-            <h3>Ona Onutienė</h3>
-            <h4>Direktorė</h4>
+            <div class="rank bg-light-grey">
+              <h3>Ona Onutienė</h3>
+              <h4>Direktorė</h4>
+            </div>
           </div>
 
-          <div class="persona col-md-5 bg-light-grey">
+          <div
+            class="persona col-10 col-md-5 d-flex flex-column align-items-stretch"
+          >
             <img class="img-fluid" src="./pics/reklamos-vadovas.jpeg" alt="" />
-
-            <h3>Petras Petrauskas</h3>
-            <h4>Reklamos vadovas</h4>
+            <div class="rank bg-light-grey">
+              <h3>Petras Petrauskas</h3>
+              <h4>Reklamos vadovas</h4>
+            </div>
           </div>
 
-          <div class="persona col-md-5 bg-light-grey">
+          <div
+            class="persona col-10 col-md-5 d-flex flex-column align-items-stretch"
+          >
             <img class="img-fluid" src="./pics/marketingo-vadove.jpeg" alt="" />
-
-            <h3>Inga Ingauskienė</h3>
-            <h4>Marketingo vadovė</h4>
+            <div class="rank bg-light-grey">
+              <h3>Inga Ingauskienė</h3>
+              <h4>Marketingo vadovė</h4>
+            </div>
           </div>
 
-          <div class="persona col-md-5 bg-light-grey">
+          <div
+            class="persona col-10 col-md-5 d-flex flex-column align-items-stretch"
+          >
             <img class="img-fluid" src="./pics/seo-spec.jpeg" alt="" />
-
-            <h3>Giedrius Giedriauskas</h3>
-            <h4>SEO specialistas</h4>
+            <div class="rank bg-light-grey">
+              <h3>Giedrius Giedriauskas</h3>
+              <h4>SEO specialistas</h4>
+            </div>
           </div>
         </div>
       </section>
@@ -286,47 +298,58 @@
           At nunc interdum suscipit sit justo, commodo amet tristique aliquet
           sit mi proin facilisi et, pharetra pellentesque id tortor tempus
         </p>
-        <button class="btn btn-success-custom col-6">Susisiekti</button>
+        <button class="btn btn-success-custom">Susisiekti</button>
       </section>
       <footer
-        class="py-5 bg-dark-grey text-white d-flex flex-column align-items-center text-center"
+        class="py-5 bg-dark-grey text-white d-flex gap-5 flex-wrap align-items-start justify-content-center"
       >
-        <h1 class="mb-4 ff-condensed fs-26 fw-700">nica reklama</h1>
-        <p class="col-10">
-          Dictum bibendum nisl donec morbi at pharetra sed quis vitae integer
-          pharetra, tincidunt morbi nec aliquam non lacus, sagittis non
-        </p>
-        <h2>Kontaktai</h2>
-        <p>Adresas: Gatvė g. 24-10, Kaunas, LT54877, Lietuva</p>
-        <div class="tels text-greyish mb-5">
-          <span>Telefonai pasiteiravimui:</span>
-          <span>+370 123 45678</span>
-          <span>+370 987 65432</span>
+        <div class="col-10 col-md-5 col-lg">
+          <h1 class="mb-4 ff-condensed fs-26 fw-700 align-items-md-start">
+            nica reklama
+          </h1>
+          <p>
+            Dictum bibendum nisl donec morbi at pharetra sed quis vitae integer
+            pharetra, tincidunt morbi nec aliquam non lacus, sagittis non
+          </p>
         </div>
 
-        <h2>Straipsniai</h2>
-        <p class="text-white">Aenean convallis eros</p>
-        <p>Vestibulum diam venenatis</p>
-        <div class="line-200"></div>
-        <p class="text-white">Aenean convallis eros</p>
-        <p>Vestibulum diam venenatis</p>
-        <div class="line-200"></div>
-        <p class="text-white">Aenean convallis eros</p>
-        <p>Vestibulum diam venenatis</p>
+        <div class="col-10 col-md-5 col-lg">
+          <h2>Kontaktai</h2>
+          <p>Adresas: Gatvė g. 24-10, Kaunas, LT54877, Lietuva</p>
+          <br />
+          <div class="tels text-greyish mb-5">
+            <span>Telefonai pasiteiravimui:</span>
+            <span>+370 123 45678</span>
+            <span>+370 987 65432</span>
+          </div>
+        </div>
 
-        <h2>Navigacija</h2>
-        <a href="#">Pagrindinis</a>
-        <div class="line-200"></div>
-        <a href="#">Paslaugos</a>
-        <div class="line-200"></div>
-        <a href="#">Apie mus</a>
-        <div class="line-200"></div>
-        <a href="#">Straipsniai</a>
-        <div class="line-200"></div>
-        <a href="#">Konktaktai</a>
+        <div class="col-10 col-md-5 col-lg">
+          <h2>Straipsniai</h2>
+          <p class="text-white">Aenean convallis eros</p>
+          <p>Vestibulum diam venenatis</p>
+          <div class="line-200"></div>
+          <p class="text-white">Aenean convallis eros</p>
+          <p>Vestibulum diam venenatis</p>
+          <div class="line-200"></div>
+          <p class="text-white">Aenean convallis eros</p>
+          <p>Vestibulum diam venenatis</p>
+        </div>
+        <div class="col-10 col-md-5 col-lg">
+          <h2>Navigacija</h2>
+          <a href="#">Pagrindinis</a>
+          <div class="line-200"></div>
+          <a href="#">Paslaugos</a>
+          <div class="line-200"></div>
+          <a href="#">Apie mus</a>
+          <div class="line-200"></div>
+          <a href="#">Straipsniai</a>
+          <div class="line-200"></div>
+          <a href="#">Konktaktai</a>
+        </div>
       </footer>
       <!-- line -->
-      <p class="bg-darker text-greyish text-center py-5">
+      <p class="copyright bg-darker text-greyish text-center py-5 px-5">
         Visos teisės saugomos, nica reklama
       </p>
     </main>
