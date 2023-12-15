@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>testing sizing script</title>
     <style>
+      * {
+        padding-left: 10px;
+      }
       .menu-btn {
         padding: 1rem;
       }
@@ -21,6 +24,68 @@
         height: 50px;
         width: 50px;
       }
+      @keyframes slowly-disappear {
+        from {
+          color: black;
+        }
+        to {
+          color: white;
+        }
+      }
+      #console {
+        color: white;
+        height: 50px;
+        width: 50px;
+        position: fixed;
+        top: 50%;
+        left: 10%;
+        font-size: 40px;
+      }
+      .log-chosen-el {
+        animation-name: slowly-disappear;
+        animation-duration: 2s;
+      }
+      .all-borders {
+        border: 1px solid blueviolet;
+      }
+      .triangles {
+        position: relative;
+      }
+
+      #resizer-vertical {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        bottom: -20px;
+        right: 20px;
+        transform: rotate(-45deg);
+        z-index: 2;
+      }
+      #arrow-up {
+        position: absolute;
+        top: 0;
+        left: 10px;
+      }
+      #arrow-down {
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+      }
+      /* .highlight-padding {
+        position: relative;
+        padding: 40px;
+        border: 1px dashed green;
+      }
+      .highlight-padding:after {
+        content: "";
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        bottom: 40px;
+        right: 40px;
+        background-color: aqua;
+        z-index: -1;
+      } */
     </style>
   </head>
   <body>
@@ -28,6 +93,11 @@
       <img src="../pics/abcd.png" alt="" class="mock-img" />
       <p class="mock-p">Lorem, ipsum dolor.</p>
     </div>
+    <div id="resizer-vertical">
+      <div id="arrow-up">&#9650;</div>
+      <div id="arrow-down">&#9660;</div>
+    </div>
+    <div id="console"></div>
     <script src="./sizing.js"></script>
   </body>
 </html>

@@ -66,7 +66,7 @@ specific handler-common part:
 4. adds his event listener with attached event handler depending on the MODE
 
 heightAdjustmentHandler:
-if event.target is save-btn saveClicked(){ it changes MODE to none, it removes specific handler event listener, it hides save btn, it brings back 4 btns to be visible it adds global event listener again, basicly it recursively calls script again from the start,right?}
+if event.target is save-btn saveClicked(){ it changes MODE to none, it removes specific handler event listener, it hides save btn, it brings back 4 btns to be visible it adds global event listener again}
 
 if event.target is another html el, then as described it highlights it, ads vert line, small input and adds bottom border and 2 triangles.
 
@@ -78,7 +78,7 @@ saveNewHeightValue(){save value and add class to the element and add value to cs
 ---
 
 paddingAdjustmentHandler:
-if event.target is save-btn saveClicked(){ it changes MODE to none, it removes specific handler event listener, it hides save btn, it brings back 4 btns to be visible it adds global event listener again, basicly it recursively calls script again from the start,right?}
+if event.target is save-btn saveClicked(){ it changes MODE to none, it removes specific handler event listener, it hides save btn, it brings back 4 btns to be visible it adds global event listener again}
 
 if event.target is another html el, then as described it highlights it, highlights existing paddings, adds triangles on each border and small inputs
 
@@ -90,7 +90,7 @@ saveNewPaddingValue(whichSidePad,val){save value and add class to the element an
 ---
 
 marginAdjustmentHandler:
-if event.target is save-btn saveClicked(){ it changes MODE to none, it removes specific handler event listener, it hides save btn, it brings back 4 btns to be visible it adds global event listener again, basicly it recursively calls script again from the start,right?}
+if event.target is save-btn saveClicked(){ it changes MODE to none, it removes specific handler event listener, it hides save btn, it brings back 4 btns to be visible it adds global event listener again}
 
 if event.target is another html el, then as described it highlights it, highlights existing margins, adds triangles on each border and small inputs
 
