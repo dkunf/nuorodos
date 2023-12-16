@@ -41,7 +41,7 @@
 
       #dashboard-2 {
         display: grid;
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 2px;
       }
       #dashboard-2 > div {
@@ -75,6 +75,17 @@
         color: #ccc;
         text-align: center;
       }
+      #whole-f-dashboard {
+        width: min-content;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+      }
+      .instructions {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -83,71 +94,69 @@
       <p class="mock-p">Lorem, ipsum dolor.</p>
     </div>
 
-    <div id="dashboard-1">
-      <div>
-        <div class="explain">Element</div>
-        <div id="tagName">DIV</div>
+    <div id="whole-f-dashboard">
+      <div id="dashboard-1">
+        <div>
+          <div class="explain">Element</div>
+          <div id="tagName">DIV</div>
+        </div>
+        <div>
+          <div class="explain">Display</div>
+          <div id="display-element">BLOCK</div>
+        </div>
+        <div>
+          <div class="explain">&subset; Parent Display</div>
+          <div id="display-parent">FLEX</div>
+        </div>
+        <div id="height">
+          <div class="explain">Height</div>
+          <div id="height-px">16px</div>
+          <!-- <div id="height-rem">1rem</div> -->
+        </div>
+        <div id="width">
+          <div class="explain">Width</div>
+          <div id="width-px">16px</div>
+          <!-- <div id="width-rem">1rem</div> -->
+        </div>
+        <div id="id">#db</div>
+        <div id="classes">
+          .nav .d-flex .my-3 dfadf adfadfa affas asfasfsfs afsasf
+        </div>
       </div>
-
-      <div>
-        <div class="explain">Display</div>
-        <div id="display-element">BLOCK</div>
+      <div id="dashboard-2">
+        <div id="padding">
+          <div class="explain span-4">Padding</div>
+          <div class="explain">top</div>
+          <div class="explain">right</div>
+          <div class="explain">bottom</div>
+          <div class="explain">left</div>
+          <div id="padding-top-px">8px</div>
+          <div id="padding-right-px">0</div>
+          <div id="padding-bottom-px">3px</div>
+          <div id="padding-left-px">80px</div>
+          <!-- <div id="padding-top-rem">0.5rem</div>
+          <div id="padding-right-rem">0</div>
+          <div id="padding-bottom-rem">0.3rem</div>
+          <div id="padding-left-rem">5rem</div> -->
+        </div>
+        <div id="margin">
+          <div class="explain span-4">Margin</div>
+          <div class="explain">top</div>
+          <div class="explain">right</div>
+          <div class="explain">bottom</div>
+          <div class="explain">left</div>
+          <div id="margin-top-px">20px</div>
+          <div id="margin-right-px">10px</div>
+          <div id="margin-bottom-px">3px</div>
+          <div id="margin-left-px">0</div>
+          <!-- <div id="margin-top-rem">1.3rem</div>
+          <div id="margin-right-rem">0.7rem</div>
+          <div id="margin-bottom-rem">0.13rem</div>
+          <div id="margin-left-rem">0</div> -->
+        </div>
       </div>
-
-      <div>
-        <div class="explain">&subset; Parent Display</div>
-        <div id="display-parent">FLEX</div>
-      </div>
-
-      <div id="height">
-        <div class="explain">Height</div>
-        <div id="height-px">16px</div>
-        <div id="height-rem">1rem</div>
-      </div>
-
-      <div id="width">
-        <div class="explain">Width</div>
-        <div id="width-px">16px</div>
-        <div id="width-rem">1rem</div>
-      </div>
-
-      <div id="id">#db</div>
-
-      <div id="classes">.nav .d-flex .my-3</div>
     </div>
-    <div id="dashboard-2">
-      <div id="padding">
-        <div class="explain span-4">Padding</div>
-        <div class="explain">top</div>
-        <div class="explain">right</div>
-        <div class="explain">bottom</div>
-        <div class="explain">left</div>
-        <div id="padding-top-px">8px</div>
-        <div id="padding-right-px">0</div>
-        <div id="padding-bottom-px">3px</div>
-        <div id="padding-left-px">80px</div>
-        <div id="padding-top-rem">0.5rem</div>
-        <div id="padding-right-rem">0</div>
-        <div id="padding-bottom-rem">0.3rem</div>
-        <div id="padding-left-rem">5rem</div>
-      </div>
-
-      <div id="margin">
-        <div class="explain span-4">Margin</div>
-        <div class="explain">top</div>
-        <div class="explain">right</div>
-        <div class="explain">bottom</div>
-        <div class="explain">left</div>
-        <div id="margin-top-px">20px</div>
-        <div id="margin-right-px">10px</div>
-        <div id="margin-bottom-px">3px</div>
-        <div id="margin-left-px">0</div>
-        <div id="margin-top-rem">1.3rem</div>
-        <div id="margin-right-rem">0.7rem</div>
-        <div id="margin-bottom-rem">0.13rem</div>
-        <div id="margin-left-rem">0</div>
-      </div>
-
+    <div class="instructions invisible">
       <div class="span-4">
         <div>
           <span class="key-like">ctrl</span> +
