@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -23,7 +29,7 @@
 
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand" href="#">Logo</a>
+        <a class="logo navbar-brand" href="#">Logo</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -62,17 +68,20 @@
     </nav>
 
     <div class="container-fluid header-box">
-      <div class="row">
-        <div class="header-writings-box ms-5 text-white">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-            quaerat quisquam aut natus ratione suscipit iste pariatur alias
-            placeat, enim labore maiores deleniti cupiditate est.
-          </p>
-          <h5>Case study</h5>
-          <button class="btn btn-primary">View Case</button>
-        </div>
+      <div class="header-writings-box text-white container">
+        <h1>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+          quaerat.
+        </h1>
+        <a href="#">Case study</a>
+        <!-- <div> -->
+        <button class="header-btn btn btn-primary">
+          <img class="img img-fluid" src="./pics/play-btn-icon.svg" alt="" />
+          View Case
+        </button>
+        <!-- </div> -->
       </div>
+      <div>.</div>
     </div>
 
     <div class="container">
@@ -95,7 +104,9 @@
               beatae doloribus incidunt similique quisquam rem corrupti a
               tempora nesciunt.
             </p>
-            <div class="vid-container"></div>
+            <div class="vid-container my-2rem">
+              <img src="./pics/play-btn-icon.svg" alt="" />
+            </div>
           </section>
           <section>
             <h2>Challenge</h2>
@@ -113,12 +124,10 @@
               consectetur modi.
             </p>
             <div class="row">
-              <div class="col-4"></div>
-              <div class="col-4 emph">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptas dolore non optio vitae corporis, ab amet atque sapiente
-                cupiditate, reprehenderit repellendus maiores earum in iure
-                minus veritatis error velit voluptatibus?
+              <div class="col-4-lg col-2"></div>
+              <div class="col-4-lg col-8 emphasized-paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis,
+                incidunt. Consequuntur optio non quasi voluptates.
               </div>
             </div>
             <div class="row">
@@ -190,7 +199,7 @@
                 <img
                   src="./pics/zebra-crossing.png"
                   alt=""
-                  class="img img-fluid"
+                  class="img img-fluid my-2rem"
                 />
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
@@ -203,7 +212,11 @@
                 </p>
               </div>
               <div class="col-6">
-                <img src="./pics/group-pic.png" alt="" class="img img-fluid" />
+                <img
+                  src="./pics/group-pic.png"
+                  alt=""
+                  class="img img-fluid my-2rem"
+                />
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
                   dignissimos voluptatem placeat, a distinctio officiis.
