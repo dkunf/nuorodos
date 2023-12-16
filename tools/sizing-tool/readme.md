@@ -98,3 +98,31 @@ if event.target is triangles'-box then drag&drop and saveNewMarginValue(whichSid
 
 if event.target is our input, then listen to changes and
 saveNewMarginValue(whichSidePad,val){save value and add class to the element and add value to css to that class}
+
+UPDATE:
+
+thinking again on UI architecture it's better to have 1 mode with ability to change size, padding and margin because it's less clicking and walking back-forth.
+
+So new idea of controls is:
+pressing SHIFT+ARROW lets adjust height and width of element using arrows
+pressing Ctrl+ARROWx lets adjust padding-x with arrows
+pressing Alt+ARROWx lets adjust margin-x with arrows
+
+this way i can just quickly do all adjustments for the element and click next one.
+
+Also my CONSOLE should be like grid of rectangles showing (DASHBOARD):
+1.element we working on (tagName)
+1.5 elements id and classes
+2.what's 'display'(?) property of it (for example if it's flex or grid item then adjusting it wouldn't be smart)
+3.calculated height,width,padding and margin 4. explaining of keystrokes
+
+HOW DO I DO THAT?
+i can have global eventListener which detects click on save&exit and shift,alt or ctrl modifiers pressed and also clicks on any elements of the page and Arrow keys.
+
+Maybe to keep track i need to use LAST_CHOSEN_PROPERTY that would have recorded 'height','width','paddingLeft', 'paddingRight','paddingTop','paddingBottom','marginLeft', 'marginRight','marginTop','marginBottom'. Once you press ctrl or alt or shift + some arrow then evrything new value of LAST_CHOSEN_PROPERTY is set. If just arrow is pressed then the LAST_CHOSEN_PROPERTY will be passed to the function which modifies values.
+That function can tell if element is not selected or property is not selected and also it can change those properties.
+
+so in short:
+LAST_CLICKED_EL is modified by clicking on elements. after new element is clicked the LAST_CHOSEN_PROPERTY stays from the last time. this way i can quickly for example set heights of all elements, then set another property of all elements etc
+LAST_CHOSEN_PROPERTY is modified by pressing ctrl,alt,shift and arrows.
+the modifier function uses global parameters to change LAST_CHOSEN_PROPERTY of LAST_CLICKED_EL +/-1px . It is called every time arrow is pressed.
