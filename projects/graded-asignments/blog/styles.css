@@ -1,0 +1,49 @@
+body {
+  --nav-height: 60px;
+}
+
+nav {
+  height: var(--nav-height);
+}
+.emph {
+  border-left: 4px solid blue;
+  margin: 4rem 0;
+}
+img {
+  margin: 2rem 0;
+}
+
+.header-box {
+  height: calc(100vh - var(--nav-height));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+    url("./pics/header-bg.jpeg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+.header-writings-box {
+  margin-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-basis: 50%;
+}
+.header-writings-box button {
+  width: fit-content;
+}
+section {
+  margin-top: 1rem;
+}
+
+.vid-container {
+  height: 600px;
+  width: auto;
+  background-image: url("./pics/play-btn-icon.svg"),
+    url("./pics/header-bg.jpeg");
+  background-position: center;
+  background-size: cover;
+}
