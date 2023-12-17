@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .slider {
+        position: relative;
+        border: 1px solid #777;
+        height: 200px;
+        width: 350px;
+      }
+      .left-pic {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 200px;
+        width: 150px;
+        object-fit: cover;
+        object-position: center;
+      }
+      .right-pic {
+        display: inline-block;
+        position: absolute;
+        left: 200px;
+        top: 0;
+        height: 200px;
+        width: 150px;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.5;
+        z-index: 5;
+      }
+      .under-pic {
+        display: inline-block;
+        position: absolute;
+        left: 200px;
+        top: 0;
+        height: 200px;
+        width: 150px;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0;
+        z-index: 3;
+      }
+      .reserve-pic {
+        display: none;
+      }
+      /* .overlay {
+        display: inline-block;
+        position: absolute;
+        opacity: 0;
+        left: 150px;
+        top: 0;
+        height: 200px;
+        width: 200px;
+        background-color: black;
+      } */
+      @keyframes fading {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+      .make-fade {
+        animation-name: fading;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+      }
+      @keyframes appearance {
+        0% {
+          opacity: 0;
+        }
+        20% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 0.5;
+        }
+      }
+      .make-appear {
+        animation-name: appearance;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes moving-left {
+        0% {
+          opacity: 0.4;
+          left: 200px;
+        }
+        8% {
+          opacity: 0.6;
+          left: 150px;
+        }
+        100% {
+          opacity: 1;
+          left: 0;
+        }
+      }
+      .make-left-move {
+        animation-name: moving-left;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+      }
+
+      @keyframes moving-left-from-0 {
+        0% {
+          left: 0;
+        }
+        10% {
+          left: 0;
+        }
+        100% {
+          left: -200px;
+          opacity: 0;
+        }
+      }
+      .make-left-move-from-0 {
+        animation-name: moving-left-from-0;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+      }
+      .left-control {
+        position: absolute;
+        bottom: -30px;
+      }
+      .right-control {
+        position: absolute;
+        bottom: -30px;
+        right: 0;
+      }
+
+      @keyframes zero-to-right {
+        0% {
+          left: 0;
+          opacity: 1;
+        }
+        8% {
+          left: 60px;
+          opacity: 0.8;
+        }
+        100% {
+          left: 200px;
+          opacity: 0.5;
+        }
+      }
+
+      .move-right {
+        animation-name: zero-to-right;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+      }
+
+      /* @keyframes appearing-left {
+        from{
+
+        }
+      }
+
+      .appear-on-left {
+        animation-name: appearing-left;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <!-- usage: list all img with class reserve-pic -->
+      <img class="reserve-pic" src="./pics/dome-thumb.jpeg" alt="" />
+      <img class="reserve-pic" src="./pics/gedimino-thumb.jpeg" alt="" />
+      <img class="reserve-pic" src="./pics/kryzkalnis-thumb.jpeg" alt="" />
+      <img class="reserve-pic" src="./pics/uzutrakio.png" alt="" />
+
+      <div id="left-control" class="left-control"><------------</div>
+      <div id="right-control" class="right-control">------------></div>
+    </div>
+
+    <script>
+      // this is our fifo stack for all div pics.
+      // unshift to add div, pop to get div
+      //need to change  background-image: url("./pics/uzutrakio.png");
+      // for just popped element afteer giving it under-right-pic class
+      let reserveArray = Array.from(document.querySelectorAll(".reserve-pic"));
+      render(reserveArray);
+
+      let leftControl = document.getElementById("left-control");
+      leftControl.addEventListener("click", moveLeftHandler);
+      let rightControl = document.getElementById("right-control");
+      rightControl.addEventListener("click", moveRightHandler);
+
+      function render(arr) {
+        arr.forEach((element) => {
+          element.classList = "reserve-pic";
+        });
+
+        arr[arr.length - 1].classList = "";
+        arr[arr.length - 1].classList.add("left-pic");
+
+        arr[arr.length - 2].classList = "";
+        arr[arr.length - 2].classList.add("right-pic");
+
+        arr[arr.length - 3].classList = "";
+        arr[arr.length - 3].classList.add("under-pic");
+      }
+      function animateLeftMove(arr) {
+        arr[arr.length - 1].classList.add("make-left-move-from-0");
+
+        arr[arr.length - 2].classList.add("make-left-move");
+
+        arr[arr.length - 3].classList.add("make-appear");
+      }
+      function animateRightMove(arr) {
+        arr[arr.length - 1].classList.add("move-right");
+
+        arr[arr.length - 2].classList.add("make-fade");
+
+        // arr[0].classList.add("appear-on-left");
+
+        // setTimeout(() => {
+        //   arr[0].classList = "left-pic";
+        // }, 500);
+      }
+
+      function moveLeftHandler() {
+        animateLeftMove(reserveArray);
+
+        //change array
+        console.log("before: ", reserveArray);
+        let last = reserveArray.pop();
+        reserveArray.unshift(last);
+        console.log("after", reserveArray);
+
+        setTimeout(() => {
+          render(reserveArray);
+        }, 500);
+      }
+      function moveRightHandler() {
+        animateRightMove(reserveArray);
+
+        //change array
+        console.log("before: ", reserveArray);
+        let first = reserveArray.shift();
+        reserveArray.push(first);
+        console.log("after", reserveArray);
+
+        setTimeout(() => {
+          render(reserveArray);
+        }, 500);
+      }
+    </script>
+  </body>
+</html>
