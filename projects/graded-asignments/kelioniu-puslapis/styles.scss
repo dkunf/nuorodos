@@ -1,6 +1,4 @@
-@import "./components/slider/slider";
+@import "./components/page-settings";
 @import "./components/navbar";
-
-body {
-  font-size: 16px;
-}
+@import "./components/slider/slider";
+@import "./components/footer";
