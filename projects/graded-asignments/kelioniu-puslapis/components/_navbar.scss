@@ -1,0 +1,20 @@
+nav {
+  height: 4.4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+  ul {
+    display: flex;
+    gap: 3rem;
+
+    a {
+      text-decoration: none;
+      color: #1b6bed;
+      font-weight: 600;
+    }
+  }
+  img {
+    height: 15px;
+  }
+}

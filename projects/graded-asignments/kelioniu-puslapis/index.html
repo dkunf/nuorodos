@@ -4,9 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kelionių Puslapis</title>
+    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <nav>
+      <img src="./pics/logo.svg" alt="" />
+      <ul>
+        <li>
+          <a href="#"> <u>Pagrindinis</u></a>
+        </li>
+        <li><a href="./apie/apie.html">Apie Mus</a></li>
+        <li><a href="./contacts.html">Kontaktai</a></li>
+      </ul>
+    </nav>
+
+    <!-- SLIDER  START-->
     <!-- usage: list all img with class reserve-pic, min: 3 img -->
     <div class="slider">
       <img class="reserve-pic" src="./pics/dome-thumb.jpeg" alt="" />
@@ -17,7 +30,7 @@
       <div id="left-control" class="left-control"><------------</div>
       <div id="right-control" class="right-control">------------></div>
     </div>
-
-    <script src="./slider.js"></script>
+    <!-- SLIDER  END-->
+    <script src="./components/slider/slider.js"></script>
   </body>
 </html>
