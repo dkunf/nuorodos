@@ -1,185 +1,279 @@
-.slider {
-  position: relative;
-  border: 1px solid #777;
-  height: 200px;
-  width: 350px;
-  .left-pic {
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 200px;
-    width: 150px;
-    object-fit: cover;
-    object-position: center;
-  }
-  .right-pic {
-    display: inline-block;
-    position: absolute;
-    left: 200px;
-    top: 0;
-    height: 200px;
-    width: 150px;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0.5;
-    z-index: 5;
-  }
-  .under-pic {
-    display: inline-block;
-    position: absolute;
-    left: 200px;
-    top: 0;
-    height: 200px;
-    width: 150px;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0;
-    z-index: 3;
-  }
-  .reserve-pic {
-    display: none;
-  }
-
-  .left-control {
-    position: absolute;
-    bottom: -30px;
-  }
-  .right-control {
-    position: absolute;
-    bottom: -30px;
-    right: 0;
-  }
-  // ==============================================
-  // ==============================================
-  // ==============================================
-  //
-  //     A
-  //    A A
-  //   A   A
-  //  A     A
-  //  AAAAAAAAAAAAAAAAAAAAAAA
-  //  A     A
-  //  A     A
-  //  A     ANIMATIONS:
-
-  @keyframes fading {
-    from {
-      opacity: 1;
+.slider-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 839px;
+  height: 634px;
+  border: 1px solid grey;
+  .slider-card_text-box {
+    margin-left: 74px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .category {
+      color: #a6a6a6;
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
     }
-    to {
-      opacity: 0;
+    .about-object {
+      h3 {
+        color: #4b4b4b;
+        font-family: Roboto;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 136.188%; /* 32.685px */
+        text-transform: capitalize;
+        margin-bottom: 1rem;
+      }
+      // does it wrk?
+      .place-marker {
+        width: 14px;
+        height: 17.769px;
+      }
+      .place-name {
+        color: #666;
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 136.188%; /* 19.066px */
+      }
+      .description {
+        margin-top: 20px;
+        color: #888;
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 148.188%; /* 20.746px */
+      }
+    }
+    .btn-wrap {
+      border-radius: 24px;
+      padding: 2px;
+      background: linear-gradient(180deg, #00d4e4 -40.5%, #1f59ee 97.28%);
+      width: max-content;
+      margin-top: 20px;
+      .more-btn {
+        padding: 1rem 2rem;
+        border-radius: 24px;
+        border: transparent;
+        background-color: white;
+        color: #1f59ee;
+      }
+      .map-btn {
+        padding: 1rem 2rem;
+        border-radius: 24px;
+        border: transparent;
+        background-color: white;
+        color: #1f59ee;
+        display: flex;
+        align-items: center;
+        svg {
+          padding: 1px;
+        }
+      }
     }
   }
-  .make-fade {
-    animation-name: fading;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
+  .map-outline {
+    z-index: -5;
   }
+  .slider {
+    position: relative;
+    right: -200px;
+    border: 1px solid #777;
+    width: 710px;
+    height: 450px;
+    .left-pic {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 450px;
+      width: 320px;
+      object-fit: cover;
+      object-position: center;
 
-  // ------------------------------------------
-  // ==============================================
-
-  //   ---------------------------------
-  @keyframes appearance {
-    0% {
-      opacity: 0;
+      border-radius: 15.586px;
+      box-shadow: -8px 8px 42px 0px rgba(0, 0, 0, 0.25);
     }
-    20% {
-      opacity: 0;
-    }
-    100% {
+    .right-pic {
+      display: inline-block;
+      position: absolute;
+      left: 390px;
+      top: 0;
+      height: 450px;
+      width: 320px;
+      object-fit: cover;
+      object-position: center;
       opacity: 0.5;
+      z-index: 5;
+      border-radius: 15.586px;
     }
-  }
-  .make-appear {
-    animation-name: appearance;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-  }
-  // ---------------------------------------
-  // ==============================================
-
-  // -----------------------------------------
-  @keyframes moving-left {
-    0% {
-      opacity: 0.4;
+    .under-pic {
+      display: inline-block;
+      position: absolute;
       left: 200px;
-      transform: rotate(-2deg);
-
-      background-image: url("./pics/lt-veliava.jpeg");
-      background-size: cover;
-      padding-right: 5px;
-    }
-    8% {
-      opacity: 0.6;
-      left: 150px;
-
-      padding-right: 5px;
-    }
-    99% {
-      padding-right: 1px;
-    }
-    100% {
-      opacity: 1;
-      left: 0;
-      padding-right: 0;
-    }
-  }
-  .make-left-move {
-    animation-name: moving-left;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
-  }
-
-  // -------------------------------------------
-  // ==============================================
-
-  // --------------------------------------------
-  @keyframes moving-left-from-0 {
-    0% {
-      left: 0;
-    }
-    10% {
-      left: 0;
-    }
-    100% {
-      left: -200px;
+      top: 0;
+      height: 200px;
+      width: 150px;
+      object-fit: cover;
+      object-position: center;
       opacity: 0;
+      z-index: 3;
     }
-  }
-  .make-left-move-from-0 {
-    animation-name: moving-left-from-0;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
-  }
-  //   ------------------------------------------
-  // ==============================================
-  //   -----------------------------------------
-  @keyframes zero-to-right {
-    0% {
-      left: 0;
-      opacity: 1;
-      transform: rotate(2deg);
+    .reserve-pic {
+      display: none;
     }
-    8% {
-      left: 60px;
-      opacity: 0.8;
-    }
-    100% {
-      left: 200px;
-      opacity: 0.5;
-    }
-  }
 
-  .move-right {
-    animation-name: zero-to-right;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
+    .left-control {
+      width: 75px;
+      height: 9px;
+      position: absolute;
+      bottom: -64px;
+      left: -50px;
+      padding: 1rem;
+    }
+    .right-control {
+      width: 75px;
+      height: 9px;
+      position: absolute;
+      bottom: -64px;
+      left: 67px;
+      padding: 1rem;
+    }
+    // ==============================================
+    // ==============================================
+    // ==============================================
+    //
+    //     A
+    //    A A
+    //   A   A
+    //  A     A
+    //  AAAAAAAAAAAAAAAAAAAAAAA
+    //  A     A
+    //  A     A
+    //  A     ANIMATIONS:
+
+    @keyframes fading {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+    .make-fade {
+      animation-name: fading;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+
+    // ------------------------------------------
+    // ==============================================
+
+    //   ---------------------------------
+    @keyframes appearance {
+      0% {
+        opacity: 0;
+      }
+      20% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.5;
+      }
+    }
+    .make-appear {
+      animation-name: appearance;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+    // ---------------------------------------
+    // ==============================================
+
+    // -----------------------------------------
+    @keyframes moving-left {
+      0% {
+        opacity: 0.4;
+        left: 200px;
+        transform: rotate(-2deg);
+
+        background-image: url("./pics/lt-veliava.jpeg");
+        background-size: cover;
+        padding-right: 5px;
+      }
+      8% {
+        opacity: 0.6;
+        left: 150px;
+
+        padding-right: 5px;
+      }
+      99% {
+        padding-right: 1px;
+      }
+      100% {
+        opacity: 1;
+        left: 0;
+        padding-right: 0;
+      }
+    }
+    .make-left-move {
+      animation-name: moving-left;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+
+    // -------------------------------------------
+    // ==============================================
+
+    // --------------------------------------------
+    @keyframes moving-left-from-0 {
+      0% {
+        left: 0;
+      }
+      10% {
+        left: 0;
+      }
+      100% {
+        left: -200px;
+        opacity: 0;
+      }
+    }
+    .make-left-move-from-0 {
+      animation-name: moving-left-from-0;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+    //   ------------------------------------------
+    // ==============================================
+    //   -----------------------------------------
+    @keyframes zero-to-right {
+      0% {
+        left: 0;
+        opacity: 1;
+        transform: rotate(2deg);
+      }
+      8% {
+        left: 60px;
+        opacity: 0.8;
+      }
+      100% {
+        left: 200px;
+        opacity: 0.5;
+      }
+    }
+
+    .move-right {
+      animation-name: zero-to-right;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;
+    }
+    //   ----------------------------------------
   }
-  //   ----------------------------------------
 }

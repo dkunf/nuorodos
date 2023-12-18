@@ -1,4 +1,60 @@
+@import "./variables";
+
 @import "./components/page-settings";
 @import "./components/navbar";
 @import "./components/slider/slider";
 @import "./components/footer";
+
+header {
+  height: calc(100vh - 4.4rem);
+  background-image: url("./pics/main-banner.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  .statements-box {
+    color: white;
+    text-align: center;
+    h1 {
+      font-size: 5.6rem;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 2.3rem;
+      font-weight: 300;
+      padding-top: 0.5rem;
+    }
+    button {
+      margin-top: 2.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border-radius: 1.5rem;
+      background: linear-gradient(180deg, #00d4e4 -40.5%, #1f59ee 97.28%);
+      border: none;
+      color: white;
+    }
+  }
+}
+.decor-top {
+  position: relative;
+  top: -184px;
+  margin-left: calc(100vw - 640px);
+}
+
+.container {
+  width: $container-width;
+  margin: 10rem auto;
+  cite {
+    display: flex;
+    justify-content: space-around;
+    line-height: 2rem;
+    margin: 10rem 0 8rem 0;
+  }
+  cite::before {
+    content: url("./pics/ri_double-quotes-r.svg");
+  }
+}
