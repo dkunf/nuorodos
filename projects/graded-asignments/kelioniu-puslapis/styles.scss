@@ -47,14 +47,101 @@ header {
 
 .container {
   width: $container-width;
-  margin: 10rem auto;
+  margin: 0 auto;
   cite {
     display: flex;
     justify-content: space-around;
     line-height: 2rem;
-    margin: 10rem 0 8rem 0;
+    margin: 5rem 0 8rem 0;
   }
   cite::before {
     content: url("./pics/ri_double-quotes-r.svg");
+  }
+}
+.grey-bg {
+  background-color: #f9f9f9;
+  //temporary
+  padding-bottom: 100px;
+}
+
+.stats-box {
+  position: relative;
+  height: 100vh;
+  background-image: url("./pics/neris.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .decor-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .card-wrap {
+    height: 50%;
+    width: 70%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .stats-card {
+      padding: 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+        "text text a b"
+        "text text c d";
+      gap: 3rem;
+      .text-wrap {
+        padding-right: 5rem;
+        grid-area: text;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.8rem;
+        h1 {
+          color: #333;
+          font-family: Plus Jakarta Sans;
+          font-size: 36px;
+          font-weight: 700;
+        }
+        h2 {
+          color: #888;
+          font-family: Plus Jakarta Sans;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 150%; /* 24px */
+        }
+      }
+      .a-stat {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .number {
+          color: #1f59ee;
+          font-family: Plus Jakarta Sans;
+          font-size: 50px;
+          font-weight: 700;
+          line-height: 120%; /* 60px */
+        }
+        .legend {
+          color: #333;
+
+          /* H5 */
+          font-family: Plus Jakarta Sans;
+          font-size: 18px;
+          font-weight: 700;
+        }
+        .explain-legend {
+          color: #888;
+          font-family: Plus Jakarta Sans;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 150%; /* 24px */
+        }
+      }
+    }
   }
 }

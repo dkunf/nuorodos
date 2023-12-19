@@ -9,18 +9,18 @@ body {
 
 nav {
   margin: 0 auto;
-  width: 65%;
+  width: 70%;
   height: 4.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
 }
-nav ul {
+nav .nav-links {
   display: flex;
   gap: 3rem;
 }
-nav ul a {
+nav .nav-links a {
   text-decoration: none;
   color: #1b6bed;
   font-weight: 600;
@@ -28,18 +28,54 @@ nav ul a {
 nav img {
   height: 15px;
 }
+nav .burger {
+  display: none;
+}
+nav .burger-links {
+  display: none;
+}
 
+@media screen and (max-width: 900px) {
+  nav .burger {
+    display: block;
+  }
+  nav .nav-links {
+    display: none;
+  }
+  nav .burger:hover .burger-links {
+    display: block;
+    height: 8rem;
+    position: absolute;
+    top: 5rem;
+    right: 15%;
+  }
+  nav .burger:hover .burger-links ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    gap: 1rem;
+  }
+  nav .burger:hover .burger-links a {
+    text-decoration: none;
+    color: #1b6bed;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+}
 footer {
   color: white;
   background-color: #11224d;
   padding-top: 4.4rem;
 }
 footer .footer_top {
-  width: 65%;
+  width: 70%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
   padding-bottom: 3.2rem;
 }
 footer .footer_top .footer_top_left {
@@ -101,4 +137,26 @@ footer .copyright {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.3rem;
+}
+
+@media screen and (max-width: 900px) {
+  footer .footer_top {
+    justify-content: center;
+  }
+  footer .footer_top .footer_top_right {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  footer .footer_top .footer_top_right .footer_top_navigacija {
+    align-items: center;
+  }
+  footer .footer_top .footer_top_right .footer_top_kontaktai {
+    align-items: center;
+  }
+  footer .footer_top .footer_top_left {
+    align-items: center;
+  }
+  footer .footer_top .footer_top_left .footer_top_left_down {
+    align-items: center;
+  }
 }/*# sourceMappingURL=contacts.css.map */

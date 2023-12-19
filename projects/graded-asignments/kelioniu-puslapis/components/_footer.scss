@@ -10,6 +10,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
     padding-bottom: 3.2rem;
     .footer_top_left {
       display: flex;
@@ -73,5 +75,28 @@ footer {
     font-size: 14px;
     font-weight: 400;
     line-height: 1.3rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  footer {
+    .footer_top {
+      justify-content: center;
+      .footer_top_right {
+        justify-content: center;
+        flex-wrap: wrap;
+        .footer_top_navigacija {
+          align-items: center;
+        }
+        .footer_top_kontaktai {
+          align-items: center;
+        }
+      }
+      .footer_top_left {
+        align-items: center;
+        .footer_top_left_down {
+          align-items: center;
+        }
+      }
+    }
   }
 }
