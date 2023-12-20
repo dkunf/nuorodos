@@ -1,3 +1,67 @@
 @import "../components/page-settings";
 @import "../components/navbar";
 @import "../components/footer";
+
+body {
+  background-color: #f9f9f9;
+}
+
+.hat {
+  height: 18.5rem;
+  background-image: url("../pics/neris.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  h1 {
+    color: #fff;
+    font-family: Plus Jakarta Sans;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-left: calc((100% - $container-width) / 2);
+  }
+}
+main {
+  background-color: #fff;
+  width: $container-width;
+  margin: 0 auto;
+  padding: 5rem;
+  margin: 3.5rem auto;
+  .wrap-cite {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 2rem;
+    @media screen and (max-width: 931px) {
+      flex-wrap: wrap;
+    }
+    cite {
+      color: #333;
+      font-family: Plus Jakarta Sans;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 2rem;
+      flex: 1 2 auto;
+    }
+    cite::before {
+      display: block;
+      content: url("../pics/ri_double-quotes-r.svg");
+    }
+    .div-img {
+      display: block;
+      background-image: url("../pics/traveller-w-map.jpeg");
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      min-height: 100%;
+      flex: 1 1 auto;
+      @media screen and (max-width: 931px) {
+        height: 20rem;
+      }
+    }
+  }
+}
+.grey-bg {
+  background-color: #f9f9f9;
+  padding-bottom: 7rem;
+}

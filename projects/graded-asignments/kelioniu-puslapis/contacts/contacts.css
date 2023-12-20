@@ -6,12 +6,12 @@ html {
 body {
   font-size: 16px;
 }
-
 @media screen and (max-width: 950px) {
   body {
     font-size: 10px;
   }
 }
+
 nav {
   margin: 0 auto;
   width: 70%;
@@ -53,12 +53,16 @@ nav .burger-links {
     position: absolute;
     top: 5rem;
     right: 15%;
+    background-color: rgba(249, 249, 249, 0.8431372549);
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    z-index: 10;
   }
   nav .burger:hover .burger-links ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: end;
+    align-items: center;
     gap: 1rem;
   }
   nav .burger:hover .burger-links a {
@@ -144,7 +148,7 @@ footer .copyright {
   line-height: 1.3rem;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 931px) {
   footer .footer_top {
     justify-content: center;
   }

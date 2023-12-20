@@ -44,11 +44,16 @@ nav {
         position: absolute;
         top: 5rem;
         right: 15%;
+        background-color: #f9f9f9d7;
+        padding: 3rem 2rem;
+        border-radius: 1rem;
+        z-index: 10;
+
         ul {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          align-items: end;
+          align-items: center;
           gap: 1rem;
         }
 

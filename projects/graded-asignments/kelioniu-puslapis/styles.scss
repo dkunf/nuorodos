@@ -73,6 +73,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 950px) {
+    height: auto;
+  }
   .decor-2 {
     position: absolute;
     top: 0;

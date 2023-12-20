@@ -23,9 +23,6 @@ function render(arr) {
 
   arr[arr.length - 2].classList = "";
   arr[arr.length - 2].classList.add("right-pic");
-
-  arr[arr.length - 3].classList = "";
-  arr[arr.length - 3].classList.add("under-pic");
 }
 
 function animateLeftMove(arr) {
@@ -38,7 +35,9 @@ function animateLeftMove(arr) {
 function animateRightMove(arr) {
   arr[arr.length - 1].classList.add("move-right");
 
-  arr[arr.length - 2].classList.add("make-fade");
+  arr[arr.length - 2].classList.add("make-right-move-from-right");
+
+  arr[0].classList.add("make-appear");
 
   //actually it's not same as going left, but it's ok
 }
