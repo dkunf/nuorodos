@@ -7,6 +7,11 @@ body {
   font-size: 16px;
 }
 
+@media screen and (max-width: 950px) {
+  body {
+    font-size: 10px;
+  }
+}
 nav {
   margin: 0 auto;
   width: 70%;
@@ -91,7 +96,7 @@ footer .footer_top .footer_top_left .footer_top_left_down {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
 }
 footer .footer_top .footer_top_left .footer_top_left_down svg {
@@ -104,7 +109,7 @@ footer .footer_top .footer_top_right {
   display: flex;
   color: #dcf2ed;
   gap: 5rem;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.5rem;
 }
@@ -126,7 +131,7 @@ footer .footer_top .footer_top_right .footer_top_kontaktai {
 }
 footer .footer_top .footer_top_right h3 {
   color: white;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
 }
 footer .copyright {
@@ -134,7 +139,7 @@ footer .copyright {
   color: #dcf2ed;
   text-align: center;
   border-top: 1px dotted #dcf2ed;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.3rem;
 }
