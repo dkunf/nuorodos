@@ -47,25 +47,28 @@ nav .burger-links {
   nav .nav-links {
     display: none;
   }
-  nav .burger:hover .burger-links {
+  nav .burger:hover .burger-links,
+  nav .burger-links:hover .burger-links {
     display: block;
     height: 8rem;
     position: absolute;
-    top: 5rem;
-    right: 15%;
+    top: 0;
+    right: 0;
     background-color: rgba(249, 249, 249, 0.8431372549);
-    padding: 3rem 2rem;
+    padding: 5rem 2rem;
     border-radius: 1rem;
     z-index: 10;
   }
-  nav .burger:hover .burger-links ul {
+  nav .burger:hover .burger-links ul,
+  nav .burger-links:hover .burger-links ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
   }
-  nav .burger:hover .burger-links a {
+  nav .burger:hover .burger-links a,
+  nav .burger-links:hover .burger-links a {
     text-decoration: none;
     color: #1b6bed;
     font-weight: 600;
