@@ -195,6 +195,7 @@ main {
   margin: 0 auto;
   padding: 5rem;
   margin: 3.5rem auto;
+  box-shadow: 0px 0px 20px 0px rgba(122, 116, 116, 0.1);
 }
 main .wrap-cite {
   display: flex;
@@ -227,11 +228,17 @@ main .wrap-cite .div-img {
   width: 100%;
   min-height: 100%;
   flex: 1 1 auto;
+  position: relative;
 }
 @media screen and (max-width: 931px) {
   main .wrap-cite .div-img {
     height: 20rem;
   }
+}
+main .wrap-cite .div-img .deco-apie {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .grey-bg {

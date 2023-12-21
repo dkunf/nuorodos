@@ -43,7 +43,9 @@ header {
   position: relative;
   top: -184px;
   margin-left: calc(100vw - 640px);
-  z-index: -1;
+  @media screen and (max-width: 950px) {
+    z-index: -1;
+  }
 }
 
 .container {

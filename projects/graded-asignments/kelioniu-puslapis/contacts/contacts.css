@@ -168,4 +168,149 @@ footer .copyright {
   footer .footer_top .footer_top_left .footer_top_left_down {
     align-items: center;
   }
+}
+body {
+  background-color: #f9f9f9;
+}
+
+.hat {
+  height: 18.5rem;
+  background-image: url("../pics/maze.jpeg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+.hat h1 {
+  color: #fff;
+  font-family: Plus Jakarta Sans;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-left: 15%;
+}
+
+main {
+  background: #f9f9f9;
+  width: 70%;
+  margin: 3.5rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+main .contact-box {
+  background-color: white;
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  box-shadow: 0px 0px 20px 0px rgba(122, 116, 116, 0.1);
+  padding: 3.6rem 1rem 0 1rem;
+}
+main .contact-box .kontaktai,
+main .contact-box .rekvizitai {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+main .contact-box .kontaktai h2,
+main .contact-box .rekvizitai h2 {
+  color: #262020;
+  font-family: Plus Jakarta Sans;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 130%; /* 39px */
+}
+main .contact-box .kontaktai .category-box,
+main .contact-box .rekvizitai .category-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main .contact-box .kontaktai .category-box .prop,
+main .contact-box .rekvizitai .category-box .prop {
+  color: #262020;
+  font-family: Plus Jakarta Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+main .contact-box .kontaktai .category-box .prop::before,
+main .contact-box .rekvizitai .category-box .prop::before {
+  content: "- ";
+}
+main .contact-box .kontaktai .category-box .value,
+main .contact-box .rekvizitai .category-box .value {
+  color: #1f59ee;
+  font-family: Plus Jakarta Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+  display: flex;
+  align-items: center;
+}
+main .contact-box .kontaktai .category-box .value svg,
+main .contact-box .rekvizitai .category-box .value svg {
+  width: 24px;
+  height: 24px;
+}
+main .contact-box .map {
+  width: 100%;
+  height: 20rem;
+  background-image: url("../pics/contacts-map.png");
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0px 0px 20px 0px rgba(122, 116, 116, 0.1);
+}
+main .forma {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0px 0px 20px 0px rgba(122, 116, 116, 0.1);
+  padding: 3.6rem 3.125rem;
+}
+main .forma h2 {
+  color: #262020;
+  font-family: Plus Jakarta Sans;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 130%; /* 39px */
+  margin-bottom: 0.5rem;
+}
+main .forma label {
+  color: #262020;
+  font-family: Plus Jakarta Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem; /* 16px */
+  letter-spacing: -0.24px;
+}
+main .forma input {
+  border-radius: 6px;
+  border: 0.5px solid #999;
+  background: #fff;
+  height: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+main .forma textarea {
+  border-radius: 6px;
+  border: 0.5px solid #999;
+  background: #fff;
+  height: 8.875rem;
+}
+main .forma button {
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  border: none;
+  background: linear-gradient(180deg, #00d4e4 -40.5%, #1f59ee 97.28%);
+  color: #fff;
+  font-family: Plus Jakarta Sans;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: -moz-fit-content;
+  width: fit-content;
 }/*# sourceMappingURL=contacts.css.map */
