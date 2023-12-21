@@ -1,0 +1,20 @@
+    <svg
+                width="77"
+                height="11"
+                viewBox="0 0 77 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M75.5176 5.85742L0.971566 5.85742"
+                  stroke="#666666"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M17.2783 10.4409L0.971378 5.85741L17.2783 1.27389"
+                  stroke="#666666"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>

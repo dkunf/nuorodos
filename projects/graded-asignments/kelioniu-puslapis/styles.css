@@ -13,12 +13,12 @@ body {
 }
 
 nav {
-  margin: 0 auto;
-  width: 70%;
-  height: 4.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
+  width: 70%;
+  height: 4.4rem;
   box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
 }
 nav .nav-links {
@@ -53,10 +53,10 @@ nav .burger-links {
   nav .burger:hover .burger-links,
   nav .burger-links:hover .burger-links {
     display: block;
-    height: 8rem;
     position: absolute;
     top: 0;
     right: 0;
+    height: 8rem;
     background: linear-gradient(rgba(249, 249, 249, 0.8078431373), white);
     padding: 5rem 2rem;
     border-radius: 1rem;
@@ -143,7 +143,7 @@ nav .burger-links {
 }
 .slider-card .slider-card_text-box .about-object .place-marker {
   width: 14px;
-  height: 17.769px;
+  height: 18px;
 }
 .slider-card .slider-card_text-box .about-object .place-name {
   color: #666;
@@ -163,11 +163,6 @@ nav .burger-links {
   overflow-y: scroll;
 }
 @media screen and (max-width: 1350px) {
-  .slider-card .slider-card_text-box .about-object .description {
-    height: 5rem;
-  }
-}
-@media screen and (max-width: 770px) {
   .slider-card .slider-card_text-box .about-object .description {
     height: 5rem;
   }
@@ -205,7 +200,8 @@ nav .burger-links {
 }
 .slider-card .slider-card_text-box .btn-section .btn-wrap .more-btn:hover {
   cursor: pointer;
-  background: linear-gradient(#00d4e4, white);
+  background: linear-gradient(#0c3d99, #00d4e4);
+  color: white;
 }
 @media screen and (max-width: 1350px) {
   .slider-card .slider-card_text-box .btn-section .btn-wrap .more-btn {
@@ -223,14 +219,15 @@ nav .burger-links {
 }
 .slider-card .slider-card_text-box .btn-section .btn-wrap .map-btn:hover {
   cursor: pointer;
-  background: linear-gradient(#00d4e4, white);
+  background: linear-gradient(#0c3d99, #00d4e4);
+  color: white;
 }
 @media screen and (max-width: 1350px) {
   .slider-card .slider-card_text-box .btn-section .btn-wrap .map-btn {
     padding: 0.5rem 1rem;
   }
 }
-.slider-card .slider-card_text-box .btn-section .btn-wrap .map-btn svg {
+.slider-card .slider-card_text-box .btn-section .btn-wrap .map-btn .place-marker-in-btn {
   padding: 1px;
 }
 .slider-card .slider {
@@ -749,7 +746,6 @@ header .statements-box button:hover {
   font-weight: 700;
 }
 .container-full-w .rekomendacijos .thumbs {
-  width: 100%;
   row-gap: 4rem;
   -moz-column-gap: 2.4rem;
        column-gap: 2.4rem;
@@ -818,7 +814,8 @@ header .statements-box button:hover {
 }
 .container-full-w .rekomendacijos .thumbs .img-w-caption .overlay-w-btns .btn-wrap .more-btn:hover {
   cursor: pointer;
-  background: linear-gradient(#014449, rgb(31, 23, 183));
+  background: linear-gradient(#0c3d99, rgb(31, 23, 183));
+  border: none;
 }
 .container-full-w .rekomendacijos .thumbs .img-w-caption .overlay-w-btns .btn-wrap .map-btn {
   padding: 1rem 2rem;
@@ -831,13 +828,13 @@ header .statements-box button:hover {
 }
 .container-full-w .rekomendacijos .thumbs .img-w-caption .overlay-w-btns .btn-wrap .map-btn:hover {
   cursor: pointer;
-  background: linear-gradient(#014449, rgb(31, 23, 183));
+  background: linear-gradient(#0c3d99, rgb(31, 23, 183));
+  border: none;
 }
-.container-full-w .rekomendacijos .thumbs .img-w-caption .overlay-w-btns .btn-wrap .map-btn svg {
+.container-full-w .rekomendacijos .thumbs .img-w-caption .overlay-w-btns .btn-wrap .map-btn .place-marker-2 {
+  height: 21px;
+  width: 17px;
   padding: 0 0.5rem;
-}
-.container-full-w .rekomendacijos .thumbs .img-w-caption .overlay-w-btns .btn-wrap .map-btn svg path {
-  fill: white;
 }
 .container-full-w .rekomendacijos .deco-rekomend-bottom {
   position: absolute;

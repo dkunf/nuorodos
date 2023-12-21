@@ -13,12 +13,12 @@ body {
 }
 
 nav {
-  margin: 0 auto;
-  width: 70%;
-  height: 4.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
+  width: 70%;
+  height: 4.4rem;
   box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
 }
 nav .nav-links {
@@ -53,10 +53,10 @@ nav .burger-links {
   nav .burger:hover .burger-links,
   nav .burger-links:hover .burger-links {
     display: block;
-    height: 8rem;
     position: absolute;
     top: 0;
     right: 0;
+    height: 8rem;
     background: linear-gradient(rgba(249, 249, 249, 0.8078431373), white);
     padding: 5rem 2rem;
     border-radius: 1rem;

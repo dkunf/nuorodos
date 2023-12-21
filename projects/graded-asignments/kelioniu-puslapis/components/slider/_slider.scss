@@ -1,18 +1,15 @@
+// ==============================================
+// ============SLIDER CONTAINER==================
+// ==============================================
+
 .slider-card {
   position: relative;
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  // align-items: center;
   min-height: $slider-pic-height;
   width: 100%;
-  // height: 634px;
   padding: 3rem 0;
-  // border: 2px solid grey;
   box-shadow: 0px 0px 20px rgba(122, 116, 116, 0.1);
-  // background-color: white;
   background: linear-gradient(
     to right,
     white 0%,
@@ -24,7 +21,6 @@
     padding: 3rem 0;
     width: 90vw;
     left: -10vw;
-    // padding: 5rem 0;
     background: linear-gradient(
       to right,
       white 0%,
@@ -37,15 +33,16 @@
     width: 98%;
     left: 0;
   }
+  // ==============================================
+  // ============TEXT OF SLIDER CARD===============
+  // ==============================================
+
   .slider-card_text-box {
     margin: 0 auto;
     padding: 0 0.625rem 0 4.625rem;
-    // height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    // border: 10px solid red;
-    // width: calc(100% + 50px);
 
     @media screen and (max-width: 1350px) {
       grid-column: span 2;
@@ -75,12 +72,10 @@
         font-weight: 500;
         line-height: 136.188%; /* 32.685px */
         text-transform: capitalize;
-        // margin-bottom: 1rem;
       }
-      // does it wrk?
       .place-marker {
         width: 14px;
-        height: 17.769px;
+        height: 18px;
       }
       .place-name {
         color: #666;
@@ -101,11 +96,13 @@
         @media screen and (max-width: 1350px) {
           height: 5rem;
         }
-        @media screen and (max-width: 770px) {
-          height: 5rem;
-        }
       }
     }
+
+    // ==============================================
+    // ============BUTTONS OF SLIDER CARD============
+    // ==============================================
+
     .btn-section {
       @media screen and (max-width: 1350px) {
         position: absolute;
@@ -134,7 +131,8 @@
           color: #1f59ee;
           &:hover {
             cursor: pointer;
-            background: linear-gradient(#00d4e4, white);
+            background: linear-gradient(#0c3d99, #00d4e4);
+            color: white;
           }
           @media screen and (max-width: 1350px) {
             padding: 0.5rem 1rem;
@@ -150,13 +148,13 @@
           align-items: center;
           &:hover {
             cursor: pointer;
-
-            background: linear-gradient(#00d4e4, white);
+            background: linear-gradient(#0c3d99, #00d4e4);
+            color: white;
           }
           @media screen and (max-width: 1350px) {
             padding: 0.5rem 1rem;
           }
-          svg {
+          .place-marker-in-btn {
             padding: 1px;
           }
         }
@@ -164,18 +162,14 @@
     }
   }
 
+  // ==============================================
+  // =============MOVING PICS SECTION==============
+  // ==============================================
+
   .slider {
     position: relative;
     justify-self: start;
     width: 110%;
-    // border: 5px solid blue;
-    // right: -50px;
-    // bottom: 50px;
-    // top: -20px;
-    // border: 1px solid #777;
-    // width: 710px;
-    // height: $slider-pic-height;
-    // background-color: white;
     z-index: 4;
 
     @media screen and (max-width: 1350px) {
@@ -188,11 +182,8 @@
     .left-pic {
       display: inline-block;
       position: absolute;
-      // left: 0;
       left: 0;
       top: 0;
-      // height: $slider-pic-height;
-      // width: $slider-pic-width;
       width: 45%;
       min-width: 300px;
       height: 100%;
@@ -210,11 +201,8 @@
     .right-pic {
       display: inline-block;
       position: absolute;
-      // left: calc($slider-pic-width + 70px);
       top: 0;
       right: 0;
-      // height: $slider-pic-height;
-      // width: $slider-pic-width;
       width: 45%;
       min-width: 300px;
       height: 100%;
@@ -261,18 +249,15 @@
         z-index: -3;
       }
     }
+    // ------------------------------------
+    // ====================================
+    //   ----------------------------------
     // ==============================================
+    // =========ANIMATION DESCRIPTIONS===============
     // ==============================================
-    // ==============================================
-    //
-    //     A
-    //    A A
-    //   A   A
-    //  A     A
-    //  AAAAAAAAAAAAAAAAAAAAAAA
-    //  A     A
-    //  A     A
-    //  A     ANIMATIONS:
+    // ------------------------------------
+    // ====================================
+    //   ----------------------------------
 
     @keyframes fading {
       from {
@@ -289,10 +274,9 @@
       animation-timing-function: linear;
     }
 
-    // ------------------------------------------
-    // ==============================================
-
-    //   ---------------------------------
+    // ------------------------------------
+    // ====================================
+    //   ----------------------------------
     @keyframes appearance {
       0% {
         opacity: 0;
@@ -309,16 +293,13 @@
       animation-duration: 1s;
       animation-fill-mode: forwards;
     }
-    // ---------------------------------------
-    // ==============================================
-
-    // -----------------------------------------
+    // ------------------------------------
+    // ====================================
+    //   ----------------------------------
     @keyframes moving-left {
       0% {
         opacity: 0.4;
         right: 0;
-        // transform: rotate(-2deg);
-
         background-image: url("./pics/lt-veliava.jpeg");
         background-size: cover;
         padding-right: 5px;
@@ -345,10 +326,9 @@
       animation-timing-function: linear;
     }
 
-    // -------------------------------------------
-    // ==============================================
-
-    // --------------------------------------------
+    // ------------------------------------
+    // ====================================
+    //   ----------------------------------
     @keyframes moving-left-from-0 {
       0% {
         left: 0;
@@ -367,22 +347,18 @@
       animation-fill-mode: forwards;
       animation-timing-function: linear;
     }
-    //   ------------------------------------------
-    // ==============================================
-    //   -----------------------------------------
+    // ------------------------------------
+    // ====================================
+    //   ----------------------------------
     @keyframes zero-to-right {
       0% {
         opacity: 1;
-        // left: 0;
-        // transform: rotate(2deg);
-
         background-image: url("./pics/lt-veliava.jpeg");
         background-size: cover;
         padding-left: 5px;
       }
       8% {
         opacity: 0.7;
-        // right: 30%;
         transform: translate(70%);
 
         padding-left: 5px;
@@ -392,7 +368,6 @@
       }
       100% {
         opacity: 0.5;
-        // right: 0;
         transform: translate(100%);
         padding-left: 0;
       }
@@ -404,10 +379,9 @@
       animation-fill-mode: forwards;
       animation-timing-function: linear;
     }
-    // ---------------------------------------
-    // ==============================================
-
-    // -----------------------------------------
+    // ------------------------------------
+    // ====================================
+    //   ----------------------------------
 
     @keyframes moving-right-from-right {
       0% {
@@ -427,12 +401,8 @@
       animation-fill-mode: forwards;
       animation-timing-function: linear;
     }
-    // ---------------------------------------
-    // ==============================================
-
-    // -----------------------------------------
-    //--------------------------------------
-    //------------------------------------------
-    //   ----------------------------------------
+    // ------------------------------------
+    // ====================================
+    //   ----------------------------------
   }
 }

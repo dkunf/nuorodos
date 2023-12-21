@@ -1,5 +1,7 @@
-// this is our fifo stack for all img.
-// we change stack, animate the change, then render it on screen
+//this script listens to left/right arrow click and slides pics by adding and removing classes.
+
+// Model is our fifo stack for all img. Img have #id and this id are same as card data in our db
+// we change stack, animate the change, then render it on screen - following mvc pattern
 //styles are in slider.scss, html need to have div.slider with at least 3 img.reserve-pic inside
 
 //because Nodelist has no shift and unshift methods
@@ -19,7 +21,7 @@ function render(arr) {
     element.classList = "reserve-pic";
   });
 
-  //apply classes to last 3 img (why not first 3, idiot?)
+  //apply classes to last 2 img
   arr[arr.length - 1].classList = "";
   arr[arr.length - 1].classList.add("left-pic");
 
@@ -42,8 +44,6 @@ function animateRightMove(arr) {
   arr[arr.length - 2].classList.add("make-right-move-from-right");
 
   arr[0].classList.add("make-appear");
-
-  //actually it's not same as going left, but it's ok
 }
 
 function moveLeftHandler() {
@@ -77,9 +77,9 @@ function showProperCard(id) {
 }
 
 function getObjData(id) {
-  //here we add data for all objects
+  //here we add text for all our cards of places, kind of db :)
   placeData = {
-    //name should same as id of image of slider
+    //placeData.id=value   ----------    this is same value as <img id="value"/>
     // fallBack is in case we cannot  find such id of image
 
     fallBack: {
@@ -110,6 +110,7 @@ function getObjData(id) {
         "Merkinės piramidė - vienas lankomiausių Dzūkijos objektų, kuriame atvykstančių skaičius vis auga. Žinia apie ypatingas lankytojų patirtis bei čia vykstančius sveikatos stebuklus sklinda toli už Lietuvos ribų.",
     },
 
+    //see how fallback wrks
     // gedimino:{
     //   name:
     //   location:

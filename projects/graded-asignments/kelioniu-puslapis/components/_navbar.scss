@@ -1,12 +1,12 @@
 @import "../variables";
 
 nav {
-  margin: 0 auto;
-  width: $container-width;
-  height: 4.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
+  width: $container-width;
+  height: 4.4rem;
   box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
   .nav-links {
     display: flex;
@@ -44,10 +44,10 @@ nav {
     .burger-links:hover {
       .burger-links {
         display: block;
-        height: 8rem;
         position: absolute;
         top: 0;
         right: 0;
+        height: 8rem;
         background: linear-gradient(#f9f9f9ce, white);
         padding: 5rem 2rem;
         border-radius: 1rem;
