@@ -30,6 +30,9 @@ nav .nav-links a {
   color: #1b6bed;
   font-weight: 600;
 }
+nav .nav-links a:hover {
+  color: #073580;
+}
 nav img {
   height: 15px;
 }
@@ -111,6 +114,10 @@ footer .footer_top .footer_top_left .footer_top_left_down svg {
   border-radius: 100%;
   padding: 7px;
   height: 24px;
+}
+footer .footer_top .footer_top_left .footer_top_left_down svg:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 footer .footer_top .footer_top_right {
   display: flex;

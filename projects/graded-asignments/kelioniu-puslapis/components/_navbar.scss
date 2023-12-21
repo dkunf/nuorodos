@@ -16,6 +16,9 @@ nav {
       text-decoration: none;
       color: #1b6bed;
       font-weight: 600;
+      &:hover {
+        color: #073580;
+      }
     }
   }
   img {

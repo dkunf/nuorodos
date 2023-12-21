@@ -32,6 +32,10 @@ footer {
           border-radius: 100%;
           padding: 7px;
           height: 24px;
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+          }
         }
       }
     }

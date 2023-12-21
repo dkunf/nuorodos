@@ -36,6 +36,10 @@ header {
       background: linear-gradient(180deg, #00d4e4 -40.5%, #1f59ee 97.28%);
       border: none;
       color: white;
+      &:hover {
+        cursor: pointer;
+        background: linear-gradient(180deg, #19c8d4 -40.5%, #355ec4 97.28%);
+      }
     }
   }
 }
@@ -212,6 +216,8 @@ header {
         width: 282px;
         position: relative;
         &:hover .overlay-w-btns {
+          cursor: pointer;
+
           display: flex;
         }
 
@@ -266,6 +272,11 @@ header {
               border: transparent;
               background-color: #1f59ee;
               color: white;
+
+              &:hover {
+                cursor: pointer;
+                background: linear-gradient(#014449, rgb(31, 23, 183));
+              }
             }
             .map-btn {
               padding: 1rem 2rem;
@@ -275,7 +286,10 @@ header {
               color: white;
               display: flex;
               align-items: center;
-
+              &:hover {
+                cursor: pointer;
+                background: linear-gradient(#014449, rgb(31, 23, 183));
+              }
               svg {
                 padding: 0 0.5rem;
 

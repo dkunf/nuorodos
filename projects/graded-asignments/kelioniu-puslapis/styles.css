@@ -30,6 +30,9 @@ nav .nav-links a {
   color: #1b6bed;
   font-weight: 600;
 }
+nav .nav-links a:hover {
+  color: #073580;
+}
 nav img {
   height: 15px;
 }
@@ -201,6 +204,7 @@ nav .burger-links {
   color: #1f59ee;
 }
 .slider-card .slider-card_text-box .btn-section .btn-wrap .more-btn:hover {
+  cursor: pointer;
   background: linear-gradient(#00d4e4, white);
 }
 @media screen and (max-width: 1350px) {
@@ -218,6 +222,7 @@ nav .burger-links {
   align-items: center;
 }
 .slider-card .slider-card_text-box .btn-section .btn-wrap .map-btn:hover {
+  cursor: pointer;
   background: linear-gradient(#00d4e4, white);
 }
 @media screen and (max-width: 1350px) {
@@ -476,6 +481,10 @@ footer .footer_top .footer_top_left .footer_top_left_down svg {
   padding: 7px;
   height: 24px;
 }
+footer .footer_top .footer_top_left .footer_top_left_down svg:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
 footer .footer_top .footer_top_right {
   display: flex;
   color: #dcf2ed;
@@ -569,6 +578,10 @@ header .statements-box button {
   background: linear-gradient(180deg, #00d4e4 -40.5%, #1f59ee 97.28%);
   border: none;
   color: white;
+}
+header .statements-box button:hover {
+  cursor: pointer;
+  background: linear-gradient(180deg, #19c8d4 -40.5%, #355ec4 97.28%);
 }
 
 .decor-top {
@@ -750,6 +763,7 @@ header .statements-box button {
   position: relative;
 }
 .container-full-w .rekomendacijos .thumbs .img-w-caption:hover .overlay-w-btns {
+  cursor: pointer;
   display: flex;
 }
 .container-full-w .rekomendacijos .thumbs .img-w-caption img {
@@ -802,6 +816,10 @@ header .statements-box button {
   background-color: #1f59ee;
   color: white;
 }
+.container-full-w .rekomendacijos .thumbs .img-w-caption .overlay-w-btns .btn-wrap .more-btn:hover {
+  cursor: pointer;
+  background: linear-gradient(#014449, rgb(31, 23, 183));
+}
 .container-full-w .rekomendacijos .thumbs .img-w-caption .overlay-w-btns .btn-wrap .map-btn {
   padding: 1rem 2rem;
   border-radius: 1.5rem;
@@ -810,6 +828,10 @@ header .statements-box button {
   color: white;
   display: flex;
   align-items: center;
+}
+.container-full-w .rekomendacijos .thumbs .img-w-caption .overlay-w-btns .btn-wrap .map-btn:hover {
+  cursor: pointer;
+  background: linear-gradient(#014449, rgb(31, 23, 183));
 }
 .container-full-w .rekomendacijos .thumbs .img-w-caption .overlay-w-btns .btn-wrap .map-btn svg {
   padding: 0 0.5rem;
