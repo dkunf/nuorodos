@@ -54,7 +54,7 @@ nav .burger-links {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: rgba(249, 249, 249, 0.8431372549);
+    background: linear-gradient(rgba(249, 249, 249, 0.8078431373), white);
     padding: 5rem 2rem;
     border-radius: 1rem;
     z-index: 10;

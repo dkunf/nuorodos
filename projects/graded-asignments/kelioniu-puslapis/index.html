@@ -74,7 +74,7 @@
       </svg>
 
       <main class="container">
-        <cite id="cia">
+        <cite>
           Lankytinos vietos dažnai palieka mums nuostabių ir džiaugsmingų
           prisiminimų. Aplink po visą Lietuvą galima pamatyti daugybe pažintinių
           takų, regioninių parkų. Lietuva dažnai pasižymi savo nuostabiais
@@ -87,9 +87,9 @@
         <div class="slider-card">
           <div class="slider-card_text-box">
             <span class="category">YPATINGOS Lietuvos VIETOS </span>
-
+            <!-- .about-object   and   .reserve-pic should be in same order to match -->
             <div class="about-object">
-              <h3>Užutrakio dvaras</h3>
+              <h3 id="attraction-name">Užutrakio dvaras</h3>
               <svg
                 class="place-marker"
                 width="14"
@@ -104,8 +104,8 @@
                   stroke-width="1.26923"
                 />
               </svg>
-              <span class="place-name">Trakai</span>
-              <p class="description">
+              <span class="place-name" id="attraction-place">Trakai</span>
+              <p class="description" id="attraction-description">
                 Užutrakio dvaras - dvaras, stovintis prie Galvės ežero,
                 Užutrakyje (Trakai). Kraštovaizdžio architektūros draustinis
                 (nuo 1993 m.).
@@ -151,14 +151,30 @@
           <!-- SLIDER  START-->
           <!-- usage: list all img with class reserve-pic, min: 3 img -->
           <div class="slider">
-            <img class="reserve-pic" src="./pics/dome-thumb.jpeg" alt="" />
-            <img class="reserve-pic" src="./pics/gedimino-thumb.jpeg" alt="" />
+            <img
+              class="reserve-pic"
+              src="./pics/uzutrakio.png"
+              alt=""
+              id="uzutrakio"
+            />
+            <img
+              class="reserve-pic"
+              src="./pics/dome-thumb.jpeg"
+              alt=""
+              id="dome"
+            />
+            <img
+              class="reserve-pic"
+              src="./pics/gedimino-thumb.jpeg"
+              alt=""
+              id="gedimino"
+            />
             <img
               class="reserve-pic"
               src="./pics/kryzkalnis-thumb.jpeg"
               alt=""
+              id="kryzkalnis"
             />
-            <img class="reserve-pic" src="./pics/uzutrakio.png" alt="" />
             <div id="left-control" class="left-control">
               <svg
                 width="77"
@@ -320,34 +336,322 @@
           <div class="img-w-caption">
             <img src="./pics/uzutrakio.png" alt="" />
             <h3>Užutrakio dvaras</h3>
+            <div class="overlay-w-btns">
+              <div class="btn-wrap">
+                <button class="more-btn">daugiau apie objektą</button>
+              </div>
+              <div class="btn-wrap">
+                <button class="map-btn">
+                  <svg
+                    width="17"
+                    height="21"
+                    viewBox="0 0 17 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.1347 8.12081V8.118C1.1347 3.98579 4.44838 0.634615 8.5 0.634615C12.5514 0.634615 15.8653 3.98553 15.8653 8.12308L15.8653 8.12589C15.8787 11.1505 14.0155 14.0445 12.0389 16.2433C11.0619 17.33 10.0821 18.2195 9.34606 18.8373C8.99954 19.1282 8.70811 19.358 8.49787 19.5189C7.81528 19.0044 6.31929 17.8096 4.8486 16.1621C2.91451 13.9954 1.12125 11.1532 1.1347 8.12081ZM3.86543 8.12308C3.86543 10.7084 5.93043 12.8192 8.5 12.8192C11.0696 12.8192 13.1346 10.7084 13.1346 8.12308C13.1346 5.53777 11.0696 3.42692 8.5 3.42692C5.93043 3.42692 3.86543 5.53777 3.86543 8.12308Z"
+                      stroke="url(#paint0_linear_895_26)"
+                      stroke-width="1.26923"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_895_26"
+                        x1="8.56425"
+                        y1="-8.22469"
+                        x2="8.56425"
+                        y2="27.5899"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#00D4E4" />
+                        <stop offset="0.78125" stop-color="#1F59EE" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  žemėlapis
+                </button>
+              </div>
+            </div>
           </div>
           <div class="img-w-caption">
             <img src="./pics/ventes-ragas.jpeg" alt="" />
             <h3>Ventės ragas</h3>
+            <div class="overlay-w-btns">
+              <div class="btn-wrap">
+                <button class="more-btn">daugiau apie objektą</button>
+              </div>
+              <div class="btn-wrap">
+                <button class="map-btn">
+                  <svg
+                    width="17"
+                    height="21"
+                    viewBox="0 0 17 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.1347 8.12081V8.118C1.1347 3.98579 4.44838 0.634615 8.5 0.634615C12.5514 0.634615 15.8653 3.98553 15.8653 8.12308L15.8653 8.12589C15.8787 11.1505 14.0155 14.0445 12.0389 16.2433C11.0619 17.33 10.0821 18.2195 9.34606 18.8373C8.99954 19.1282 8.70811 19.358 8.49787 19.5189C7.81528 19.0044 6.31929 17.8096 4.8486 16.1621C2.91451 13.9954 1.12125 11.1532 1.1347 8.12081ZM3.86543 8.12308C3.86543 10.7084 5.93043 12.8192 8.5 12.8192C11.0696 12.8192 13.1346 10.7084 13.1346 8.12308C13.1346 5.53777 11.0696 3.42692 8.5 3.42692C5.93043 3.42692 3.86543 5.53777 3.86543 8.12308Z"
+                      stroke="url(#paint0_linear_895_26)"
+                      stroke-width="1.26923"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_895_26"
+                        x1="8.56425"
+                        y1="-8.22469"
+                        x2="8.56425"
+                        y2="27.5899"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#00D4E4" />
+                        <stop offset="0.78125" stop-color="#1F59EE" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  žemėlapis
+                </button>
+              </div>
+            </div>
           </div>
           <div class="img-w-caption">
             <img src="./pics/velnio-akmuo.jpeg" alt="" />
             <h3>Velnio akmuo</h3>
+            <div class="overlay-w-btns">
+              <div class="btn-wrap">
+                <button class="more-btn">daugiau apie objektą</button>
+              </div>
+              <div class="btn-wrap">
+                <button class="map-btn">
+                  <svg
+                    width="17"
+                    height="21"
+                    viewBox="0 0 17 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.1347 8.12081V8.118C1.1347 3.98579 4.44838 0.634615 8.5 0.634615C12.5514 0.634615 15.8653 3.98553 15.8653 8.12308L15.8653 8.12589C15.8787 11.1505 14.0155 14.0445 12.0389 16.2433C11.0619 17.33 10.0821 18.2195 9.34606 18.8373C8.99954 19.1282 8.70811 19.358 8.49787 19.5189C7.81528 19.0044 6.31929 17.8096 4.8486 16.1621C2.91451 13.9954 1.12125 11.1532 1.1347 8.12081ZM3.86543 8.12308C3.86543 10.7084 5.93043 12.8192 8.5 12.8192C11.0696 12.8192 13.1346 10.7084 13.1346 8.12308C13.1346 5.53777 11.0696 3.42692 8.5 3.42692C5.93043 3.42692 3.86543 5.53777 3.86543 8.12308Z"
+                      stroke="url(#paint0_linear_895_26)"
+                      stroke-width="1.26923"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_895_26"
+                        x1="8.56425"
+                        y1="-8.22469"
+                        x2="8.56425"
+                        y2="27.5899"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#00D4E4" />
+                        <stop offset="0.78125" stop-color="#1F59EE" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  žemėlapis
+                </button>
+              </div>
+            </div>
           </div>
           <div class="img-w-caption">
             <img src="./pics/gedimino-pilis.jpeg" alt="" />
             <h3>gedimino pilis</h3>
+            <div class="overlay-w-btns">
+              <div class="btn-wrap">
+                <button class="more-btn">daugiau apie objektą</button>
+              </div>
+              <div class="btn-wrap">
+                <button class="map-btn">
+                  <svg
+                    width="17"
+                    height="21"
+                    viewBox="0 0 17 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.1347 8.12081V8.118C1.1347 3.98579 4.44838 0.634615 8.5 0.634615C12.5514 0.634615 15.8653 3.98553 15.8653 8.12308L15.8653 8.12589C15.8787 11.1505 14.0155 14.0445 12.0389 16.2433C11.0619 17.33 10.0821 18.2195 9.34606 18.8373C8.99954 19.1282 8.70811 19.358 8.49787 19.5189C7.81528 19.0044 6.31929 17.8096 4.8486 16.1621C2.91451 13.9954 1.12125 11.1532 1.1347 8.12081ZM3.86543 8.12308C3.86543 10.7084 5.93043 12.8192 8.5 12.8192C11.0696 12.8192 13.1346 10.7084 13.1346 8.12308C13.1346 5.53777 11.0696 3.42692 8.5 3.42692C5.93043 3.42692 3.86543 5.53777 3.86543 8.12308Z"
+                      stroke="url(#paint0_linear_895_26)"
+                      stroke-width="1.26923"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_895_26"
+                        x1="8.56425"
+                        y1="-8.22469"
+                        x2="8.56425"
+                        y2="27.5899"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#00D4E4" />
+                        <stop offset="0.78125" stop-color="#1F59EE" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  žemėlapis
+                </button>
+              </div>
+            </div>
           </div>
           <div class="img-w-caption">
             <img src="./pics/kryziu-kalnas.jpeg" alt="" />
             <h3>Kryžių kalnas</h3>
+            <div class="overlay-w-btns">
+              <div class="btn-wrap">
+                <button class="more-btn">daugiau apie objektą</button>
+              </div>
+              <div class="btn-wrap">
+                <button class="map-btn">
+                  <svg
+                    width="17"
+                    height="21"
+                    viewBox="0 0 17 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.1347 8.12081V8.118C1.1347 3.98579 4.44838 0.634615 8.5 0.634615C12.5514 0.634615 15.8653 3.98553 15.8653 8.12308L15.8653 8.12589C15.8787 11.1505 14.0155 14.0445 12.0389 16.2433C11.0619 17.33 10.0821 18.2195 9.34606 18.8373C8.99954 19.1282 8.70811 19.358 8.49787 19.5189C7.81528 19.0044 6.31929 17.8096 4.8486 16.1621C2.91451 13.9954 1.12125 11.1532 1.1347 8.12081ZM3.86543 8.12308C3.86543 10.7084 5.93043 12.8192 8.5 12.8192C11.0696 12.8192 13.1346 10.7084 13.1346 8.12308C13.1346 5.53777 11.0696 3.42692 8.5 3.42692C5.93043 3.42692 3.86543 5.53777 3.86543 8.12308Z"
+                      stroke="url(#paint0_linear_895_26)"
+                      stroke-width="1.26923"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_895_26"
+                        x1="8.56425"
+                        y1="-8.22469"
+                        x2="8.56425"
+                        y2="27.5899"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#00D4E4" />
+                        <stop offset="0.78125" stop-color="#1F59EE" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  žemėlapis
+                </button>
+              </div>
+            </div>
           </div>
           <div class="img-w-caption">
             <img src="./pics/birstono-apzvalgos.jpeg" alt="" />
             <h3>Birštono apžvalgos bokštas</h3>
+            <div class="overlay-w-btns">
+              <div class="btn-wrap">
+                <button class="more-btn">daugiau apie objektą</button>
+              </div>
+              <div class="btn-wrap">
+                <button class="map-btn">
+                  <svg
+                    width="17"
+                    height="21"
+                    viewBox="0 0 17 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.1347 8.12081V8.118C1.1347 3.98579 4.44838 0.634615 8.5 0.634615C12.5514 0.634615 15.8653 3.98553 15.8653 8.12308L15.8653 8.12589C15.8787 11.1505 14.0155 14.0445 12.0389 16.2433C11.0619 17.33 10.0821 18.2195 9.34606 18.8373C8.99954 19.1282 8.70811 19.358 8.49787 19.5189C7.81528 19.0044 6.31929 17.8096 4.8486 16.1621C2.91451 13.9954 1.12125 11.1532 1.1347 8.12081ZM3.86543 8.12308C3.86543 10.7084 5.93043 12.8192 8.5 12.8192C11.0696 12.8192 13.1346 10.7084 13.1346 8.12308C13.1346 5.53777 11.0696 3.42692 8.5 3.42692C5.93043 3.42692 3.86543 5.53777 3.86543 8.12308Z"
+                      stroke="url(#paint0_linear_895_26)"
+                      stroke-width="1.26923"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_895_26"
+                        x1="8.56425"
+                        y1="-8.22469"
+                        x2="8.56425"
+                        y2="27.5899"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#00D4E4" />
+                        <stop offset="0.78125" stop-color="#1F59EE" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  žemėlapis
+                </button>
+              </div>
+            </div>
           </div>
           <div class="img-w-caption">
             <img src="./pics/merkines-piramide.jpeg" alt="" />
             <h3>Merkinės piramidė</h3>
+            <div class="overlay-w-btns">
+              <div class="btn-wrap">
+                <button class="more-btn">daugiau apie objektą</button>
+              </div>
+              <div class="btn-wrap">
+                <button class="map-btn">
+                  <svg
+                    width="17"
+                    height="21"
+                    viewBox="0 0 17 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.1347 8.12081V8.118C1.1347 3.98579 4.44838 0.634615 8.5 0.634615C12.5514 0.634615 15.8653 3.98553 15.8653 8.12308L15.8653 8.12589C15.8787 11.1505 14.0155 14.0445 12.0389 16.2433C11.0619 17.33 10.0821 18.2195 9.34606 18.8373C8.99954 19.1282 8.70811 19.358 8.49787 19.5189C7.81528 19.0044 6.31929 17.8096 4.8486 16.1621C2.91451 13.9954 1.12125 11.1532 1.1347 8.12081ZM3.86543 8.12308C3.86543 10.7084 5.93043 12.8192 8.5 12.8192C11.0696 12.8192 13.1346 10.7084 13.1346 8.12308C13.1346 5.53777 11.0696 3.42692 8.5 3.42692C5.93043 3.42692 3.86543 5.53777 3.86543 8.12308Z"
+                      stroke="url(#paint0_linear_895_26)"
+                      stroke-width="1.26923"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_895_26"
+                        x1="8.56425"
+                        y1="-8.22469"
+                        x2="8.56425"
+                        y2="27.5899"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#00D4E4" />
+                        <stop offset="0.78125" stop-color="#1F59EE" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  žemėlapis
+                </button>
+              </div>
+            </div>
           </div>
           <div class="img-w-caption">
             <img src="./pics/kabantis.jpeg" alt="" />
             <h3>Kabantis lynų tiltas</h3>
+            <div class="overlay-w-btns">
+              <div class="btn-wrap">
+                <button class="more-btn">daugiau apie objektą</button>
+              </div>
+              <div class="btn-wrap">
+                <button class="map-btn">
+                  <svg
+                    width="17"
+                    height="21"
+                    viewBox="0 0 17 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.1347 8.12081V8.118C1.1347 3.98579 4.44838 0.634615 8.5 0.634615C12.5514 0.634615 15.8653 3.98553 15.8653 8.12308L15.8653 8.12589C15.8787 11.1505 14.0155 14.0445 12.0389 16.2433C11.0619 17.33 10.0821 18.2195 9.34606 18.8373C8.99954 19.1282 8.70811 19.358 8.49787 19.5189C7.81528 19.0044 6.31929 17.8096 4.8486 16.1621C2.91451 13.9954 1.12125 11.1532 1.1347 8.12081ZM3.86543 8.12308C3.86543 10.7084 5.93043 12.8192 8.5 12.8192C11.0696 12.8192 13.1346 10.7084 13.1346 8.12308C13.1346 5.53777 11.0696 3.42692 8.5 3.42692C5.93043 3.42692 3.86543 5.53777 3.86543 8.12308Z"
+                      stroke="url(#paint0_linear_895_26)"
+                      stroke-width="1.26923"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_895_26"
+                        x1="8.56425"
+                        y1="-8.22469"
+                        x2="8.56425"
+                        y2="27.5899"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#00D4E4" />
+                        <stop offset="0.78125" stop-color="#1F59EE" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  žemėlapis
+                </button>
+              </div>
+            </div>
           </div>
         </div>
         <svg
