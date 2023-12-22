@@ -29,6 +29,18 @@ nav {
 #sandwich-menu {
   background-color: white;
   border: 0px;
+  &:hover .dropdown {
+    display: flex;
+  }
+}
+
+.dropdown {
+  padding: 10ch;
+  display: flex;
+  flex-direction: column;
+  gap: 2ch;
+  align-items: center;
+  display: none;
 }
 .banner {
   width: 100%;
@@ -72,11 +84,19 @@ nav {
   color: white;
   background-color: #eb5757;
   border: #eb5757;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
 }
 
 .view-btn {
   color: #eb5757;
   background-color: white;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
 }
 
 /* header finished */
@@ -212,6 +232,10 @@ section {
     color: white;
     background-color: #eb5757;
     border: #eb5757;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
   }
   .price {
     @include lato-700;
@@ -316,9 +340,12 @@ section {
       width: 100%;
     }
     button {
-      width: 12.75rem;
-      height: 2.6rem;
+      padding: 2ch 10ch;
       margin-left: 1rem;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
     }
     #text-area {
       width: calc(100% - 2rem);

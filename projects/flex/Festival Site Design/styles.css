@@ -21,6 +21,18 @@ nav {
   background-color: white;
   border: 0px;
 }
+#sandwich-menu:hover .dropdown {
+  display: flex;
+}
+
+.dropdown {
+  padding: 10ch;
+  display: flex;
+  flex-direction: column;
+  gap: 2ch;
+  align-items: center;
+  display: none;
+}
 
 .banner {
   width: 100%;
@@ -64,10 +76,18 @@ nav {
   background-color: #eb5757;
   border: #eb5757;
 }
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
 
 .view-btn {
   color: #eb5757;
   background-color: white;
+}
+.view-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 /* header finished */
@@ -206,6 +226,10 @@ section .section-main-part {
   background-color: #eb5757;
   border: #eb5757;
 }
+.a-ticket-box .btn-ticket:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
 .a-ticket-box .price {
   font-family: "Lato", sans-serif;
   font-weight: 700;
@@ -316,9 +340,12 @@ section .section-main-part {
   width: 100%;
 }
 .cont-and-form-box .form button {
-  width: 12.75rem;
-  height: 2.6rem;
+  padding: 2ch 10ch;
   margin-left: 1rem;
+}
+.cont-and-form-box .form button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 .cont-and-form-box .form #text-area {
   width: calc(100% - 2rem);
