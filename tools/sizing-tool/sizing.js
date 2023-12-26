@@ -3,10 +3,19 @@ let LAST_CLICKED_EL;
 let LAST_CHOSEN_PROPERTY;
 // controls how many pixels to add or subtract on one keypress
 let STEP = 1;
-
+let dashboardModel = {
+  height: "",
+  width: "",
+  padding: "",
+  margin: "",
+  tagName: "",
+  // parentTagName: "",
+  display: "",
+  parentDisplay: "",
+};
 // let CONSOLE = document.getElementById("console");
 let DASHBOARD = document.getElementById("dashboard");
-updateDashboard();
+// updateDashboard();
 // let RESIZER = document.getElementById("resizer-vertical");
 // {} = f(#id,#id,#id,#id)
 // let menuBtns = createMenu(
@@ -107,7 +116,7 @@ function createSaveBtn(saveBtnId) {
 function clickHandler(event) {
   if (LAST_CLICKED_EL) undoHighlightSelectedElement();
   LAST_CLICKED_EL = event.target;
-  updateDashboard();
+  // updateDashboard();
 
   if (LAST_CLICKED_EL == saveBtn) {
     console.log("save and exit pressed");
@@ -144,7 +153,84 @@ function onArrowPress(key) {
     changeOnePixelSize(LAST_CLICKED_EL, 1 * STEP, LAST_CHOSEN_PROPERTY);
   }
   updateDashboard();
+  renderDashboard();
   return;
+}
+
+function renderDashboard() {
+  console.log("would like to render dashboard");
+  //first we need to interpret correctly padding and margin:
+
+  let marginStringArray = dashboardModel.margin.split(" ");
+  //if margin: 5px; then margin=[5,5,5,5]
+  let mt = parseFloat(marginStringArray[0]);
+
+  let tempStrVal = marginStringArray[2];
+  if (tempStrVal) mb = parseFloat(tempStrVal);
+  else mb = mt;
+  //if margin: 3px 5px; then margin=[3,5,3,5]
+  tempStrVal = marginStringArray[1];
+  if (tempStrVal) mr = parseFloat(tempStrVal);
+  else mr = mt;
+  // if margin: 4px 6px 3px 77px;then margin=[4,6,3,77]
+  tempStrVal = marginStringArray[3];
+  if (tempStrVal) ml = parseFloat(tempStrVal);
+  else ml = mr;
+  // console.log("margin", mt, mr, mb, ml);
+
+  document.getElementById("margin-top-px").textContent = mt + "px";
+  document.getElementById("margin-right-px").textContent = mr + "px";
+  document.getElementById("margin-bottom-px").textContent = mb + "px";
+  document.getElementById("margin-left-px").textContent = ml + "px";
+
+  //SAME FOR PADDING FOR NOW LATER DRY
+  //first we need to interpret correctly padding and margin:
+
+  let paddingStringArray = dashboardModel.padding.split(" ");
+  //if padding: 5px; then padding=[5,5,5,5]
+  let pt = parseFloat(paddingStringArray[0]);
+
+  tempStrVal = paddingStringArray[2];
+  if (tempStrVal) pb = parseFloat(tempStrVal);
+  else pb = pt;
+  //if padding: 3px 5px; then padding=[3,5,3,5]
+  tempStrVal = paddingStringArray[1];
+  if (tempStrVal) pr = parseFloat(tempStrVal);
+  else pr = pt;
+  // if padding: 4px 6px 3px 77px;then padding=[4,6,3,77]
+  tempStrVal = paddingStringArray[3];
+  if (tempStrVal) pl = parseFloat(tempStrVal);
+  else pl = pr;
+  // console.log("padding", pt, pr, pb, pl);
+
+  document.getElementById("padding-top-px").textContent = pt + "px";
+  document.getElementById("padding-right-px").textContent = pr + "px";
+  document.getElementById("padding-bottom-px").textContent = pb + "px";
+  document.getElementById("padding-left-px").textContent = pl + "px";
+
+  // height,width left to do
+  document.getElementById("height-px").textContent = dashboardModel.height;
+  document.getElementById("width-px").textContent = dashboardModel.width;
+
+  // now tagname, display of el
+  document.getElementById("tagName").textContent = dashboardModel.tagName;
+  document.getElementById("display-element").textContent =
+    dashboardModel.display;
+
+  // display and tag of parent
+  // document.getElementById("parentTagName").textContent = dashboardModel.tagName;
+  document.getElementById("display-parent").textContent =
+    dashboardModel.parentDisplay;
+
+  // highlight chosen property
+  // if there is capital letter we split there
+  let capitalLetter = LAST_CHOSEN_PROPERTY.match(/[A-Z]/);
+  console.log(capitalLetter);
+  let id;
+  if (capitalLetter) id = LAST_CHOSEN_PROPERTY.split(capitalLetter)[0];
+  else id = LAST_CHOSEN_PROPERTY;
+  //FIST WE NEED TO DESELECT PREVIOUS ONE
+  document.getElementById(id).classList.add("selected");
 }
 
 function changeOnePixelSize(elem, term, prop) {
@@ -176,7 +262,7 @@ function saveBtnClickHandler() {
   // RESIZER.classList.add("invisible");
   // document.addEventListener("click", globalEventHandler);
 }
-
+// here we update our dashboard model object to later render it on screen if needed
 function updateDashboard() {
   if (LAST_CLICKED_EL) {
     console.log(
@@ -186,6 +272,17 @@ function updateDashboard() {
       getPropVal(LAST_CLICKED_EL.parentElement, "display")
     );
   }
+
+  //here we need to go through all properties of element and update them
+  Object.keys(dashboardModel).forEach((prop) => {
+    dashboardModel[prop] = getPropVal(LAST_CLICKED_EL, prop);
+  });
+
+  dashboardModel.tagName = LAST_CLICKED_EL.tagName;
+  dashboardModel.parentTagName = LAST_CLICKED_EL.parentElement.tagName;
+  dashboardModel.parentDisplay = LAST_CLICKED_EL.parentElement.display;
+
+  console.log(dashboardModel);
 }
 
 function getPropVal(el, prop) {
