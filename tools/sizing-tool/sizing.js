@@ -1,6 +1,7 @@
 // let MODE = "none";
 let LAST_CLICKED_EL;
 let LAST_CHOSEN_PROPERTY;
+let PREV_CHOSEN_PROPERTY;
 // controls how many pixels to add or subtract on one keypress
 let STEP = 1;
 let dashboardModel = {
@@ -42,6 +43,7 @@ function keyPressHandler(e) {
     STEP = 1;
     return;
   }
+  if (LAST_CHOSEN_PROPERTY) PREV_CHOSEN_PROPERTY = LAST_CHOSEN_PROPERTY;
 
   if (e.ctrlKey && key == "ArrowUp") {
     LAST_CHOSEN_PROPERTY = "paddingTop";
@@ -94,6 +96,8 @@ function keyPressHandler(e) {
     e.preventDefault();
   }
 
+  highlightReading();
+
   updateDashboard();
 
   if (!e.ctrlKey && !e.altKey && !e.shiftKey) {
@@ -103,6 +107,37 @@ function keyPressHandler(e) {
 
   console.log(LAST_CHOSEN_PROPERTY);
   return;
+}
+
+function highlightReading() {
+  let unhighlighDashEl;
+  let highlighDashEl;
+  if (PREV_CHOSEN_PROPERTY)
+    unhighlighDashEl = convertPropToEl(PREV_CHOSEN_PROPERTY);
+  if (LAST_CHOSEN_PROPERTY)
+    highlighDashEl = convertPropToEl(LAST_CHOSEN_PROPERTY);
+
+  if (unhighlighDashEl) unhighlighDashEl.classList.remove("selected");
+  if (highlighDashEl) highlighDashEl.classList.add("selected");
+}
+
+function convertPropToEl(prop) {
+  let capitalLetter = prop.match(/[A-Z]/);
+
+  console.log(capitalLetter);
+  let id;
+  if (capitalLetter) {
+    let firstPart = prop.split(capitalLetter)[0];
+
+    id =
+      firstPart + "-" + prop.slice(firstPart.length).toLowerCase() + "-" + "px";
+  } else id = prop + "-" + "px";
+
+  console.log("id looks like that: ", id);
+
+  let el = document.getElementById(id);
+
+  return el;
 }
 
 function createSaveBtn(saveBtnId) {
@@ -125,6 +160,7 @@ function clickHandler(event) {
   }
 
   highlightSelectedElement();
+
   console.log(LAST_CLICKED_EL);
 }
 
@@ -221,16 +257,6 @@ function renderDashboard() {
   // document.getElementById("parentTagName").textContent = dashboardModel.tagName;
   document.getElementById("display-parent").textContent =
     dashboardModel.parentDisplay;
-
-  // highlight chosen property
-  // if there is capital letter we split there
-  let capitalLetter = LAST_CHOSEN_PROPERTY.match(/[A-Z]/);
-  console.log(capitalLetter);
-  let id;
-  if (capitalLetter) id = LAST_CHOSEN_PROPERTY.split(capitalLetter)[0];
-  else id = LAST_CHOSEN_PROPERTY;
-  //FIST WE NEED TO DESELECT PREVIOUS ONE
-  document.getElementById(id).classList.add("selected");
 }
 
 function changeOnePixelSize(elem, term, prop) {
@@ -244,6 +270,11 @@ function changeOnePixelSize(elem, term, prop) {
 function highlightSelectedElement() {
   LAST_CLICKED_EL.classList.add("selected");
   LAST_CLICKED_EL.classList.add("all-borders");
+  let tagOnDash = document.getElementById("tagName");
+  tagOnDash.classList.add("selected");
+  setTimeout(() => {
+    tagOnDash.classList.remove("selected");
+  }, 1000);
 }
 
 function undoHighlightSelectedElement() {
