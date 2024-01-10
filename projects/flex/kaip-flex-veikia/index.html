@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kaip veikia flex</title>
+    <link rel="stylesheet" href="../../../reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-cell">
+        <h1>Flex, Kai vaikai turi daug teksto:</h1>
+        <pre>
+          .flex-containeris {
+             display: flex;
+             gap: 10px;
+             height: 70px;
+             width: 100%;
+            }
+            </pre
+        >
+        <div class="flex-containeris">
+          <div class="flex-vaikas vaikas-1">Lorem ipsum dolor sit.</div>
+          <div class="flex-vaikas vaikas-1">Lorem, ipsum dolor sit.</div>
+          <div class="flex-vaikas vaikas-1">Lorem ipsum dolor sit.</div>
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>Viskas tas pats, bet pirmas vaikas turi daugiau teksto</h1>
+        <div class="flex-containeris">
+          <div class="flex-vaikas vaikas-1">
+            Lorem ipsum, dolor sit amet consectetur adipisicing.
+          </div>
+          <div class="flex-vaikas vaikas-1">Lorem, ipsum dolor.</div>
+          <div class="flex-vaikas vaikas-1">Lorem, ipsum dolor.</div>
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>Viskas tas pats tik trečias vaikas turi labai daug teksto</h1>
+        <h2>kadangi konteineris turi fiksuotą aukšti tai vaikai išlenda</h2>
+        <div class="flex-containeris">
+          <div class="flex-vaikas vaikas-1">Lorem, ipsum dolor.</div>
+          <div class="flex-vaikas vaikas-1">Lorem ipsum dolor sit amet.</div>
+          <div class="flex-vaikas vaikas-1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus, repellendus.
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-cell">
+        <h2>Padarykime tą patį, bet nefiksuojant tėvo konteinerio aukščio:</h2>
+
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1">Lorem, ipsum dolor.</div>
+          <div class="flex-vaikas vaikas-1">
+            Lorem ipsum dolor sit amet, consectetur adipisicing.
+          </div>
+          <div class="flex-vaikas vaikas-1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+            inventore?
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-cell">
+        <h1>Viskas tas pats tik trečias vaikas turi labai daug teksto</h1>
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1">
+            Lorem ipsum dolor sit amet, consectetur adipisicing.
+          </div>
+          <div class="flex-vaikas vaikas-1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+            in!
+          </div>
+          <div class="flex-vaikas vaikas-1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+            alias adipisci sunt amet quam asperiores qui fuga ea corrupti quis!
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-cell">
+        <h1>O kas jei 3-as vaikas yra paveiksliukas (naturalus h=65px)</h1>
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci,
+            excepturi.
+          </div>
+          <div class="flex-vaikas vaikas-1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quod
+            ipsam repellat tenetur veritatis quo accusantium dignissimos
+            repudiandae! Ab, impedit!
+          </div>
+          <div class="flex-vaikas vaikas-3">
+            <img src="./pics/lake.jpeg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>fiksuojame paveiksliuko aukštį: 150px</h1>
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <div class="flex-vaikas vaikas-3">
+            <img src="./pics/lake.jpeg" class="h-150" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>O kas jei paveiksliuko aukštį fiksuosime 50%?</h1>
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <div class="flex-vaikas vaikas-3">
+            <img src="./pics/lake.jpeg" class="h-50percent" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>justify-content:flex-end;</h1>
+        <div class="flex-containeris-2">
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <div class="flex-vaikas vaikas-3 h-50percent">
+            <img src="./pics/lake.jpeg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>Dabar paveiksliuką dėsime be div tiesiogiai į konteinerį</h1>
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <img src="./pics/lake.jpeg" alt="" />
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>
+          nurodykime jam 50% aukštį(nėra skirtumo) ir justify-content:center;
+        </h1>
+        <h2></h2>
+        <div class="flex-containeris-1" style="justify-content: center">
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <img src="./pics/lake.jpeg" class="h-50percent" alt="" />
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>Vaikams galima nurodyti ribas</h1>
+        <h2>
+          paveiksliukui: <br />
+          flex: 1 2 auto;
+        </h2>
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <div class="flex-vaikas vaikas-2">Lorem</div>
+          <img src="./pics/lake.jpeg" class="flex-1–2–auto" alt="" />
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>o vaikas-1 jeigu uždėti flex: 1 2 auto;</h1>
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1 flex-1–2–auto"></div>
+          <div class="flex-vaikas vaikas-2">Lorem</div>
+          <img src="./pics/lake.jpeg" alt="" />
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>paveiksliuko height:150px;</h1>
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1 flex-1–2–auto"></div>
+          <div class="flex-vaikas vaikas-2">Lorem</div>
+          <img src="./pics/lake.jpeg" class="h-150" alt="" />
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>pasiimam iš pirmo vaiko flex: 1 2 auto ir uždedam antram</h1>
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <div class="flex-vaikas vaikas-2 flex-1–2–auto"></div>
+          <img src="./pics/lake.jpeg" class="h-150" alt="" />
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>Kaip ir praeitas, bet daug teksto</h1>
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus
+            tempore a rerum error iusto ab!
+          </div>
+          <div class="flex-vaikas vaikas-2 flex-1–2–auto">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam
+            quisquam dicta voluptatum voluptatibus aut beatae unde excepturi
+            repudiandae, odit mollitia omnis dignissimos quod sunt odio!
+          </div>
+          <img src="./pics/lake.jpeg" class="h-150" alt="" />
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>O dabar paveiksliukui flex: 1 2 auto;</h1>
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <img src="./pics/lake.jpeg" class="h-150 flex-1–2–auto" alt="" />
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>o abiems vaikams po flex: 1 2 auto</h1>
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1 flex-1–2–auto"></div>
+          <div class="flex-vaikas vaikas-2 flex-1–2–auto"></div>
+          <img src="./pics/lake.jpeg" class="h-150" alt="" />
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>O dabar flex: 2 1 auto pirmam vaikui, kitiems nieko</h1>
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1 flex-2–1–auto"></div>
+          <div class="flex-vaikas vaikas-1">Lorem</div>
+          <img src="./pics/lake.jpeg" class="h-150" alt="" />
+        </div>
+      </div>
+      <div class="grid-cell">
+        <h1>
+          Antram vaikui flex: 2 1 auto; o paveiksliukas kaip background divui
+        </h1>
+        <div class="flex-containeris-1">
+          <div class="flex-vaikas vaikas-1 flex-2–1–auto"></div>
+          <div class="flex-vaikas vaikas-2">Lorem</div>
+          <div class="paveikslas"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
