@@ -124,8 +124,45 @@ R
 `;
 const robot = new GameObject(robotPattern, 1, 1);
 
+//it's funny to escape backslashes :)
+const spaceShipPattern = `
+  |   
+ /_\\  
+( o ) 
+ | |  
+/ | \\ 
+`;
+
+const spaceShip = new GameObject(spaceShipPattern, 30, 60);
+
+const gasPattern = `
+ | |
+ ~ ~
+`;
+let gas;
+
 setTimeout(() => {
   player.move(4, 3);
   obstacle.move(2, 0);
   robot.move(7, 1);
+  gas = new GameObject(gasPattern, 35, 60);
 }, 2000);
+
+setTimeout(() => {
+  player.move(4, 3);
+  obstacle.move(2, 0);
+  robot.move(7, 1);
+  spaceShip.move(0, -2);
+  gas.move(0, -1);
+}, 2500);
+setTimeout(() => {
+  player.move(4, 3);
+  obstacle.move(2, 0);
+  robot.move(7, 1);
+  spaceShip.move(0, -2);
+  gameField.clearObject(gas);
+  gameField.render();
+}, 3000);
+setTimeout(() => {
+  spaceShip.move(0, -6);
+}, 3500);
