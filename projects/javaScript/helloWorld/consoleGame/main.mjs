@@ -1,8 +1,11 @@
 import { backTickToArray } from "./utils.mjs";
+import { gameControls } from "./controls.mjs";
+import { patterns } from "./patterns.mjs";
 
+//default values if I cannot get console size
 let totalColumns = 20;
 let totalRows = 10;
-//check what's the size of console now
+//check what's the size of console now and use those instead
 if (process.stdout.columns && process.stdout.rows) {
   totalColumns = process.stdout.columns;
   totalRows = process.stdout.rows - 1; //otherwise scrolls
@@ -23,13 +26,7 @@ const gameField = {
   initializeField() {
     const field = [];
     for (let i = 0; i < this.rows; i++) {
-      // if (i === 0 || i === this.rows - 1)
-      // field.push(new Array(this.columns).fill("-"));
-      // else
       field.push(new Array(this.columns).fill(EMPTY_CELL));
-
-      // field[i][0] = "|";
-      // field[i][this.columns - 1] = "|";
     }
     return field;
   },
@@ -101,83 +98,17 @@ class GameObject {
   }
 }
 
-// Example usage:
-// const gameField = new GameField(10, 20);
-
-//can be also defined as template string
-// const playerPattern = [
-//   ["*", "*", "*"],
-//   ["*", "o", "*"],
-//   ["*", "*", "*"],
-// ];
-
-// const player = new GameObject(playerPattern, 20, 20);
-
-// const obstaclePattern = `
-// x
-// `;
-
-// const obstacle = new GameObject(obstaclePattern, 12, 7);
-
-// const robotPattern = `
-// R
-// `;
-// const robot = new GameObject(robotPattern, 5, 5);
-
-const starPattern = `
-  |  
---o--
-  |  
-`;
 let nrOfStars = 10;
 const arrayOfStars = Array(nrOfStars);
 for (let i = 0; i < nrOfStars; i++) {
   let x = Math.round(totalColumns * Math.random());
   let y = Math.round(4 * Math.random());
-  arrayOfStars.push(new GameObject(starPattern, x, y));
+  arrayOfStars.push(new GameObject(patterns.star, x, y));
 }
 //it's funny to escape backslashes :)
-const spaceShipPattern = `
-  |   
- /_\\  
-( o ) 
- | |  
-/ | \\ 
-`;
+
 let center = Math.round(totalColumns / 2);
-const spaceShip = new GameObject(spaceShipPattern, center, totalRows - 8);
-
-const gasPattern = `
- | |
- ~ ~
-`;
-let gas;
-
-// setTimeout(() => {
-// player.move(4, 3);
-// obstacle.move(2, 0);
-// robot.move(7, 1);
-// gas = new GameObject(gasPattern, center, totalRows - 3);
-// }, 2000);
-
-// setTimeout(() => {
-// player.move(4, 3);
-// obstacle.move(2, 0);
-//   // robot.move(7, 1);
-//   spaceShip.move(0, -2);
-//   gas.move(0, -1);
-// }, 2500);
-// setTimeout(() => {
-// player.move(4, 3);
-// obstacle.move(2, 0);
-// robot.move(7, 1);
-// spaceShip.move(0, -2);
-// gameField.clearObject(gas);
-// gameField.render();
-// }, 3000);
-// setTimeout(() => {
-//   spaceShip.move(0, -6);
-// }, 3500);
+const spaceShip = new GameObject(patterns.spaceShip, center, totalRows - 8);
 
 setTimeout(() => {
   let count = totalRows;
@@ -188,7 +119,7 @@ setTimeout(() => {
       if (count % 3) {
         arrayOfStars.push(
           new GameObject(
-            starPattern,
+            patterns.star,
             Math.round(totalColumns * Math.random()),
             Math.round(4 * Math.random())
           )
@@ -199,49 +130,10 @@ setTimeout(() => {
   }
 }, 2500);
 
-import keypress from "keypress";
-
-// Enable keypress events on the standard input
-keypress(process.stdin);
-
-// Set raw mode to capture individual key presses
-process.stdin.setRawMode(true);
-process.stdin.resume();
-
-// Listen for keypress events
-process.stdin.on("keypress", function (ch, key) {
-  if (key) {
-    // Arrow key pressed
-    switch (key.name) {
-      case "up":
-        spaceShip.move(0, -1);
-        console.log("Up arrow pressed");
-        break;
-      case "down":
-        spaceShip.move(0, 1);
-        console.log("Down arrow pressed");
-        break;
-      case "left":
-        spaceShip.move(-1, 0);
-        console.log("Left arrow pressed");
-        break;
-      case "right":
-        spaceShip.move(2, 0);
-        console.log("Right arrow pressed");
-        break;
-      case "q":
-        console.log("exiting");
-        process.exit();
-      default:
-        // Handle other key presses
-        console.log(`Key pressed: ${key.sequence}`);
-    }
-    // console.log("value of  lastPressedKey = ", lastPressedKey);
-  }
-});
-
-// Close the stdin stream on exit
-process.on("SIGINT", function () {
-  //   process.stdin.pause();
-  process.exit();
+//listens and reacts to left,right,down,up as asked in provided functions, and also q for exit
+gameControls({
+  left: () => spaceShip.move(-3, 0),
+  right: () => spaceShip.move(3, 0),
+  up: () => spaceShip.move(0, -3),
+  down: () => spaceShip.move(0, 3),
 });

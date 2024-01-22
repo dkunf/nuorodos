@@ -1,31 +1,19 @@
 //i want to create function that would translate object visualization
 //  from backtick notation into array notation, that would make easier
 
-//so instead of this:
+// there is problem: need to escape some symbols like this spaceShip:
 
-// const playerPattern = [
-//     ["-", "*", "*", "*", "-"],
-//     ["-", "*", "-", "*", "-"],
-//     ["-", "*", "*", "*", "-"],
-//   ];
-
-//I could do this:
-// const playerPattern = `
-// -***-
-// -**b-
-// -h**-
+// const spaceShipPattern = `
+//   |
+//  /_\\
+// ( o )
+//  | |
+// / | \\
 // `;
-// console.log(backTickToArray(playerPattern));
 
-const spaceShipPattern = `
-  |   
- /_\\  
-( o ) 
- | |  
-/ | \\ 
-`;
+// console.log(backTickToArray(spaceShipPattern));
 
-console.log(backTickToArray(spaceShipPattern));
+//maybe it should be coupled with patterns.mjs as a method of patterns object?
 export function backTickToArray(pattern) {
   let flatArray = pattern.split("\n");
   let len = flatArray.length;
@@ -42,6 +30,6 @@ export function backTickToArray(pattern) {
     }
     finalPatternArray.push(flatArray[i].split(""));
   }
-  if (!simmetryFlag) return "object's dimensions are not simmetrical";
+  // if (!simmetryFlag) return "object's dimensions are not simmetrical";
   return finalPatternArray;
 }

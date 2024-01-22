@@ -20,3 +20,9 @@ and maybe sometimes with multiplier m\*(dx,dy) in case user presses quickly many
 The game could be anything, for beginning let's see how it works, adding objects to field, rendering, etc. I am thinking of game like either driving car in the boundaries of road or shooter like galaxy invaders or logical slow game P vs robots R where rules for robots and for player defined :)
 
 ANyway, now i need to listen to keyboard events... arrows to control GameObjects
+
+file structure:
+main.mjs -- running game
+patterns.mjs -- drawings of patterns for the gameObjects
+utils.mjs -- translates patterns from `**` to [['*','*']] for example
+controls.mjs -- provides event listener for keys and requires details object with functions of how to react to each keypress
