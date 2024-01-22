@@ -104,26 +104,37 @@ class GameObject {
 // const gameField = new GameField(10, 20);
 
 //can be also defined as template string
-const playerPattern = [
-  ["-", "*", "*", "*", "-"],
-  ["-", "*", "-", "*", "-"],
-  ["-", "*", "*", "*", "-"],
-];
+// const playerPattern = [
+//   ["*", "*", "*"],
+//   ["*", "o", "*"],
+//   ["*", "*", "*"],
+// ];
 
-const player = new GameObject(playerPattern, 20, 20);
+// const player = new GameObject(playerPattern, 20, 20);
 
-const obstaclePattern = `
-xxxx
-xxxx
+// const obstaclePattern = `
+// x
+// `;
+
+// const obstacle = new GameObject(obstaclePattern, 12, 7);
+
+// const robotPattern = `
+// R
+// `;
+// const robot = new GameObject(robotPattern, 5, 5);
+
+const starPattern = `
+  |  
+--o--
+  |  
 `;
-
-const obstacle = new GameObject(obstaclePattern, 12, 7);
-
-const robotPattern = `
-R
-`;
-const robot = new GameObject(robotPattern, 5, 5);
-
+let nrOfStars = 30;
+const arrayOfStars = Array(nrOfStars);
+for (let i = 0; i < nrOfStars; i++) {
+  let x = Math.round(120 * Math.random());
+  let y = Math.round(50 * Math.random());
+  arrayOfStars.push(new GameObject(starPattern, x, y));
+}
 //it's funny to escape backslashes :)
 const spaceShipPattern = `
   |   
@@ -132,8 +143,8 @@ const spaceShipPattern = `
  | |  
 / | \\ 
 `;
-
-const spaceShip = new GameObject(spaceShipPattern, 30, 30);
+let center = Math.round(totalColumns / 2);
+const spaceShip = new GameObject(spaceShipPattern, center, 30);
 
 const gasPattern = `
  | |
@@ -142,37 +153,38 @@ const gasPattern = `
 let gas;
 
 setTimeout(() => {
-  player.move(4, 3);
-  obstacle.move(2, 0);
-  robot.move(7, 1);
-  gas = new GameObject(gasPattern, 30, 35);
+  // player.move(4, 3);
+  // obstacle.move(2, 0);
+  // robot.move(7, 1);
+  gas = new GameObject(gasPattern, center, 35);
 }, 2000);
 
-setTimeout(() => {
-  player.move(4, 3);
-  obstacle.move(2, 0);
-  robot.move(7, 1);
-  spaceShip.move(0, -2);
-  gas.move(0, -1);
-}, 2500);
-setTimeout(() => {
-  player.move(4, 3);
-  obstacle.move(2, 0);
-  robot.move(7, 1);
-  spaceShip.move(0, -2);
-  gameField.clearObject(gas);
-  gameField.render();
-}, 3000);
-setTimeout(() => {
-  spaceShip.move(0, -6);
-}, 3500);
+// setTimeout(() => {
+// player.move(4, 3);
+// obstacle.move(2, 0);
+//   // robot.move(7, 1);
+//   spaceShip.move(0, -2);
+//   gas.move(0, -1);
+// }, 2500);
+// setTimeout(() => {
+// player.move(4, 3);
+// obstacle.move(2, 0);
+// robot.move(7, 1);
+// spaceShip.move(0, -2);
+// gameField.clearObject(gas);
+// gameField.render();
+// }, 3000);
+// setTimeout(() => {
+//   spaceShip.move(0, -6);
+// }, 3500);
 
 setTimeout(() => {
   let count = spaceShip.y;
-  while (count > 1) {
+  while (count > -5) {
     setTimeout(() => {
       spaceShip.move(0, -1);
+      gas.move(0, 1);
     }, 1000 + count * 150);
     count--;
   }
-}, 4000);
+}, 2500);
