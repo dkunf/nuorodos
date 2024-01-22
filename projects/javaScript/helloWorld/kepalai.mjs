@@ -162,7 +162,7 @@ async function ivestiReiksmes() {
       let nr = Number(userInput) || null;
       if (!nr)
         l(
-          "bandyk dar kartą, iš tavęs reikalingas  skaičius o ne nesamonė kurią parašiai",
+          "bandyk dar kartą, iš tavęs reikalingas  skaičius o ne nesamonė kurią parašei",
           "yellow"
         );
       else return userInput;

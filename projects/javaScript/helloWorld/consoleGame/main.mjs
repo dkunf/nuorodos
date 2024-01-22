@@ -23,12 +23,13 @@ const gameField = {
   initializeField() {
     const field = [];
     for (let i = 0; i < this.rows; i++) {
-      if (i === 0 || i === this.rows - 1)
-        field.push(new Array(this.columns).fill("-"));
-      else field.push(new Array(this.columns).fill(EMPTY_CELL));
+      // if (i === 0 || i === this.rows - 1)
+      // field.push(new Array(this.columns).fill("-"));
+      // else
+      field.push(new Array(this.columns).fill(EMPTY_CELL));
 
-      field[i][0] = "|";
-      field[i][this.columns - 1] = "|";
+      // field[i][0] = "|";
+      // field[i][this.columns - 1] = "|";
     }
     return field;
   },
@@ -128,11 +129,11 @@ const starPattern = `
 --o--
   |  
 `;
-let nrOfStars = 30;
+let nrOfStars = 10;
 const arrayOfStars = Array(nrOfStars);
 for (let i = 0; i < nrOfStars; i++) {
   let x = Math.round(totalColumns * Math.random());
-  let y = Math.round(totalRows * Math.random());
+  let y = Math.round(4 * Math.random());
   arrayOfStars.push(new GameObject(starPattern, x, y));
 }
 //it's funny to escape backslashes :)
@@ -152,12 +153,12 @@ const gasPattern = `
 `;
 let gas;
 
-setTimeout(() => {
-  // player.move(4, 3);
-  // obstacle.move(2, 0);
-  // robot.move(7, 1);
-  gas = new GameObject(gasPattern, center, totalRows - 3);
-}, 2000);
+// setTimeout(() => {
+// player.move(4, 3);
+// obstacle.move(2, 0);
+// robot.move(7, 1);
+// gas = new GameObject(gasPattern, center, totalRows - 3);
+// }, 2000);
 
 // setTimeout(() => {
 // player.move(4, 3);
@@ -179,12 +180,68 @@ setTimeout(() => {
 // }, 3500);
 
 setTimeout(() => {
-  let count = spaceShip.y;
-  while (count > -5) {
+  let count = totalRows;
+  while (count > -10) {
     setTimeout(() => {
-      spaceShip.move(0, -1);
-      gas.move(0, 1);
-    }, 1000 + count * 150);
+      arrayOfStars.forEach((star) => star.move(0, 1));
+
+      if (count % 3) {
+        arrayOfStars.push(
+          new GameObject(
+            starPattern,
+            Math.round(totalColumns * Math.random()),
+            Math.round(4 * Math.random())
+          )
+        );
+      }
+    }, 2000 + count * 200);
     count--;
   }
 }, 2500);
+
+import keypress from "keypress";
+
+// Enable keypress events on the standard input
+keypress(process.stdin);
+
+// Set raw mode to capture individual key presses
+process.stdin.setRawMode(true);
+process.stdin.resume();
+
+// Listen for keypress events
+process.stdin.on("keypress", function (ch, key) {
+  if (key) {
+    // Arrow key pressed
+    switch (key.name) {
+      case "up":
+        spaceShip.move(0, -1);
+        console.log("Up arrow pressed");
+        break;
+      case "down":
+        spaceShip.move(0, 1);
+        console.log("Down arrow pressed");
+        break;
+      case "left":
+        spaceShip.move(-1, 0);
+        console.log("Left arrow pressed");
+        break;
+      case "right":
+        spaceShip.move(2, 0);
+        console.log("Right arrow pressed");
+        break;
+      case "q":
+        console.log("exiting");
+        process.exit();
+      default:
+        // Handle other key presses
+        console.log(`Key pressed: ${key.sequence}`);
+    }
+    // console.log("value of  lastPressedKey = ", lastPressedKey);
+  }
+});
+
+// Close the stdin stream on exit
+process.on("SIGINT", function () {
+  //   process.stdin.pause();
+  process.exit();
+});
