@@ -37,8 +37,8 @@ const gameField = {
   updateObject(object) {
     for (let i = 0; i < object.height; i++) {
       for (let j = 0; j < object.width; j++) {
-        const row = object.x + i;
-        const col = object.y + j;
+        const row = object.y + i;
+        const col = object.x + j;
 
         if (row >= 0 && row < this.rows && col >= 0 && col < this.columns) {
           const visualChar = object.pattern[i][j];
@@ -53,8 +53,8 @@ const gameField = {
   clearObject: function (object) {
     for (let i = 0; i < object.height; i++) {
       for (let j = 0; j < object.width; j++) {
-        const row = object.x + i;
-        const col = object.y + j;
+        const row = object.y + i;
+        const col = object.x + j;
 
         if (row >= 0 && row < this.rows && col >= 0 && col < this.columns) {
           this.field[row][col] = EMPTY_CELL;
@@ -92,8 +92,8 @@ class GameObject {
   move(dx, dy) {
     gameField.clearObject(this);
 
-    this.x += dy;
-    this.y += dx;
+    this.x += dx;
+    this.y += dy;
 
     gameField.updateObject(this);
     gameField.render();
@@ -110,19 +110,19 @@ const playerPattern = [
   ["-", "*", "*", "*", "-"],
 ];
 
-const player = new GameObject(playerPattern, 2, 35);
+const player = new GameObject(playerPattern, 20, 20);
 
 const obstaclePattern = `
 xxxx
 xxxx
 `;
 
-const obstacle = new GameObject(obstaclePattern, 7, 7);
+const obstacle = new GameObject(obstaclePattern, 12, 7);
 
 const robotPattern = `
 R
 `;
-const robot = new GameObject(robotPattern, 1, 1);
+const robot = new GameObject(robotPattern, 5, 5);
 
 //it's funny to escape backslashes :)
 const spaceShipPattern = `
@@ -133,7 +133,7 @@ const spaceShipPattern = `
 / | \\ 
 `;
 
-const spaceShip = new GameObject(spaceShipPattern, 30, 60);
+const spaceShip = new GameObject(spaceShipPattern, 30, 40);
 
 const gasPattern = `
  | |
@@ -145,7 +145,7 @@ setTimeout(() => {
   player.move(4, 3);
   obstacle.move(2, 0);
   robot.move(7, 1);
-  gas = new GameObject(gasPattern, 35, 60);
+  gas = new GameObject(gasPattern, 30, 45);
 }, 2000);
 
 setTimeout(() => {
@@ -166,3 +166,11 @@ setTimeout(() => {
 setTimeout(() => {
   spaceShip.move(0, -6);
 }, 3500);
+
+let count = spaceShip.y;
+while (count > 1) {
+  setTimeout(() => {
+    spaceShip.move(0, -1);
+  }, 1000 + count * 150);
+  count--;
+}
