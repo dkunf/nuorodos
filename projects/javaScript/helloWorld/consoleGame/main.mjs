@@ -4,12 +4,10 @@ import { backTickToArray } from "./utils.mjs";
 const EMPTY_CELL = "-";
 
 // Define the game field model
-class GameField {
-  constructor(rows, columns) {
-    this.rows = rows;
-    this.columns = columns;
-    this.field = this.initializeField();
-  }
+const gameField = {
+  rows: 10,
+  columns: 20,
+  field: [],
 
   // Initialize an empty game field
   initializeField() {
@@ -18,7 +16,7 @@ class GameField {
       field.push(new Array(this.columns).fill(EMPTY_CELL));
     }
     return field;
-  }
+  },
 
   // Update the cells based on the object's dimensions and position
   updateObject(object) {
@@ -34,10 +32,10 @@ class GameField {
         }
       }
     }
-  }
+  },
 
   // Clear the cells previously occupied by the object
-  clearObject(object) {
+  clearObject: function (object) {
     for (let i = 0; i < object.height; i++) {
       for (let j = 0; j < object.width; j++) {
         const row = object.x + i;
@@ -48,7 +46,7 @@ class GameField {
         }
       }
     }
-  }
+  },
 
   // Render the current state of the game field
   render() {
@@ -56,12 +54,14 @@ class GameField {
     for (let i = 0; i < this.rows; i++) {
       console.log(this.field[i].join(""));
     }
-  }
-}
+  },
+};
+
+gameField.field = gameField.initializeField();
 
 // Define the game object model
 class GameObject {
-  constructor(pattern, x, y, gameField) {
+  constructor(pattern, x, y) {
     if (typeof pattern === "string") pattern = backTickToArray(pattern);
     this.pattern = pattern;
     this.height = pattern.length;
@@ -74,7 +74,7 @@ class GameObject {
   }
 
   // Move the object based on a direction vector (dx, dy)
-  move(dx, dy, gameField) {
+  move(dx, dy) {
     gameField.clearObject(this);
 
     this.x += dy;
@@ -86,7 +86,7 @@ class GameObject {
 }
 
 // Example usage:
-const gameField = new GameField(10, 20);
+// const gameField = new GameField(10, 20);
 
 //can be also defined as template string
 const playerPattern = [
@@ -95,18 +95,18 @@ const playerPattern = [
   ["-", "*", "*", "*", "-"],
 ];
 
-const player = new GameObject(playerPattern, 1, 1, gameField);
+const player = new GameObject(playerPattern, 1, 1);
 
 const obstaclePattern = `
 xxxx
 xxxx
 `;
 
-const obstacle = new GameObject(obstaclePattern, 7, 7, gameField);
+const obstacle = new GameObject(obstaclePattern, 7, 7);
 
 setTimeout(() => {
-  player.move(4, 3, gameField);
-  obstacle.move(2, 0, gameField);
+  player.move(4, 3);
+  obstacle.move(2, 0);
 }, 2000);
 
 // gameField.updateObject(player);

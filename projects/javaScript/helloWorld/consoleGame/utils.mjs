@@ -10,12 +10,12 @@
 //   ];
 
 //I could do this:
-const playerPattern = `
--***-
--**b-
--h**-
-`;
-console.log(backTickToArray(playerPattern));
+// const playerPattern = `
+// -***-
+// -**b-
+// -h**-
+// `;
+// console.log(backTickToArray(playerPattern));
 
 export function backTickToArray(pattern) {
   let flatArray = pattern.split("\n");
