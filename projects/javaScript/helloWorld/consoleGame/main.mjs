@@ -1,19 +1,34 @@
 import { backTickToArray } from "./utils.mjs";
 
+let totalColumns = 20;
+let totalRows = 10;
+//check what's the size of console now
+if (process.stdout.columns && process.stdout.rows) {
+  totalColumns = process.stdout.columns;
+  totalRows = process.stdout.rows - 1; //otherwise scrolls
+}
+
 // Define constants for the game
-const EMPTY_CELL = "-";
+const EMPTY_CELL = " ";
+const COLUMNS = totalColumns;
+const ROWS = totalRows;
 
 // Define the game field model
 const gameField = {
-  rows: 10,
-  columns: 20,
+  rows: ROWS,
+  columns: COLUMNS,
   field: [],
 
   // Initialize an empty game field
   initializeField() {
     const field = [];
     for (let i = 0; i < this.rows; i++) {
-      field.push(new Array(this.columns).fill(EMPTY_CELL));
+      if (i === 0 || i === this.rows - 1)
+        field.push(new Array(this.columns).fill("-"));
+      else field.push(new Array(this.columns).fill(EMPTY_CELL));
+
+      field[i][0] = "|";
+      field[i][this.columns - 1] = "|";
     }
     return field;
   },
@@ -95,7 +110,7 @@ const playerPattern = [
   ["-", "*", "*", "*", "-"],
 ];
 
-const player = new GameObject(playerPattern, 1, 1);
+const player = new GameObject(playerPattern, 2, 35);
 
 const obstaclePattern = `
 xxxx
@@ -104,29 +119,13 @@ xxxx
 
 const obstacle = new GameObject(obstaclePattern, 7, 7);
 
+const robotPattern = `
+R
+`;
+const robot = new GameObject(robotPattern, 1, 1);
+
 setTimeout(() => {
   player.move(4, 3);
   obstacle.move(2, 0);
+  robot.move(7, 1);
 }, 2000);
-
-// gameField.updateObject(player);
-// gameField.render();
-
-// Clear the previous position of the player
-// gameField.clearObject(player);
-
-// Move the player diagonally down-right using a vector
-
-// Update and render the new position of the player
-// gameField.updateObject(player);
-// setTimeout(() => {
-//   gameField.render();
-// }, 3000);
-// gameField.updateObject(obstacle);
-// gameField.render();
-
-// Clear the previous position of the player
-// gameField.clearObject(obstacle);
-
-// Move the player diagonally down-right using a vector
-// gameField.updateObject(obstacle);
