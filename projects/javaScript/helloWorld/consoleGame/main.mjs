@@ -131,8 +131,8 @@ const starPattern = `
 let nrOfStars = 30;
 const arrayOfStars = Array(nrOfStars);
 for (let i = 0; i < nrOfStars; i++) {
-  let x = Math.round(120 * Math.random());
-  let y = Math.round(50 * Math.random());
+  let x = Math.round(totalColumns * Math.random());
+  let y = Math.round(totalRows * Math.random());
   arrayOfStars.push(new GameObject(starPattern, x, y));
 }
 //it's funny to escape backslashes :)
@@ -144,7 +144,7 @@ const spaceShipPattern = `
 / | \\ 
 `;
 let center = Math.round(totalColumns / 2);
-const spaceShip = new GameObject(spaceShipPattern, center, 30);
+const spaceShip = new GameObject(spaceShipPattern, center, totalRows - 8);
 
 const gasPattern = `
  | |
@@ -156,7 +156,7 @@ setTimeout(() => {
   // player.move(4, 3);
   // obstacle.move(2, 0);
   // robot.move(7, 1);
-  gas = new GameObject(gasPattern, center, 35);
+  gas = new GameObject(gasPattern, center, totalRows - 3);
 }, 2000);
 
 // setTimeout(() => {
