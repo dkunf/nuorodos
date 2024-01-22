@@ -133,7 +133,7 @@ const spaceShipPattern = `
 / | \\ 
 `;
 
-const spaceShip = new GameObject(spaceShipPattern, 30, 40);
+const spaceShip = new GameObject(spaceShipPattern, 30, 30);
 
 const gasPattern = `
  | |
@@ -145,7 +145,7 @@ setTimeout(() => {
   player.move(4, 3);
   obstacle.move(2, 0);
   robot.move(7, 1);
-  gas = new GameObject(gasPattern, 30, 45);
+  gas = new GameObject(gasPattern, 30, 35);
 }, 2000);
 
 setTimeout(() => {
@@ -167,10 +167,12 @@ setTimeout(() => {
   spaceShip.move(0, -6);
 }, 3500);
 
-let count = spaceShip.y;
-while (count > 1) {
-  setTimeout(() => {
-    spaceShip.move(0, -1);
-  }, 1000 + count * 150);
-  count--;
-}
+setTimeout(() => {
+  let count = spaceShip.y;
+  while (count > 1) {
+    setTimeout(() => {
+      spaceShip.move(0, -1);
+    }, 1000 + count * 150);
+    count--;
+  }
+}, 4000);
