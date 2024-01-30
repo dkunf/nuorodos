@@ -1,0 +1,22 @@
+.container {
+  margin: 0 7rem;
+}
+.container nav {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container nav .logo {
+  display: flex;
+  align-items: center;
+}
+.container nav .logo .logo-text {
+  display: flex;
+  flex-direction: column;
+}
+.container nav .nav-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,26 @@
+$container-margin: 7rem;
+
+.container {
+  margin: 0 $container-margin;
+  nav {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      .logo-text {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+}
