@@ -28,7 +28,7 @@ nav .nav-link:hover {
 }
 
 .header-box {
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("./pics/header-bg.jpeg");
   background-position: center;
   background-size: cover;

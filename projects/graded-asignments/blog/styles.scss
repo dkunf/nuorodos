@@ -31,7 +31,7 @@ nav {
 
 // nav + header-box = 100vh
 .header-box {
-  height: calc(100vh - #{$nav-height});
+  min-height: calc(100vh - #{$nav-height});
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
     url("./pics/header-bg.jpeg");
   background-position: center;
