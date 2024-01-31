@@ -14,10 +14,10 @@
     to right,
     white 0%,
     white 50%,
-    #f9f9f9 50%,
-    #f9f9f9 100%
+    $grey-bg 50%,
+    $grey-bg 100%
   );
-  @media screen and (max-width: 1350px) {
+  @media screen and (max-width: $big-screen) {
     padding: 3rem 0;
     width: 90vw;
     left: -10vw;
@@ -25,10 +25,10 @@
       to right,
       white 0%,
 
-      #f9f9f9 100%
+      $grey-bg 100%
     );
   }
-  @media screen and (max-width: 770px) {
+  @media screen and (max-width: $big-phone-scr) {
     padding: 3rem 0;
     width: 98%;
     left: 0;
@@ -44,7 +44,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    @media screen and (max-width: 1350px) {
+    @media screen and (max-width: $big-screen) {
       grid-column: span 2;
       display: flex;
       flex-direction: column;
@@ -53,7 +53,7 @@
       margin-bottom: 2rem;
     }
 
-    @media screen and (max-width: 770px) {
+    @media screen and (max-width: $big-phone-scr) {
       margin-left: 0;
       padding-left: 1rem;
     }
@@ -86,14 +86,14 @@
       }
       .description {
         margin-top: 20px;
-        color: #888;
+        color: $grey-overlay;
         font-family: "Roboto", sans-serif;
         font-size: 0.875rem;
         font-weight: 400;
         line-height: 148.188%; /* 20.746px */
         height: 8rem;
         overflow-y: scroll;
-        @media screen and (max-width: 1350px) {
+        @media screen and (max-width: $big-screen) {
           height: 5rem;
         }
       }
@@ -104,13 +104,13 @@
     // ==============================================
 
     .btn-section {
-      @media screen and (max-width: 1350px) {
+      @media screen and (max-width: $big-screen) {
         position: absolute;
         top: 2rem;
         right: 1rem;
         display: block;
       }
-      @media screen and (max-width: 770px) {
+      @media screen and (max-width: $big-phone-scr) {
         display: block;
         transform: scale(0.6);
         top: 1rem;
@@ -134,7 +134,7 @@
             background: linear-gradient(#0c3d99, #00d4e4);
             color: white;
           }
-          @media screen and (max-width: 1350px) {
+          @media screen and (max-width: $big-screen) {
             padding: 0.5rem 1rem;
           }
         }
@@ -151,7 +151,7 @@
             background: linear-gradient(#0c3d99, #00d4e4);
             color: white;
           }
-          @media screen and (max-width: 1350px) {
+          @media screen and (max-width: $big-screen) {
             padding: 0.5rem 1rem;
           }
           .place-marker-in-btn {
@@ -172,7 +172,7 @@
     width: 110%;
     z-index: 4;
 
-    @media screen and (max-width: 1350px) {
+    @media screen and (max-width: $big-screen) {
       grid-column: span 2;
       height: 350px;
       width: 90%;
@@ -193,7 +193,7 @@
       border-radius: 15.586px;
       box-shadow: -8px 8px 42px 0px rgba(0, 0, 0, 0.25);
 
-      @media screen and (max-width: 770px) {
+      @media screen and (max-width: $big-phone-scr) {
         width: 100%;
         min-width: 10vw;
       }
@@ -212,7 +212,7 @@
       z-index: 5;
       border-radius: 15.586px;
 
-      @media screen and (max-width: 770px) {
+      @media screen and (max-width: $big-phone-scr) {
         display: none;
       }
     }
@@ -242,7 +242,7 @@
       position: absolute;
       top: -100px;
       z-index: -2;
-      @media screen and (max-width: 1350px) {
+      @media screen and (max-width: $big-screen) {
         display: none;
         top: -50%;
         left: 10%;

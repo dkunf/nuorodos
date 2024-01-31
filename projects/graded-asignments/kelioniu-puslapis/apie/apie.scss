@@ -3,7 +3,7 @@
 @import "../components/footer";
 
 body {
-  background-color: #f9f9f9;
+  background-color: $grey-bg;
 }
 
 .hat {
@@ -22,7 +22,7 @@ body {
   }
 }
 main {
-  background-color: #f9f9f9;
+  background-color: $grey-bg;
   width: $container-width;
   margin: 0 auto;
   padding: 5rem;
@@ -33,11 +33,11 @@ main {
     align-items: stretch;
     justify-content: space-between;
     gap: 2rem;
-    @media screen and (max-width: 931px) {
+    @media screen and (max-width: $mid-tablet-scr) {
       flex-wrap: wrap;
     }
     cite {
-      color: #333;
+      color: $dark-grey;
       font-family: Plus Jakarta Sans;
       font-size: 1rem;
       font-weight: 400;
@@ -57,7 +57,7 @@ main {
       min-height: 100%;
       flex: 1 1 auto;
       position: relative;
-      @media screen and (max-width: 931px) {
+      @media screen and (max-width: $mid-tablet-scr) {
         height: 20rem;
       }
       .deco-apie {
@@ -69,6 +69,6 @@ main {
   }
 }
 .grey-bg {
-  background-color: #f9f9f9;
+  background-color: $grey-bg;
   padding-bottom: 7rem;
 }

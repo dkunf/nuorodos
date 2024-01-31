@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  font-size: 16px;
+  font-size: 1rem;
 }
 @media screen and (max-width: 950px) {
   body {
@@ -543,7 +543,7 @@ footer .copyright {
   }
 }
 header {
-  height: calc(100vh - 4.4rem);
+  min-height: calc(100vh - 4.4rem);
   background-image: url("./pics/main-banner.jpeg");
   background-size: cover;
   background-position: center;
@@ -557,11 +557,11 @@ header .statements-box {
   text-align: center;
 }
 header .statements-box h1 {
-  font-size: 5.6rem;
+  font-size: min(5.6rem, 50px);
   font-weight: 700;
 }
 header .statements-box h2 {
-  font-size: 2.3rem;
+  font-size: min(2.3rem, 36px);
   font-weight: 300;
   padding-top: 0.5rem;
 }
@@ -589,6 +589,7 @@ header .statements-box button:hover {
 @media screen and (max-width: 950px) {
   .decor-top {
     z-index: -1;
+    max-width: 100%;
   }
 }
 
@@ -631,6 +632,7 @@ header .statements-box button:hover {
   top: 0;
   left: 0;
   z-index: 1;
+  max-width: 100%;
 }
 .stats-box .card-wrap {
   max-height: 80%;
@@ -721,12 +723,17 @@ header .statements-box button:hover {
 
 .container-full-w {
   position: relative;
+  max-width: 100vw;
 }
 .container-full-w .deco-rekomend-top {
   position: absolute;
   top: 0;
   right: 0;
   z-index: -1;
+  max-width: 100%;
+}
+.container-full-w .deco-rekomend-top img {
+  max-width: 100%;
 }
 .container-full-w .rekomendacijos {
   width: 70%;
@@ -744,6 +751,7 @@ header .statements-box button:hover {
   font-family: Plus Jakarta Sans;
   font-size: 2.25rem;
   font-weight: 700;
+  word-break: break-all;
 }
 .container-full-w .rekomendacijos .thumbs {
   row-gap: 4rem;
@@ -841,4 +849,5 @@ header .statements-box button:hover {
   bottom: 0;
   left: 0;
   z-index: -1;
+  max-width: 100%;
 }/*# sourceMappingURL=styles.css.map */

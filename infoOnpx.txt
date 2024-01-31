@@ -1,0 +1,402 @@
+./projects/graded-asignments/kelioniu-puslapis/_variables.scss:2 - $slider-pic-height: 450px;
+./projects/graded-asignments/kelioniu-puslapis/_variables.scss:2 + $slider-pic-height: 450$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/_variables.scss:11 - $big-screen: 1350px;
+./projects/graded-asignments/kelioniu-puslapis/_variables.scss:11 + $big-screen: 1350$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/_variables.scss:12 - $big-tablet-scr: 950px;
+./projects/graded-asignments/kelioniu-puslapis/_variables.scss:12 + $big-tablet-scr: 950$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/_variables.scss:13 - $mid-tablet-scr: 931px;
+./projects/graded-asignments/kelioniu-puslapis/_variables.scss:13 + $mid-tablet-scr: 931$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/_variables.scss:14 - $tablet-scr: 900px;
+./projects/graded-asignments/kelioniu-puslapis/_variables.scss:14 + $tablet-scr: 900$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/_variables.scss:15 - $big-phone-scr: 770px;
+./projects/graded-asignments/kelioniu-puslapis/_variables.scss:15 + $big-phone-scr: 770$mid-tablet-scr;
+
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:7 - font-size: 16px;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:7 + font-size: 16$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:9 - @media screen and (max-width: 950px) {
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:9 + @media screen and (max-width: 950$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:11 - font-size: 10px;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:11 + font-size: 10$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:22 - box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:22 + box-shadow: 0$mid-tablet-scr 2$mid-tablet-scr 0$mid-tablet-scr 0$mid-tablet-scr rgba(0, 0, 0, 0.15);
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:37 - height: 15px;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:37 + height: 15$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:46 - @media screen and (max-width: 900px) {
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:46 + @media screen and (max-width: 900$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:103 - height: 30px;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:103 + height: 30$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:113 - border: 2px solid white;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:113 + border: 2$mid-tablet-scr solid white;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:115 - padding: 7px;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:115 + padding: 7$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:116 - height: 24px;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:116 + height: 24$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:155 - border-top: 1px dotted #dcf2ed;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:155 + border-top: 1$mid-tablet-scr dotted #dcf2ed;
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:161 - @media screen and (max-width: 931px) {
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:161 + @media screen and (max-width: 931$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:208 - box-shadow: 0px 0px 20px 0px rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:208 + box-shadow: 0$mid-tablet-scr 0$mid-tablet-scr 20$mid-tablet-scr 0$mid-tablet-scr rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:216 - @media screen and (max-width: 931px) {
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:216 + @media screen and (max-width: 931$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:243 - @media screen and (max-width: 931px) {
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.css:243 + @media screen and (max-width: 931$mid-tablet-scr) {
+
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.html:24 - width="24px"
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.html:24 + width="24$mid-tablet-scr"
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.html:25 - height="24px"
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.html:25 + height="24$mid-tablet-scr"
+
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.scss:30 - box-shadow: 0px 0px 20px 0px rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/apie/apie.scss:30 + box-shadow: 0$mid-tablet-scr 0$mid-tablet-scr 20$mid-tablet-scr 0$mid-tablet-scr rgba(122, 116, 116, 0.1);
+
+./projects/graded-asignments/kelioniu-puslapis/index.html:28 - width="24px"
+./projects/graded-asignments/kelioniu-puslapis/index.html:28 + width="24$mid-tablet-scr"
+./projects/graded-asignments/kelioniu-puslapis/index.html:29 - height="24px"
+./projects/graded-asignments/kelioniu-puslapis/index.html:29 + height="24$mid-tablet-scr"
+
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:12 - box-shadow: 0px 0px 20px rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:12 + box-shadow: 0$mid-tablet-scr 0$mid-tablet-scr 20$mid-tablet-scr rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:73 - line-height: 136.188%; /* 32.685px */
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:73 + line-height: 136.188%; /* 32.685$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:77 - width: 14px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:77 + width: 14$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:78 - height: 18px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:78 + height: 18$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:85 - line-height: 136.188%; /* 19.066px */
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:85 + line-height: 136.188%; /* 19.066$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:88 - margin-top: 20px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:88 + margin-top: 20$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:93 - line-height: 148.188%; /* 20.746px */
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:93 + line-height: 148.188%; /* 20.746$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:122 - padding: 2px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:122 + padding: 2$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:158 - padding: 1px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:158 + padding: 1$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:177 - height: 350px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:177 + height: 350$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:188 - min-width: 300px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:188 + min-width: 300$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:193 - border-radius: 15.586px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:193 + border-radius: 15.586$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:194 - box-shadow: -8px 8px 42px 0px rgba(0, 0, 0, 0.25);
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:194 + box-shadow: -8$mid-tablet-scr 8$mid-tablet-scr 42$mid-tablet-scr 0$mid-tablet-scr rgba(0, 0, 0, 0.25);
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:207 - min-width: 300px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:207 + min-width: 300$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:213 - border-radius: 15.586px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:213 + border-radius: 15.586$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:225 - width: 75px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:225 + width: 75$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:226 - height: 9px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:226 + height: 9$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:229 - left: -50px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:229 + left: -50$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:233 - width: 75px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:233 + width: 75$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:234 - height: 9px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:234 + height: 9$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:237 - left: 67px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:237 + left: 67$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:243 - top: -100px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:243 + top: -100$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:305 - padding-right: 5px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:305 + padding-right: 5$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:311 - padding-right: 5px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:311 + padding-right: 5$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:314 - padding-right: 1px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:314 + padding-right: 1$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:340 - left: -200px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:340 + left: -200$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:358 - padding-left: 5px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:358 + padding-left: 5$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:364 - padding-left: 5px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:364 + padding-left: 5$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:367 - padding-left: 1px;
+./projects/graded-asignments/kelioniu-puslapis/components/slider/_slider.scss:367 + padding-left: 1$mid-tablet-scr;
+
+./projects/graded-asignments/kelioniu-puslapis/components/_page-settings.scss:7 - font-size: 16px;
+./projects/graded-asignments/kelioniu-puslapis/components/_page-settings.scss:7 + font-size: 16$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/_page-settings.scss:9 - font-size: 10px;
+./projects/graded-asignments/kelioniu-puslapis/components/_page-settings.scss:9 + font-size: 10$mid-tablet-scr;
+
+./projects/graded-asignments/kelioniu-puslapis/components/_footer.scss:30 - height: 30px;
+./projects/graded-asignments/kelioniu-puslapis/components/_footer.scss:30 + height: 30$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/_footer.scss:39 - border: 2px solid white;
+./projects/graded-asignments/kelioniu-puslapis/components/_footer.scss:39 + border: 2$mid-tablet-scr solid white;
+./projects/graded-asignments/kelioniu-puslapis/components/_footer.scss:41 - padding: 7px;
+./projects/graded-asignments/kelioniu-puslapis/components/_footer.scss:41 + padding: 7$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/_footer.scss:42 - height: 24px;
+./projects/graded-asignments/kelioniu-puslapis/components/_footer.scss:42 + height: 24$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/components/_footer.scss:86 - border-top: 1px dotted #dcf2ed;
+./projects/graded-asignments/kelioniu-puslapis/components/_footer.scss:86 + border-top: 1$mid-tablet-scr dotted #dcf2ed;
+
+./projects/graded-asignments/kelioniu-puslapis/components/_navbar.scss:10 - box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
+./projects/graded-asignments/kelioniu-puslapis/components/_navbar.scss:10 + box-shadow: 0$mid-tablet-scr 2$mid-tablet-scr 0$mid-tablet-scr 0$mid-tablet-scr rgba(0, 0, 0, 0.15);
+./projects/graded-asignments/kelioniu-puslapis/components/_navbar.scss:25 - height: 15px;
+./projects/graded-asignments/kelioniu-puslapis/components/_navbar.scss:25 + height: 15$mid-tablet-scr;
+
+./projects/graded-asignments/kelioniu-puslapis/styles.css:7 - font-size: 16px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:7 + font-size: 16$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:9 - @media screen and (max-width: 950px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:9 + @media screen and (max-width: 950$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:11 - font-size: 10px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:11 + font-size: 10$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:22 - box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
+./projects/graded-asignments/kelioniu-puslapis/styles.css:22 + box-shadow: 0$mid-tablet-scr 2$mid-tablet-scr 0$mid-tablet-scr 0$mid-tablet-scr rgba(0, 0, 0, 0.15);
+./projects/graded-asignments/kelioniu-puslapis/styles.css:37 - height: 15px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:37 + height: 15$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:46 - @media screen and (max-width: 900px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:46 + @media screen and (max-width: 900$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:85 - min-height: 450px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:85 + min-height: 450$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:88 - box-shadow: 0px 0px 20px rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/styles.css:88 + box-shadow: 0$mid-tablet-scr 0$mid-tablet-scr 20$mid-tablet-scr rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/styles.css:91 - @media screen and (max-width: 1350px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:91 + @media screen and (max-width: 1350$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:99 - @media screen and (max-width: 770px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:99 + @media screen and (max-width: 770$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:113 - @media screen and (max-width: 1350px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:113 + @media screen and (max-width: 1350$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:123 - @media screen and (max-width: 770px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:123 + @media screen and (max-width: 770$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:141 - line-height: 136.188%; /* 32.685px */
+./projects/graded-asignments/kelioniu-puslapis/styles.css:141 + line-height: 136.188%; /* 32.685$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/styles.css:145 - width: 14px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:145 + width: 14$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:146 - height: 18px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:146 + height: 18$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:153 - line-height: 136.188%; /* 19.066px */
+./projects/graded-asignments/kelioniu-puslapis/styles.css:153 + line-height: 136.188%; /* 19.066$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/styles.css:156 - margin-top: 20px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:156 + margin-top: 20$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:161 - line-height: 148.188%; /* 20.746px */
+./projects/graded-asignments/kelioniu-puslapis/styles.css:161 + line-height: 148.188%; /* 20.746$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/styles.css:165 - @media screen and (max-width: 1350px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:165 + @media screen and (max-width: 1350$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:170 - @media screen and (max-width: 1350px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:170 + @media screen and (max-width: 1350$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:178 - @media screen and (max-width: 770px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:178 + @media screen and (max-width: 770$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:188 - padding: 2px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:188 + padding: 2$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:206 - @media screen and (max-width: 1350px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:206 + @media screen and (max-width: 1350$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:225 - @media screen and (max-width: 1350px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:225 + @media screen and (max-width: 1350$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:231 - padding: 1px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:231 + padding: 1$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:239 - @media screen and (max-width: 1350px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:239 + @media screen and (max-width: 1350$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:242 - height: 350px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:242 + height: 350$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:253 - min-width: 300px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:253 + min-width: 300$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:259 - border-radius: 15.586px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:259 + border-radius: 15.586$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:260 - box-shadow: -8px 8px 42px 0px rgba(0, 0, 0, 0.25);
+./projects/graded-asignments/kelioniu-puslapis/styles.css:260 + box-shadow: -8$mid-tablet-scr 8$mid-tablet-scr 42$mid-tablet-scr 0$mid-tablet-scr rgba(0, 0, 0, 0.25);
+./projects/graded-asignments/kelioniu-puslapis/styles.css:262 - @media screen and (max-width: 770px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:262 + @media screen and (max-width: 770$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:274 - min-width: 300px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:274 + min-width: 300$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:282 - border-radius: 15.586px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:282 + border-radius: 15.586$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:284 - @media screen and (max-width: 770px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:284 + @media screen and (max-width: 770$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:293 - width: 75px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:293 + width: 75$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:294 - height: 9px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:294 + height: 9$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:297 - left: -50px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:297 + left: -50$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:301 - width: 75px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:301 + width: 75$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:302 - height: 9px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:302 + height: 9$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:305 - left: 67px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:305 + left: 67$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:311 - top: -100px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:311 + top: -100$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:314 - @media screen and (max-width: 1350px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:314 + @media screen and (max-width: 1350$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:358 - padding-right: 5px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:358 + padding-right: 5$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:363 - padding-right: 5px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:363 + padding-right: 5$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:366 - padding-right: 1px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:366 + padding-right: 1$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:388 - left: -200px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:388 + left: -200$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:403 - padding-left: 5px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:403 + padding-left: 5$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:408 - padding-left: 5px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:408 + padding-left: 5$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:411 - padding-left: 1px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:411 + padding-left: 1$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:466 - height: 30px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:466 + height: 30$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:476 - border: 2px solid white;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:476 + border: 2$mid-tablet-scr solid white;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:478 - padding: 7px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:478 + padding: 7$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:479 - height: 24px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:479 + height: 24$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:518 - border-top: 1px dotted #dcf2ed;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:518 + border-top: 1$mid-tablet-scr dotted #dcf2ed;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:524 - @media screen and (max-width: 931px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:524 + @media screen and (max-width: 931$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:586 - top: -184px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:586 + top: -184$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:587 - margin-left: calc(100vw - 640px);
+./projects/graded-asignments/kelioniu-puslapis/styles.css:587 + margin-left: calc(100vw - 640$mid-tablet-scr);
+./projects/graded-asignments/kelioniu-puslapis/styles.css:589 - @media screen and (max-width: 950px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:589 + @media screen and (max-width: 950$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:624 - @media screen and (max-width: 950px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:624 + @media screen and (max-width: 950$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:654 - @media screen and (max-width: 1350px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:654 + @media screen and (max-width: 1350$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:662 - @media screen and (max-width: 950px) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:662 + @media screen and (max-width: 950$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/styles.css:694 - line-height: 150%; /* 24px */
+./projects/graded-asignments/kelioniu-puslapis/styles.css:694 + line-height: 150%; /* 24$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/styles.css:706 - line-height: 120%; /* 60px */
+./projects/graded-asignments/kelioniu-puslapis/styles.css:706 + line-height: 120%; /* 60$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/styles.css:720 - line-height: 150%; /* 24px */
+./projects/graded-asignments/kelioniu-puslapis/styles.css:720 + line-height: 150%; /* 24$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/styles.css:758 - height: 282px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:758 + height: 282$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:759 - width: 282px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:759 + width: 282$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:767 - height: 282px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:767 + height: 282$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:768 - width: 282px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:768 + width: 282$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:784 - line-height: 136.188%; /* 21.79px */
+./projects/graded-asignments/kelioniu-puslapis/styles.css:784 + line-height: 136.188%; /* 21.79$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/styles.css:803 - padding: 2px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:803 + padding: 2$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:836 - height: 21px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:836 + height: 21$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:837 - width: 17px;
+./projects/graded-asignments/kelioniu-puslapis/styles.css:837 + width: 17$mid-tablet-scr;
+
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.html:24 - width="24px"
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.html:24 + width="24$mid-tablet-scr"
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.html:25 - height="24px"
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.html:25 + height="24$mid-tablet-scr"
+
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:44 - box-shadow: 0px 0px 20px 0px rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:44 + box-shadow: 0$mid-tablet-scr 0$mid-tablet-scr 20$mid-tablet-scr 0$mid-tablet-scr rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:56 - line-height: 130%; /* 39px */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:56 + line-height: 130%; /* 39$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:67 - line-height: 24px; /* 150% */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:67 + line-height: 24$mid-tablet-scr; /* 150% */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:77 - line-height: 20px; /* 125% */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:77 + line-height: 20$mid-tablet-scr; /* 125% */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:81 - width: 24px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:81 + width: 24$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:82 - height: 24px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:82 + height: 24$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:93 - box-shadow: 0px 0px 20px 0px rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:93 + box-shadow: 0$mid-tablet-scr 0$mid-tablet-scr 20$mid-tablet-scr 0$mid-tablet-scr rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:102 - box-shadow: 0px 0px 20px 0px rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:102 + box-shadow: 0$mid-tablet-scr 0$mid-tablet-scr 20$mid-tablet-scr 0$mid-tablet-scr rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:110 - line-height: 130%; /* 39px */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:110 + line-height: 130%; /* 39$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:118 - line-height: 1rem; /* 16px */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:118 + line-height: 1rem; /* 16$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:119 - letter-spacing: -0.24px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:119 + letter-spacing: -0.24$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:122 - border-radius: 6px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:122 + border-radius: 6$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:123 - border: 0.5px solid #999;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:123 + border: 0.5$mid-tablet-scr solid #999;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:129 - border-radius: 6px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:129 + border-radius: 6$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:130 - border: 0.5px solid #999;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.scss:130 + border: 0.5$mid-tablet-scr solid #999;
+
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:7 - font-size: 16px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:7 + font-size: 16$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:9 - @media screen and (max-width: 950px) {
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:9 + @media screen and (max-width: 950$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:11 - font-size: 10px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:11 + font-size: 10$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:22 - box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.15);
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:22 + box-shadow: 0$mid-tablet-scr 2$mid-tablet-scr 0$mid-tablet-scr 0$mid-tablet-scr rgba(0, 0, 0, 0.15);
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:37 - height: 15px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:37 + height: 15$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:46 - @media screen and (max-width: 900px) {
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:46 + @media screen and (max-width: 900$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:103 - height: 30px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:103 + height: 30$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:113 - border: 2px solid white;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:113 + border: 2$mid-tablet-scr solid white;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:115 - padding: 7px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:115 + padding: 7$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:116 - height: 24px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:116 + height: 24$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:155 - border-top: 1px dotted #dcf2ed;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:155 + border-top: 1$mid-tablet-scr dotted #dcf2ed;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:161 - @media screen and (max-width: 931px) {
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:161 + @media screen and (max-width: 931$mid-tablet-scr) {
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:219 - box-shadow: 0px 0px 20px 0px rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:219 + box-shadow: 0$mid-tablet-scr 0$mid-tablet-scr 20$mid-tablet-scr 0$mid-tablet-scr rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:234 - line-height: 130%; /* 39px */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:234 + line-height: 130%; /* 39$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:248 - line-height: 24px; /* 150% */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:248 + line-height: 24$mid-tablet-scr; /* 150% */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:260 - line-height: 20px; /* 125% */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:260 + line-height: 20$mid-tablet-scr; /* 125% */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:266 - width: 24px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:266 + width: 24$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:267 - height: 24px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:267 + height: 24$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:275 - box-shadow: 0px 0px 20px 0px rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:275 + box-shadow: 0$mid-tablet-scr 0$mid-tablet-scr 20$mid-tablet-scr 0$mid-tablet-scr rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:283 - box-shadow: 0px 0px 20px 0px rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:283 + box-shadow: 0$mid-tablet-scr 0$mid-tablet-scr 20$mid-tablet-scr 0$mid-tablet-scr rgba(122, 116, 116, 0.1);
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:291 - line-height: 130%; /* 39px */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:291 + line-height: 130%; /* 39$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:299 - line-height: 1rem; /* 16px */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:299 + line-height: 1rem; /* 16$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:300 - letter-spacing: -0.24px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:300 + letter-spacing: -0.24$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:303 - border-radius: 6px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:303 + border-radius: 6$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:304 - border: 0.5px solid #999;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:304 + border: 0.5$mid-tablet-scr solid #999;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:310 - border-radius: 6px;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:310 + border-radius: 6$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:311 - border: 0.5px solid #999;
+./projects/graded-asignments/kelioniu-puslapis/contacts/contacts.css:311 + border: 0.5$mid-tablet-scr solid #999;
+
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:48 - top: -184px;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:48 + top: -184$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:49 - margin-left: calc(100vw - 640px);
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:49 + margin-left: calc(100vw - 640$mid-tablet-scr);
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:146 - line-height: 150%; /* 24px */
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:146 + line-height: 150%; /* 24$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:158 - line-height: 120%; /* 60px */
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:158 + line-height: 120%; /* 60$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:173 - line-height: 150%; /* 24px */
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:173 + line-height: 150%; /* 24$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:213 - height: 282px;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:213 + height: 282$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:214 - width: 282px;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:214 + width: 282$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:223 - height: 282px;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:223 + height: 282$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:224 - width: 282px;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:224 + width: 282$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:240 - line-height: 136.188%; /* 21.79px */
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:240 + line-height: 136.188%; /* 21.79$mid-tablet-scr */
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:263 - padding: 2px;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:263 + padding: 2$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:298 - height: 21px;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:298 + height: 21$mid-tablet-scr;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:299 - width: 17px;
+./projects/graded-asignments/kelioniu-puslapis/styles.scss:299 + width: 17$mid-tablet-scr;
+
+Would perform 239 replacements on 14 matching files
+Re-run ruplacer with --go to write these changes to the filesystem

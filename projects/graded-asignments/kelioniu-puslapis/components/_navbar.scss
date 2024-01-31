@@ -32,7 +32,7 @@ nav {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: $tablet-scr) {
   nav {
     .burger {
       display: block;

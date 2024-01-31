@@ -10,7 +10,7 @@
 
 footer {
   color: white;
-  background-color: #11224d;
+  background-color: $dark-blue;
   padding-top: 4.4rem;
   .footer_top {
     width: $container-width;
@@ -89,7 +89,7 @@ footer {
     line-height: 1.3rem;
   }
 }
-@media screen and (max-width: 931px) {
+@media screen and (max-width: $mid-tablet-scr) {
   footer {
     .footer_top {
       justify-content: center;
