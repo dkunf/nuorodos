@@ -22,6 +22,7 @@ console.log(failuVardai);
 
 //na o dabar jos skaitysime :)
 //bus proga panaudoti for of, bet ne geriau tiks for in, nes reiks dar tuo pačiu indeksu įkišti į kitą arr tekstą
+//for..in i indexus ziuri kaip i stringus, atsargiai. Taip pat Symbol jis praleidzia.
 for (indeksas in failuVardai) {
   try {
     let kelias = path.join(__dirname, failuVardai[indeksas]);

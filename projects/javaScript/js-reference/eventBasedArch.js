@@ -1,3 +1,4 @@
+//This is not event based, but communication through methods like receiver.receive(giver.give(2));
 class Giver {
   amount = 17;
   give(n) {
@@ -40,6 +41,6 @@ console.log(receiver3);
 
 //how do i give to each receiver amount x in equal parts?
 // we may need to introduce
-// static receivers = []; 
+// static receivers = [];
 //for the Giver class itself and keep track there of how
 // many receivers now exist
