@@ -1,0 +1,247 @@
+@charset "UTF-8";
+html {
+  font-size: 125%;
+  line-height: 1.6rem;
+}
+
+html * {
+  box-sizing: border-box;
+  --shadows: 4px 3px 5px 1px rgba(0, 0, 0, 0.24);
+  --contents-width: 15rem;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #d2b48c;
+}
+
+/* utilities */
+.hide {
+  visibility: collapse;
+}
+
+.widen {
+  width: 100vw;
+  font-size: 1.5rem;
+}
+
+.r {
+  text-align: right;
+}
+
+.tiny {
+  font-size: 0.7rem;
+}
+
+/* tekstas 
+  naujos eilutės centre*/
+.center {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.big {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.img-center {
+  display: block;
+  margin: 1em auto;
+  box-shadow: var(--shadows);
+}
+
+.l2 {
+  margin-left: 2rem;
+}
+
+.highlight {
+  background-color: rgb(188, 190, 69);
+}
+
+/* general */
+.code-snippet {
+  padding: 1em;
+  font-family: "Fira Code", monospace;
+  background-color: #bdb2b2;
+  color: HTML-code-snippet-color;
+  overflow-wrap: break-word;
+  overflow-x: scroll;
+}
+
+.tag {
+  color: rgb(79, 79, 204);
+}
+
+.insert-container {
+  position: relative;
+}
+
+.insert {
+  position: absolute;
+  right: 0;
+  top: 5rem;
+  width: 40%;
+  max-height: 80%;
+  border: 2px dashed #efefef;
+  overflow-y: scroll;
+  padding: 1rem;
+  box-shadow: var(--shadows);
+}
+
+.insert code {
+  font-size: 0.7em;
+}
+
+code {
+  display: block;
+  /* text-align: center; */
+  overflow-wrap: break-word;
+  padding: 1rem;
+  margin: 1rem;
+  font-family: "Fira Code", monospace;
+  /* font-family: "Courier New", Courier, monospace; */
+  background-color: #ccc;
+  color: #333;
+}
+
+.pamokslas:before {
+  content: "pamokslo pradžia";
+  position: relative;
+  left: -2em;
+  background-color: rgb(207, 131, 68);
+  transform: rotate(-2deg);
+  box-shadow: var(--shadows);
+  font-size: 0.7em;
+  padding: 0.3rem;
+}
+
+.screenshots {
+  width: calc(30% - 1.5rem);
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 1rem;
+  box-shadow: var(--shadows);
+}
+
+section {
+  box-shadow: var(--shadows);
+  padding: 5rem 2rem 5rem 2rem;
+  margin: 2rem 0;
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  text-indent: 2em;
+  padding: 0 2em 1em 2em;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  line-height: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  padding: 1rem;
+  text-align: center;
+  /* box-shadow: var(--shadows); */
+}
+
+h2::before {
+  content: "✦ ";
+}
+
+/* just to have li numbering */
+ol {
+  counter-reset: item;
+}
+
+ol li:before {
+  content: counter(item) ". ";
+  counter-increment: item;
+}
+
+ol ol {
+  margin-left: 0.5rem;
+}
+
+ol ol li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+}
+
+li {
+  margin-left: 0.5rem;
+}
+
+li::before {
+  content: "✧ ";
+}
+
+/* concrete */
+main {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: calc(100vw - var(--contents-width));
+  overflow-y: scroll;
+  padding: 1rem;
+  line-height: 2rem;
+  /* background-color: #ff8800;
+    color: white; */
+  border: 1px solid transparent;
+}
+
+.epi {
+  padding: 2rem;
+  font-size: 1rem;
+  position: relative;
+  right: -50%;
+  width: 50%;
+  transform: rotate(-1deg);
+  box-shadow: var(--shadows);
+}
+
+#contents-box {
+  font-size: 0.9rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--contents-width);
+  border: 1px solid #bdb2b2;
+  overflow-y: scroll;
+  padding: 1rem 0.5rem;
+  line-height: 2rem;
+  border: 1px solid transparent;
+  background-color: #d2b47c;
+}
+
+.hide-btn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 30%;
+  margin: 0.2rem 0.2rem;
+}
+
+/* links to tasks */
+#link-to-tasks {
+  font-size: 1.5rem;
+  background-color: rgb(165, 108, 42);
+}
+
+.figma-tasks {
+  text-align: center;
+}/*# sourceMappingURL=styles.css.map */

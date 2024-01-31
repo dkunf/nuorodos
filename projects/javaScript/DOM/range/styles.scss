@@ -1,0 +1,31 @@
+// goal is to make universal ranger
+//but first lets make 1 concrete
+
+//math is off a bit. maybe top: value for rail
+
+$runner-height: 1.5rem;
+
+.range-element {
+  margin-top: 50%;
+  position: relative;
+  width: 90vw;
+  height: 2 * ($runner-height + 1) + $runner-height;
+  background-color: rgb(209, 155, 91);
+  border-radius: 2 * $runner-height;
+  .rail {
+    width: 100%;
+    background-color: lightgreen;
+    height: 0.5rem;
+    position: absolute;
+    top: $runner-height + 1rem + $runner-height/2;
+  }
+  .runner {
+    position: absolute;
+    top: 0;
+    height: $runner-height;
+    width: $runner-height;
+    border: $runner-height + 1rem solid rgb(4, 81, 77);
+    background-color: rgb(0, 0, 0);
+    border-radius: 100%;
+  }
+}

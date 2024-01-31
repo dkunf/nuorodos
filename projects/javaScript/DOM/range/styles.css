@@ -1,0 +1,24 @@
+.range-element {
+  margin-top: 50%;
+  position: relative;
+  width: 90vw;
+  height: 6.5rem;
+  background-color: rgb(209, 155, 91);
+  border-radius: 3rem;
+}
+.range-element .rail {
+  width: 100%;
+  background-color: lightgreen;
+  height: 0.5rem;
+  position: absolute;
+  top: 3.25rem;
+}
+.range-element .runner {
+  position: absolute;
+  top: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 2.5rem solid rgb(4, 81, 77);
+  background-color: rgb(0, 0, 0);
+  border-radius: 100%;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,7 @@
+text and image side by side looking nicely  and responsive ???
+
+coords of elements, changing positions from js
+
+catalogue style:  i enter data and standard catalogue is presented on screen. Smth like Maxima weekly issue.
+
+
