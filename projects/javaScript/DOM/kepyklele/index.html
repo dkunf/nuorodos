@@ -4,9 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kepykla</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <h1>KEPYKLA</h1>
+    <div class="form">
+      <h2>Jūsų užsakymas:</h2>
+      <div>
+        <label for="a">Baguettes?</label>
+        <input id="baguettes" type="number" min="0" placeholder="0" step="1" />
+      </div>
+      <div>
+        <label for="b">Pretzel?</label>
+        <input id="pretzel" type="number" min="0" placeholder="0" step="1" />
+      </div>
+      <div>
+        <label for="c">Croissant?</label>
+        <input id="croissant" type="number" min="0" placeholder="0" step="1" />
+      </div>
+      <div class="btns">
+        <button>Calculate</button>
+        <button class="reset-btn">Iš naujo</button>
+      </div>
+
+      <div class="results">
+        <p>0</p>
+      </div>
+    </div>
+
+    <div class="errContainer"></div>
+
     <script src="./script.js"></script>
   </body>
 </html>
