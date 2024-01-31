@@ -1,0 +1,16 @@
+h1 {
+  color: rgb(160, 140, 27);
+}
+
+pre {
+  width: 10vw;
+  transform: rotate(-15deg);
+  font-size: 1.5rem;
+  color: lightsalmon;
+  margin: 5rem;
+  border: 1px dotted rgb(160, 140, 27);
+}
+
+h2 {
+  font-size: 2rem;
+}/*# sourceMappingURL=styles.css.map */

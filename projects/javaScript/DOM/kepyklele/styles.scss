@@ -1,0 +1,72 @@
+/*# sourceMappingURL=styles.css.map */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: beige;
+  background-image: url("./bakery.avif");
+  background-position: center;
+  background-size: cover;
+  .errContainer {
+    position: absolute;
+    height: 100px;
+    width: 50px;
+    background-image: url("./mistake.png");
+    background-size: 100% 100%;
+    display: none;
+  }
+
+  h1 {
+    font-size: 4rem;
+    color: rgb(250, 247, 243);
+    text-align: center;
+    background-color: rgba(241, 195, 139, 0.385);
+  }
+  .form {
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border-radius: 2rem;
+    width: fit-content;
+    div {
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .btns {
+      display: flex;
+      flex-direction: row;
+      button,
+      .reset-btn {
+        padding: 1rem 2rem;
+        //   width: fit-content;
+        margin: 1rem auto;
+        background-color: bisque;
+        border-radius: 2rem;
+      }
+    }
+  }
+  .results {
+    height: 2rem;
+    width: 2rem;
+    background-color: black;
+    color: beige;
+    padding: 1rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+.red {
+  color: red;
+}

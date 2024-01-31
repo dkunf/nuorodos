@@ -1,0 +1,12 @@
+// let rnd = Math.round(Math.random() * 10 + 2);
+let rnd;
+// console.log(rnd);
+let cikluSkaicius = Math.round(Math.random() * 100);
+let visiSkaiciai = "";
+
+for (let i = 1; i <= cikluSkaicius; i++) {
+  rnd = Math.round(Math.random() * 100 + 2);
+  visiSkaiciai += rnd + " ";
+}
+
+console.log(visiSkaiciai);

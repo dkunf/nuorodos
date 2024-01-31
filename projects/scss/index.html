@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Hello world</h1>
+    <p>now we can use scss</p>
+    <p>let's try mixins as here:</p>
+    <pre>
+            @mixin reset-list {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+              }
+              
+              @mixin horizontal-list {
+                @include reset-list;
+              
+                li {
+                  display: inline-block;
+                  margin: {
+                    left: -2px;
+                    right: 2em;
+                  }
+                }
+              }
+              
+              nav ul {
+                @include horizontal-list;
+              }
+              
+
+        </pre
+    >
+    <p>i did this:</p>
+    <pre>
+
+    @mixin strange {
+        width: 10vw;
+        transform: rotate(-15deg);
+        font-size: 1.5rem;
+        color: lightsalmon;
+      }
+      
+      pre {
+        @include strange;
+      
+        margin: 5rem;
+        border: 1px dotted x.$fontColor;
+      }
+
+
+</pre
+    >
+
+    <p>
+      i have variable in _variables.scss file and i import it into styles.scss
+      file:
+    </p>
+
+    <pre>
+// @import "variables"
+// @use "variables" as *; color:$fontColor;
+@use "variables" as x;
+
+h1 {
+  color: x.$fontColor;
+}
+</pre
+    >
+    <p>
+      looks like you use something as object with properties identical to
+      variable names
+    </p>
+
+    <h2>Nesting is nice too</h2>
+
+    <p></p>
+    <pre>
+        .enlarge {
+            font-size: 14px;
+            transition: {
+              property: font-size;
+              duration: 4s;
+              delay: 2s;
+            }
+          
+            &:hover { font-size: 36px; }
+          }
+          
+    </pre>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+// @import "variables"
+// @use "variables" as *; color:$fontColor;
+@use "variables" as x;
+
+h1 {
+  color: x.$fontColor;
+}
+
+@mixin strange {
+  width: 10vw;
+  transform: rotate(-15deg);
+  font-size: 1.5rem;
+  color: lightsalmon;
+}
+
+pre {
+  @include strange;
+
+  margin: 5rem;
+  border: 1px dotted x.$fontColor;
+}
+
+h2 {
+  font-size: 2rem;
+}

@@ -1,0 +1,78 @@
+$container-margin: 7rem;
+
+.container {
+  margin: 0 $container-margin;
+  nav {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      .logo-text {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  }
+}
+
+.cta-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: $container-margin;
+  gap: 0.5rem;
+  .cta-descr {
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 30rem);
+    gap: 2rem;
+    background-image: url("./assets/cta.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex: 1 2 auto;
+    padding-left: $container-margin;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: bolder;
+    }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: normal;
+      font-style: italic;
+    }
+    .bold {
+      font-weight: bold;
+    }
+    button {
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      background-color: #2e98d6;
+      width: fit-content;
+      color: white;
+    }
+  }
+  .cta-vid {
+    min-height: 100%;
+    width: min(100%, 30rem);
+    width: 100%;
+    max-width: 50%;
+    background-image: url("./assets/tr.png");
+    background-size: cover;
+    background-position: center;
+    flex: 1 1 auto;
+  }
+}

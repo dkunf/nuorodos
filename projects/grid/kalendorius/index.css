@@ -1,8 +1,24 @@
-.baner {
+.hidden {
+  display: none;
+}
+#note-box {
+  position: fixed;
+  top: 30vh;
+  left: 10vw;
+  z-index: 3;
+}
+
+#a-note {
+  width: 80vw;
+  height: 40vh;
+}
+.banner {
   height: 50vh;
   width: 100%;
   object-fit: cover;
   object-position: bottom;
+}
+.pic-container {
   position: relative;
 }
 .month {
@@ -14,14 +30,14 @@
 }
 .year {
   position: absolute;
-  font-size: 5rem;
-  top: 2rem;
+  font-size: 2rem;
+  bottom: 0;
   right: 1rem;
-  color: #999;
+  color: #555;
 }
 .calendar {
   padding: 1rem;
-  height: 50vh;
+  /* height: 50vh; */
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 }
@@ -34,8 +50,9 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 1rem;
 }
 
@@ -45,4 +62,10 @@
 .today {
   color: rgb(25, 241, 25);
   font-weight: 900;
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 12px;
+  }
 }

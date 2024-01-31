@@ -1,0 +1,71 @@
+body {
+  box-sizing: border-box;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: stretch;
+}
+.grid-cell {
+  border: 1px solid #444;
+  padding: 10px;
+}
+h1,
+h2 {
+  padding: 5px;
+}
+.flex-containeris {
+  display: flex;
+  gap: 10px;
+  height: 70px;
+  width: 100%;
+  /* background-color: rgb(118, 55, 55); */
+  background-color: lightsalmon;
+}
+.flex-containeris-1 {
+  display: flex;
+  gap: 10px;
+  /* height: 300px; */
+  width: 100%;
+  /* background-color: rgb(118, 55, 55); */
+  background-color: lightsalmon;
+}
+.flex-containeris-2 {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  /* height: 300px; */
+  width: 100%;
+  /* background-color: rgb(118, 55, 55); */
+  background-color: lightsalmon;
+}
+.flex-vaikas {
+  border: 1px solid grey;
+  padding: 10px;
+  margin: 10px;
+  background-color: lightyellow;
+}
+.tarpas {
+  margin-top: 200px;
+}
+.mark {
+  font-weight: bolder;
+}
+.h-150 {
+  height: 150px;
+}
+.h-50percent {
+  height: 50%;
+}
+.flex-1–2–auto {
+  flex: 1 2 auto;
+}
+.flex-2–1–auto {
+  flex: 2 1 auto;
+}
+.paveikslas {
+  background-image: url("./pics/lake.jpeg");
+  /* height: 100px; */
+  width: 100px;
+  flex: 1 1 auto;
+}

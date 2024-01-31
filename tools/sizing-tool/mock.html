@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>testing sizing script</title>
+    <style>
+      .invisible {
+        display: none;
+      }
+      #save-btn {
+        padding: 1rem;
+      }
+      .selected {
+        background-color: lightpink;
+      }
+      .mock {
+        display: flex;
+      }
+
+      .mock-img {
+        height: 50px;
+        width: 50px;
+      }
+      #dashboard-1 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2px;
+        font-size: 0.9rem;
+      }
+      #dashboard-1 > div {
+        border: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #classes {
+        grid-column: span 4;
+      }
+
+      #dashboard-2 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2px;
+      }
+      #dashboard-2 > div {
+        border: 1px solid #ddd;
+      }
+      #padding,
+      #margin {
+        grid-column: span 4;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2px;
+      }
+      #padding > div,
+      #margin > div {
+        border: 1px solid #ddd;
+      }
+      .span-4 {
+        grid-column: span 4;
+      }
+      .span-2 {
+        grid-column: span 2;
+      }
+      .key-like {
+        font-size: 0.7rem;
+        border: 1px solid #eee;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1px;
+      }
+      .explain {
+        font-size: 0.8rem;
+        color: #ccc;
+        text-align: center;
+      }
+      #whole-f-dashboard {
+        width: min-content;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+      }
+      .instructions {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mock">
+      <img src="../pics/abcd.png" alt="" class="mock-img" />
+      <p class="mock-p">Lorem, ipsum dolor.</p>
+    </div>
+
+    <div id="whole-f-dashboard">
+      <div id="dashboard-1">
+        <div>
+          <div class="explain">Element</div>
+          <div id="tagName">DIV</div>
+        </div>
+        <div>
+          <div class="explain">Display</div>
+          <div id="display-element">BLOCK</div>
+        </div>
+        <div>
+          <div class="explain">&subset; Parent Display</div>
+          <div id="display-parent">FLEX</div>
+        </div>
+        <div id="height">
+          <div class="explain">Height</div>
+          <div id="height-px">16px</div>
+          <!-- <div id="height-rem">1rem</div> -->
+        </div>
+        <div id="width">
+          <div class="explain">Width</div>
+          <div id="width-px">16px</div>
+          <!-- <div id="width-rem">1rem</div> -->
+        </div>
+        <div id="id">#db</div>
+        <div id="classes">
+          .nav .d-flex .my-3 dfadf adfadfa affas asfasfsfs afsasf
+        </div>
+      </div>
+      <div id="dashboard-2">
+        <div id="padding">
+          <div class="explain span-4">Padding</div>
+          <div class="explain">top</div>
+          <div class="explain">right</div>
+          <div class="explain">bottom</div>
+          <div class="explain">left</div>
+          <div id="padding-top-px">8px</div>
+          <div id="padding-right-px">0</div>
+          <div id="padding-bottom-px">3px</div>
+          <div id="padding-left-px">80px</div>
+          <!-- <div id="padding-top-rem">0.5rem</div>
+          <div id="padding-right-rem">0</div>
+          <div id="padding-bottom-rem">0.3rem</div>
+          <div id="padding-left-rem">5rem</div> -->
+        </div>
+        <div id="margin">
+          <div class="explain span-4">Margin</div>
+          <div class="explain">top</div>
+          <div class="explain">right</div>
+          <div class="explain">bottom</div>
+          <div class="explain">left</div>
+          <div id="margin-top-px">20px</div>
+          <div id="margin-right-px">10px</div>
+          <div id="margin-bottom-px">3px</div>
+          <div id="margin-left-px">0</div>
+          <!-- <div id="margin-top-rem">1.3rem</div>
+          <div id="margin-right-rem">0.7rem</div>
+          <div id="margin-bottom-rem">0.13rem</div>
+          <div id="margin-left-rem">0</div> -->
+        </div>
+      </div>
+    </div>
+    <div class="instructions invisible">
+      <div class="span-4">
+        <div>
+          <span class="key-like">ctrl</span> +
+          <span class="key-like">&uarr;</span>
+          <span class="key-like">&darr;</span>
+          <span class="key-like">&rarr;</span>
+          <span class="key-like">&larr;</span>
+        </div>
+        <div>choose padding</div>
+      </div>
+      <div class="span-4">
+        <div>
+          <span class="key-like">shift</span> +
+          <span class="key-like">&uarr;</span>
+          <span class="key-like">&darr;</span>
+          <span class="key-like">&rarr;</span>
+          <span class="key-like">&larr;</span>
+        </div>
+        <div>choose margin</div>
+      </div>
+      <div class="span-4">
+        <div>
+          <span class="key-like"> alt</span> +
+          <span class="key-like">&uarr;</span>
+          <span class="key-like">&darr;</span>
+        </div>
+        <div>choose height</div>
+      </div>
+      <div class="span-4">
+        <div>
+          <span class="key-like"> alt</span> +
+          <span class="key-like">&rarr;</span>
+          <span class="key-like">&larr;</span>
+        </div>
+        <div>choose width</div>
+      </div>
+      <div class="span-2">
+        <div>
+          <span class="key-like">&uarr;</span>
+          <span class="key-like">&rarr;</span>
+        </div>
+        <div>+X px</div>
+      </div>
+      <div class="span-2">
+        <div>
+          <span class="key-like">&darr;</span>
+          <span class="key-like">&larr;</span>
+        </div>
+        <div>-X px</div>
+      </div>
+      <div class="span-2">
+        <div><span class="key-like"> 1</span></div>
+        <div>X = 1</div>
+      </div>
+      <div class="span-2">
+        <div><span class="key-like"> 5</span></div>
+        <div>X = 5</div>
+      </div>
+    </div>
+
+    <script src="./sizing.js"></script>
+  </body>
+</html>
