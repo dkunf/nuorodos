@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Original function
+      function sayHello(greeting) {
+        console.log(`${greeting}, ${this.name}!`);
+      }
+
+      // Creating a bound function
+      const boundFunction = sayHello.bind({ name: "John" }, "Good morning");
+
+      // Calling the bound function
+      boundFunction();
+
+      //orig fn
+      sayHello("hey");
+    </script>
+  </body>
+</html>
