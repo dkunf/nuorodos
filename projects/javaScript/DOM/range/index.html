@@ -9,7 +9,123 @@
   <body>
     <div class="range-element">
       <div class="rail"></div>
-      <div class="runner"></div>
+      <div class="runner">
+        <div class="needle"></div>
+      </div>
     </div>
+
+    <div class="ruler">
+      <canvas class="canvas" width="1000" height="200"></canvas>
+    </div>
+    <!-- actually range slider is needed when 
+      you want to see quickly results of using some very different values.
+    Entering from keyboard takes more efforts and time,
+    unless it's arrows, but arrows can change range insignifficantly
+    while slider can be moved very significantly.
+    Maybe 2d range is best for picking colors, right?
+    because it's very visual and very quick to choose what you want.
+      
+    so to make sense using range slider:
+    1: range changes are significant (otherwise arrow keys)
+    2: you need to visualize effect of changing values quickly
+
+    what if i use it applying a lot of css styles to some group 
+    of elements and seeing effect of doing it immediately?????
+for example margin,padding,height,width.
+
+then flex with all flex options 
+then grid with all grid options 
+
+and i don't need to know which ones applied until i find suittable one :)
+same with colors, shaddows, animation params etc.....
+
+border-radii are tricky, gradients
+    -->
+    <script>
+      //this runner is not descrete,but continuos
+      //goal is to make runner run to clicked coordinates
+      const rangeEl = document.querySelector(".range-element");
+      const rail = document.querySelector(".rail");
+      const runner = document.querySelector(".runner");
+      // it moves now
+      rangeEl.addEventListener("click", moveToClickedCoord);
+      document.addEventListener("keydown", keyHandler);
+
+      drawRuler();
+
+      function keyHandler(event) {
+        let rangeRect = rangeEl.getBoundingClientRect();
+        let leftEdgeOfRange = rangeRect.left;
+        let runnerRect = runner.getBoundingClientRect();
+        let runnerLocalCoordX = runnerRect.left - leftEdgeOfRange;
+        if (event.key === "ArrowRight") {
+          if (runnerRect.right < rangeRect.right) {
+            runner.style.left = Math.round(runnerLocalCoordX + 1) + "px";
+          }
+        }
+        if (event.key === "ArrowLeft") {
+          if (runnerLocalCoordX >= 0.5)
+            runner.style.left = Math.round(runnerLocalCoordX - 1) + "px";
+        }
+      }
+
+      //now i want to add ruler or some reference to data
+      //i am thinking of precision of 1px, can i do it like
+      //on the slankmatis?
+      function moveToClickedCoord(event) {
+        //we switch to local coords by minus left edge of range
+        let rangeRect = rangeEl.getBoundingClientRect();
+        let runnerRect = runner.getBoundingClientRect();
+        let clickedX = event.clientX;
+        let halfRunner = Math.round(runnerRect.width / 2);
+
+        //left to the very edge
+        if (clickedX < rangeRect.left + halfRunner) {
+          runner.style.left = "0";
+          return;
+        }
+        //right to the very edge
+        if (clickedX > rangeRect.right - halfRunner) {
+          runner.style.left = rangeRect.width - 2 * halfRunner + "px";
+
+          return;
+        }
+
+        runner.style.left = clickedX - rangeRect.left - halfRunner + "px";
+      }
+
+      function drawRuler(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]) {
+        const ruler = document.querySelector(".canvas");
+        console.log(ruler);
+        //need to map lines to from to step
+        let rulerRect = ruler.getBoundingClientRect();
+        let range = arr.length + 1;
+        let scale = Math.round((rulerRect.width - 50) / (1 * range));
+        let rulerWidth = Math.round(rulerRect.width);
+
+        console.log(`range is ${range}, scale is ${scale},
+        rulerRect.width is ${rulerWidth},
+        rangexscale is ${range * scale}`);
+        const ctx = ruler.getContext("2d");
+
+        // Set line properties
+        ctx.strokeStyle = "black"; // Set line color
+        ctx.lineWidth = 1; // Set line width
+
+        // Draw the first vertical line
+        ctx.beginPath(); // Start a new path
+        ctx.resetTransform();
+        ctx.font = "30px Arial";
+        ctx.fillStyle = "black";
+        let i = -1;
+        for (let x = 30; x <= rulerWidth - 100; x += scale) {
+          i++;
+          ctx.moveTo(x, 0);
+          ctx.lineTo(x, 100);
+          ctx.fillText(`${arr[i]}`, x - 10, 150);
+        }
+        ctx.stroke();
+      }
+    </script>
   </body>
 </html>

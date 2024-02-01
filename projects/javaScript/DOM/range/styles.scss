@@ -3,29 +3,69 @@
 
 //math is off a bit. maybe top: value for rail
 
-$runner-height: 1.5rem;
+// $runner-height: 1.5rem;
+// $component-bg:
+// #5e493a;
+// $rail-bg:
+// #231f20;
+// $runner-border-color:
+// #8b7355;
+// $runner-center-color:
+// #3d3028;
 
-.range-element {
-  margin-top: 50%;
-  position: relative;
-  width: 90vw;
-  height: 2 * ($runner-height + 1) + $runner-height;
-  background-color: rgb(209, 155, 91);
-  border-radius: 2 * $runner-height;
-  .rail {
-    width: 100%;
-    background-color: lightgreen;
-    height: 0.5rem;
-    position: absolute;
-    top: $runner-height + 1rem + $runner-height/2;
+$runner-height: 1.5rem;
+$runner-width: 1.5rem;
+$component-bg: #d3d3d3;
+$rail-bg: #808080;
+$runner-border-color: #555555;
+$runner-center-color: #c0c0c0;
+
+body {
+  background-color: #333333;
+
+  .range-element {
+    margin: 3rem auto;
+    position: relative;
+    width: 90vw;
+    height: 2 * ($runner-height + 1) + $runner-height;
+    background-color: $component-bg;
+    border-radius: 2 * $runner-height + 1rem;
+
+    .rail {
+      width: 100%;
+      background-color: $rail-bg;
+      height: 0.5rem;
+      position: absolute;
+      top: $runner-height + 1rem + $runner-height/4;
+      border-radius: 1rem;
+    }
+    .runner {
+      position: absolute;
+      top: 0;
+      height: $runner-height;
+      width: $runner-width;
+      border: $runner-height + 1rem solid $runner-border-color;
+      background-color: $runner-center-color;
+      border-radius: 100%;
+      .needle {
+        position: absolute;
+        width: 1px;
+        height: $runner-height * 7;
+        left: $runner-width/2;
+        background-color: #000;
+      }
+    }
   }
-  .runner {
-    position: absolute;
-    top: 0;
-    height: $runner-height;
-    width: $runner-height;
-    border: $runner-height + 1rem solid rgb(4, 81, 77);
-    background-color: rgb(0, 0, 0);
-    border-radius: 100%;
+  .ruler {
+    display: block;
+    margin: 1rem auto;
+    width: 90vw;
+    height: 2 * ($runner-height + 1) + $runner-height;
+    background-color: $component-bg;
+    border-radius: 2 * $runner-height + 1rem;
+    .canvas {
+      width: 90vw;
+      height: 100%;
+    }
   }
 }
