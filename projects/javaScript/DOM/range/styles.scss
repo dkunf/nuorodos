@@ -20,52 +20,58 @@ $rail-bg: #808080;
 $runner-border-color: #555555;
 $runner-center-color: #c0c0c0;
 
+html,
 body {
   background-color: #333333;
-
-  .range-element {
-    margin: 3rem auto;
-    position: relative;
-    width: 90vw;
-    height: 2 * ($runner-height + 1) + $runner-height;
-    background-color: $component-bg;
-    border-radius: 2 * $runner-height + 1rem;
-
-    .rail {
+  margin: 0;
+  padding: 0;
+  .container {
+    // width: 100%;
+    // height: 50vh;
+    margin: 3rem;
+    .range-element {
+      position: relative;
       width: 100%;
-      background-color: $rail-bg;
-      height: 0.5rem;
-      position: absolute;
-      top: $runner-height + 1rem + $runner-height/4;
-      border-radius: 1rem;
-    }
-    .runner {
-      position: absolute;
-      top: 0;
-      height: $runner-height;
-      width: $runner-width;
-      border: $runner-height + 1rem solid $runner-border-color;
-      background-color: $runner-center-color;
-      border-radius: 100%;
-      .needle {
+      height: 2 * ($runner-height + 1) + $runner-height;
+      background-color: $component-bg;
+      border-radius: 2 * $runner-height + 1rem;
+
+      .rail {
+        width: 100%;
+        background-color: $rail-bg;
+        height: 0.5rem;
         position: absolute;
-        width: 1px;
-        height: $runner-height * 7;
-        left: $runner-width/2;
-        background-color: #000;
+        top: $runner-height + 1rem + $runner-height/4;
+        border-radius: 1rem;
+      }
+      .runner {
+        position: absolute;
+        top: 0;
+        height: $runner-height;
+        width: $runner-width;
+        border: $runner-height + 1rem solid $runner-border-color;
+        background-color: $runner-center-color;
+        border-radius: 100%;
+        .needle {
+          position: absolute;
+          width: 1px;
+          height: $runner-height * 7;
+          left: $runner-width/2;
+          background-color: #000;
+        }
       }
     }
-  }
-  .ruler {
-    display: block;
-    margin: 1rem auto;
-    width: 90vw;
-    height: 2 * ($runner-height + 1) + $runner-height;
-    background-color: $component-bg;
-    border-radius: 2 * $runner-height + 1rem;
-    .canvas {
-      width: 90vw;
-      height: 100%;
+    .ruler {
+      margin-top: 1rem;
+      display: block;
+      min-width: 100%;
+      height: 2 * ($runner-height + 1) + $runner-height;
+      background-color: $component-bg;
+      // border-radius: 2 * $runner-height + 1rem;
+      .canvas {
+        min-width: 100%;
+        height: 100%;
+      }
     }
   }
 }

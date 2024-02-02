@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+    <style>
+      body {
+        background-color: lightpink;
+      }
+      .canvas-wrapper-container {
+        background-color: lightsalmon;
+        margin: 90px;
+      }
+      canvas {
+        margin: 5px;
+        border: 1px solid #000;
+        /* width: 700px;
+        height: 350px; */
+      }
+    </style>
+  </head>
+  <body>
+    body
+    <div class="canvas-wrapper-container">
+      wrapper
+      <canvas id="graphCanvas"></canvas>
+    </div>
+    <script>
+      const canvas = document.getElementById("graphCanvas");
+      canvas.width = 700;
+      canvas.height = 350;
+      const ctx = canvas.getContext("2d");
+
+      //////////////// DOT ////////////////////////////
+      // Set dot properties
+      const dotRadius = 5;
+      const dotColor = "#FF0000";
+      const dot1X = 120;
+      const dot1Y = 120;
+      const dot2X = 100;
+      const dot2Y = 100;
+
+      // Draw dot
+      ctx.beginPath();
+      ctx.arc(dot1X, dot1Y, dotRadius, 0, 2 * Math.PI);
+      ctx.arc(dot2X, dot2Y, dotRadius, 0, 2 * Math.PI);
+      ctx.fillStyle = dotColor;
+      ctx.fill(); //fill area enclosed by path
+      ctx.closePath(); //connects last position to first,closing path
+
+      //////////////// LINE ///////////////////////////////
+      // Set line properties
+
+      const lineColor = "#0000FF";
+      const lineWidth = 2;
+
+      // Draw line
+      ctx.beginPath();
+      ctx.moveTo(dot1X, dot1Y); // Starting point
+      ctx.lineTo(dot2X, dot2Y); // Ending point
+      ctx.strokeStyle = lineColor; // Set line color
+      ctx.lineWidth = lineWidth; // Set line width
+      ctx.stroke(); // Draw the line
+      ctx.closePath();
+      //////////////////////RECTANGLE////////////////////////
+      ctx.beginPath();
+      ctx.rect(20, 20, 30, 30);
+      ctx.closePath();
+      ctx.stroke(); //outlines path
+      ctx.fillStyle = "#00ff00";
+      ctx.fill(); //fills enclosed path
+      //////////////////////CIRCLE////////////////////////////////
+
+      // Set circle properties
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      const radius = 50;
+      const startAngle = 0;
+      const endAngle = Math.PI * 2;
+      const anticlockwise = false; // Whether the arc is drawn counterclockwise or not
+
+      // Draw circle
+      ctx.strokeStyle = "#333";
+      ctx.beginPath();
+
+      ctx.arc(centerX, centerY, radius, startAngle, endAngle, anticlockwise);
+      ctx.closePath();
+      ctx.stroke(); // To only draw the outline of the circle
+
+      ///////////////////// QUADRATIC CURVE ///////////////////////
+      // Set curve properties
+      const startX = 50;
+      const startY = 100;
+      const controlX = 150;
+      const controlY = 300;
+      const endX = 250;
+      const endY = 100;
+
+      // Draw curved line
+      ctx.beginPath();
+      ctx.moveTo(startX, startY);
+      ctx.quadraticCurveTo(controlX, controlY, endX, endY);
+      ctx.arc(controlX, controlY, 5, 0, 2 * Math.PI); //control point
+
+      ctx.stroke();
+      manyQuadraticCurvesWithControlPoints(ctx);
+
+      ///////////////bezierCurve//////////////////////////
+
+      // Set curve properties
+      const startXB = 200;
+      const startYB = 10;
+      const controlX1 = 250;
+      const controlY1 = 100;
+      const controlX2 = 400;
+      const controlY2 = 6;
+      const endXB = 500;
+      const endYB = 30;
+
+      // Draw curved line
+      ctx.beginPath();
+      ctx.moveTo(startXB, startYB);
+      ctx.bezierCurveTo(
+        controlX1,
+        controlY1,
+        controlX2,
+        controlY2,
+        endXB,
+        endYB
+      );
+      ctx.moveTo(startXB, startYB);
+      ctx.arc(controlX1, controlY1, dotRadius, 0, 2 * Math.PI);
+      ctx.fillText("<<--Bezier ctrl point", controlX1 + 10, controlY1 + 5);
+      ctx.moveTo(endXB, endYB);
+      ctx.arc(controlX2, controlY2, dotRadius, 0, 2 * Math.PI);
+      ctx.stroke();
+
+      //////////////////////TEXT/////////////////////////////
+      // Set text properties
+      const text = "-control point for quadratic curve";
+      const x = controlX + 10;
+      const y = controlY + 5;
+      const font = "16px Arial";
+      const color = "black";
+
+      // Draw filled text
+      ctx.fillStyle = color;
+      ctx.font = font;
+      ctx.fillText(text, x, y);
+
+      // Draw stroked text
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1; // Optional: Set line width for stroked text
+      ctx.strokeText(text, x, y);
+
+      ///COORDINATES IN CANVAS  / IN SCREEN///////////////////////
+      ctx.beginPath();
+      ctx.strokeStyle = "#3580ee";
+      ctx.lineWidth = "8";
+      ctx.moveTo(0, 300);
+      ctx.lineTo(0, 0);
+      ctx.lineTo(300, 0);
+      ctx.stroke();
+
+      let canvasRect = canvas.getBoundingClientRect();
+      ctx.fillText(
+        `(${canvasRect.x},  ${canvasRect.y}) are coords of left upper corner of canvas`,
+        20,
+        330
+      );
+      let offsetX = canvas.offsetLeft;
+      let offsetY = canvas.offsetTop;
+      ctx.fillText(
+        `(${offsetX},  ${offsetY}) are offsets of canvas from left and top. it's (0,0) on canvas`,
+        20,
+        348
+      );
+      ctx.fillText("canvas", 600, 300);
+
+      /////////////////////////////////////////
+      /////////////////////////////////////////
+      /////////////////////////////////////////
+      /////////////////////////////////////////
+      /////////////////////////////////////////
+      /////////////////////////////////////////
+
+      function manyQuadraticCurvesWithControlPoints(ctx) {
+        // Set curve properties
+        let startX = 350;
+        const startY = 100;
+        let controlX = 350;
+        let controlY = 300;
+        let endX = 600;
+        let endY = 100;
+
+        // Draw curved line
+
+        for (let i = 1; i < 5; i++) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgb(${i * i * 10},${(i * i * 50) % 250},${
+            255 - i * 50
+          })`;
+          ctx.moveTo(startX, startY);
+          ctx.quadraticCurveTo(
+            controlX + i * 40,
+            controlY,
+            endX - 50 * i,
+            endY + 30 * i
+          );
+          ctx.arc(controlX + i * 40, controlY, 5, 0, 2 * Math.PI); //control point
+          ctx.stroke();
+          ctx.closePath();
+        }
+      }
+    </script>
+  </body>
+</html>
