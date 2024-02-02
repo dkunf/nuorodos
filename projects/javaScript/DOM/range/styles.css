@@ -1,5 +1,6 @@
 html,
 body {
+  box-sizing: border-box;
   background-color: #333333;
   margin: 0;
   padding: 0;
@@ -7,6 +8,10 @@ body {
 html .container,
 body .container {
   margin: 3rem;
+}
+html .container h2,
+body .container h2 {
+  text-align: center;
 }
 html .container .range-element,
 body .container .range-element {
@@ -39,7 +44,7 @@ html .container .range-element .runner .needle,
 body .container .range-element .runner .needle {
   position: absolute;
   width: 1px;
-  height: 10.5rem;
+  height: 9rem;
   left: 0.75rem;
   background-color: #000;
 }
@@ -47,12 +52,6 @@ html .container .ruler,
 body .container .ruler {
   margin-top: 1rem;
   display: block;
-  min-width: 100%;
   height: 6.5rem;
   background-color: #d3d3d3;
-}
-html .container .ruler .canvas,
-body .container .ruler .canvas {
-  min-width: 100%;
-  height: 100%;
 }/*# sourceMappingURL=styles.css.map */

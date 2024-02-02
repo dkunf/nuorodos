@@ -8,6 +8,7 @@
   </head>
   <body>
     <div class="container">
+      <h2 id="data">--</h2>
       <div class="range-element">
         <div class="rail"></div>
         <div class="runner">
@@ -16,7 +17,7 @@
       </div>
 
       <div class="ruler">
-        <canvas class="canvas" width="1000" height="200"></canvas>
+        <canvas class="canvas"></canvas>
       </div>
     </div>
     <!-- actually range slider is needed when 
@@ -51,13 +52,17 @@ border-radii are tricky, gradients
       const runner = document.querySelector(".runner");
       let needle = document.querySelector(".needle");
       let rulerContainer = document.querySelector(".ruler");
-      let canvas = document.querySelector(".canvas");
+      const canvas = document.querySelector(".canvas");
+      canvas.width = rangeEl.getBoundingClientRect().width;
+      canvas.height = rangeEl.getBoundingClientRect().height + 100;
+      const ctx = canvas.getContext("2d");
 
       // it moves now
       rangeEl.addEventListener("click", moveToClickedCoord);
       document.addEventListener("keydown", keyHandler);
 
-      logAllRects();
+      // logAllRects();
+      let dataStep = drawRuler(ctx);
 
       function keyHandler(event) {
         let rangeRect = rangeEl.getBoundingClientRect();
@@ -73,6 +78,7 @@ border-radii are tricky, gradients
           if (runnerLocalCoordX >= 0.5)
             runner.style.left = Math.round(runnerLocalCoordX - 1) + "px";
         }
+        showData(getDataFromView(needle.getBoundingClientRect().right + 1));
       }
 
       //now i want to add ruler or some reference to data
@@ -83,6 +89,7 @@ border-radii are tricky, gradients
         let rangeRect = rangeEl.getBoundingClientRect();
         let runnerRect = runner.getBoundingClientRect();
         let clickedX = event.clientX;
+        showData(getDataFromView(clickedX));
         let halfRunner = Math.round(runnerRect.width / 2);
 
         //left to the very edge
@@ -99,8 +106,45 @@ border-radii are tricky, gradients
 
         runner.style.left = clickedX - rangeRect.left - halfRunner + "px";
       }
+      function getDataFromView(x) {
+        //how many steps from beginning to this coord?
+        let dx = x - canvas.getBoundingClientRect().left;
 
-      function drawRuler(arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]) {}
+        return Math.round(dx / dataStep) - 1;
+      }
+
+      function showData(d) {
+        let dataDisplay = document.getElementById("data");
+        dataDisplay.textContent = d;
+      }
+
+      function drawRuler(ctx) {
+        arr = Array(11).fill(1);
+        //assuming only numbers for now
+        let maxVal = Math.max(...arr.map((nr) => Math.abs(nr)));
+        let normalized = arr.map((nr) => nr / maxVal);
+        //now we need starting point and ending point:
+        let startingPoint =
+          needle.getBoundingClientRect().x - canvas.getBoundingClientRect().x;
+        let endPoint = canvas.getBoundingClientRect().width - startingPoint;
+        let range = endPoint - startingPoint;
+        let step = range / (arr.length - 1);
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#000";
+        let i = 0;
+        //otherwise last one may not be painted
+        let adjustment = endPoint + 0.9 * step;
+        for (let x = startingPoint; x <= adjustment; x += step) {
+          ctx.moveTo(x, 100);
+          ctx.lineTo(x, 150);
+          ctx.strokeText(`${i}`, x - 2, 95);
+          i++;
+        }
+
+        ctx.stroke();
+        return step;
+      }
 
       function logAllRects() {
         let rangeRect = rangeEl.getBoundingClientRect();
