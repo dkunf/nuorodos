@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shadow DOM</title>
+    <style>
+      .pink-bg {
+        width: 300px;
+        height: 300px;
+        background-color: lightpink;
+      }
+      :host p {
+        display: block;
+        border: 1px solid black;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Shaddow DOM</h1>
+    <p>it is attached to div#host-element with pink backgroung</p>
+    <div id="host-element" class="pink-bg"></div>
+    <script>
+      const hostElement = document.getElementById("host-element");
+      const shadowRoot = hostElement.attachShadow({ mode: "open" }); //open means can access its elements
+      shadowRoot.innerHTML = "<style>p{color:green}</style>";
+      let p = document.createElement("p");
+      p.textContent = "This is a paragraph inside Shadow DOM";
+
+      shadowRoot.append(p);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+  <!-- actually range slider is needed when 
+      you want to see quickly results of using some very different values.
+       And maybe you don't care what values are, but interested in effect only.
+
+    Entering from keyboard takes more efforts and time (esp if you need to press ENTER each time),
+    unless it's arrows(with keypress events), but arrows can change range insignifficantly
+    while slider can be moved very significantly.
+
+    Maybe 2d range is best for picking colors, right?
+    because it's very visual and very quick to choose what you want.
+    Imagine doing this with #ee7722 or rgb notation from keyboard! 
+      
+    so to make sense using range slider:
+    1: range changes are significant (otherwise arrow keys)
+    2: you need to visualize effect of changing values quickly
+    3. you don't care of values themselves most of times like #336699
+
+    Ideas:
+-   what if i use it applying a lot of css styles to some group 
+    of elements and seeing effect of doing it immediately?????
+    for example margin,padding,height,width.
+    then flex with all flex options 
+    then grid with all grid options 
+    and i don't need to know which ones applied until i find suittable one :)
+    same with colors, shaddows, animation params etc.....
+    border-radii are tricky, gradients
+
+-   graph plot ranges and zoom levels when analizing curves
+
+  -->

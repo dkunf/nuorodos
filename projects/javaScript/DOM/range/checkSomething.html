@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>trying out things</title>
+    <link rel="stylesheet" href="../../../../reset.css" />
+    <style>
+      .container {
+        background-color: lightgray;
+        overflow: scroll;
+      }
+      .tricky-div {
+        background-color: lightpink;
+        width: 200%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Lorem, ipsum dolor.</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, sunt!
+      </p>
+      <div class="tricky-div">dd</div>
+      <my-tricky-div class="tricky-div"> yy</my-tricky-div>
+    </div>
+    <script>
+      //by default it's display:inline-block;
+      class MytrickyDiv extends HTMLElement {
+        constructor() {
+          super();
+          this.style.display = "block"; // Set display to block
+        }
+      }
+      customElements.define("my-tricky-div", MytrickyDiv);
+    </script>
+  </body>
+</html>

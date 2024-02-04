@@ -71,6 +71,8 @@ body {
       height: 2 * ($runner-height + 1) + $runner-height;
       background-color: $component-bg;
       // border-radius: 2 * $runner-height + 1rem;
+
+      //canvas size is determinedin javascript code by setting canvas.width & canvas.height
     }
   }
 }
