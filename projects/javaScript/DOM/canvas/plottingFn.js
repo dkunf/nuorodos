@@ -16,11 +16,19 @@ plotAxis(ctx);
 // it would plot graph on canvas so that xmin starts on the left and stretches to the right and height of graph can be adjusted?
 let res = [];
 for (let x = -7; x < 7; x += 0.2) {
-  y = 0.05 * x ** 3 - 0.002 * x ** 2 + 1.3 * x + 2 * Math.sin(x) - 10;
+  y =
+    0.01 * x ** 4 +
+    0.05 * x ** 3 -
+    0.002 * x ** 2 +
+    1.3 * x +
+    2 * Math.sin(x) -
+    10;
   res.push([x, y]);
 }
 
 plotArray(ctx, res);
+
+//we'll add range sliders here to change range and zoom levels
 
 function plotAxis(ctx) {
   ctx.beginPath();
