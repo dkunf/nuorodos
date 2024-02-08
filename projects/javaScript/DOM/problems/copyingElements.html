@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copying HTMLElements, cloning and moving</title>
+  </head>
+  <style>
+    body {
+      max-width: 60ch;
+      margin: 2rem auto;
+      line-height: 2rem;
+    }
+    .edges {
+      padding: 2rem;
+    }
+  </style>
+  <body>
+    <div class="edges">
+      <h1>Copying HTMLElements, cloning and moving</h1>
+      <p>
+        When i tried to create my custom component with encapsulated styles and
+        html markup, I had difficult times to append my custom component into
+        main document:
+      </p>
+      <p>
+        I could see my component and it worked correctly in the browser, but I
+        couldn't reference any of elements, actually they were not the same
+        objects as in the component, but copies.
+      </p>
+      <p>
+        My component was range-slider. When i moved the carret, browser
+        correctly updated numbers and everything, but same element inside
+        component did not update (i looked in console to see if it changed).
+      </p>
+      <p>
+        So i realized it was a copy with no connection. Elements of my Component
+        and same looking elements in my main document were just copies somehow
+        and not the same elements and I couldn't get hold of the value, produced
+        by component.
+      </p>
+      <p>
+        I tried emitting event from component when slider position changed, but
+        event was never dispatched, because slider position did not chandge, i
+        mean the slider which was inside of component, not the slider that was
+        in the browser.
+      </p>
+      <p>
+        Same with mutation observer. Of course callback did not work because
+        elements from component did not ever change....
+      </p>
+      <p>
+        My component was class in .js file <br />+ html file <br />+css file
+        <br />
+        and it was made by fetching htm and css files and appending them to
+        document. That was done inside of constructor. Why to document??? Would
+        it not be logical to first append it to component and then add component
+        to main document???
+      </p>
+      <p>
+        Otherwise my component is like a proxy. But why functionality worked?
+      </p>
+    </div>
+  </body>
+</html>
