@@ -2,12 +2,20 @@ $body-bg: #d2b48c;
 $contents-bg: #d2b47c;
 
 $pamokslas-color: rgb(207, 131, 68);
+$pamokslas-bg: hsl(34, 44%, 72%);
 $highlighter-color: rgb(188, 190, 69);
 $links-bg: rgb(165, 108, 42);
 
-$code-bg: #ccc;
+/* Convert #d2b48c to HSL */
+/* Hue: 34 (sepia hue), Saturation: 44%, Lightness: 70% */
+/* Increase lightness to make it lighter */
+//   background-color: hsl(34, 44%, 80%); /* Adjust lightness to your preference */
+
+$code-bg: hsl(34, 44%, 80%);
 $code-color: #333;
 
-$HTML-code-snippet-bg: #bdb2b2;
+$heading-bg: #c69f6c;
+
+$HTML-code-snippet-bg: #e2cfb6;
 $HTML-code-snippet-color: black;
 $HTML-code-html-tag-color: rgb(79, 79, 204);

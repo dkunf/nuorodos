@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event bus for decoupling</title>
+  </head>
+  <body>
+    <!-- https://medium.com/better-programming/poor-mans-event-bus-with-zero-lines-of-code-d4e66fe8f56b -->
+
+    <label> Name: <input name="name" id="name" /> </label>
+
+    <p>Hello, <span id="output">you</span>!</p>
+
+    <script>
+      //this one is without bubbling, completely independent]
+      // window.eventBus = new EventTarget()
+
+      //   To pass some data along with the event, you can use the detail option to the CustomEvent constructor.
+      // window.dispatchEvent(new CustomEvent('hello', { detail: 'World' }))
+
+      // First I’ll define a “model”.
+      //   It’s an object that holds some value, and emits an event each time the value is changed.
+      let model = {
+        value: "",
+        set(val) {
+          if (val === this.value) return;
+          this.value = val;
+          window.dispatchEvent(
+            new CustomEvent("modelUpdate", { detail: this.value })
+          );
+        },
+      };
+
+      //   To keep the model independent of the other code, I’ll also add a new event to update the model.
+      window.addEventListener("modelSet", (ev) => {
+        model.set(ev.detail);
+      });
+
+      //   Next, I’ll attach the necessary event listeners to complete the UI updates:
+      let $name = document.getElementById("name"), //our input
+        $output = document.getElementById("output"); //our output
+
+      $name.addEventListener("input", (ev) =>
+        window.dispatchEvent(
+          new CustomEvent("modelSet", {
+            detail: ev.target.value,
+          })
+        )
+      );
+      window.addEventListener(
+        "modelUpdate",
+        (ev) => ($output.textContent = ev.detail || "you")
+      );
+      //   Notice how the $name input event listener does not have a reference to the model object.
+      //  The setting of the name is done entirely through the event bus. Because of this, we could
+      //  swap out the model for a different implementation tomorrow, and the input will be none the wiser.
+      //   And vice versa. There is a similar relationship between the model and the $output element.
+    </script>
+  </body>
+</html>

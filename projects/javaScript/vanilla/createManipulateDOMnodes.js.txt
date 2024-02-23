@@ -1,0 +1,487 @@
+// Mastering the DOM manipulation is the key to a successful Vanilla JS project.
+// https://medium.com/@hayavuk/working-with-the-dom-in-vanilla-js-apps-part-1-bf8ccc0faaed
+// Creating DOM Nodes
+
+let $node = document.createElement("div");
+$node.className = "my-node";
+let $child = document.createElement("div");
+$child.className = "my-child";
+$node.append(child);
+
+// When I want the child node to be just some text, I use document.createTextNode()
+
+let $node = document.createElement("div");
+$node.className = "my-node";
+let $textChild = document.createTextNode("some text");
+$node.append(textChild);
+
+// If all my node contains is text, I don’t create the text node separately.
+// I can simply use the Element.textContent property:
+
+let $node = document.createElement("div");
+$node.className = "my-node";
+$node.textContent = "some text";
+
+// If I’m creating more elaborate node trees, I prefer to use Element.innerHTML with template strings:
+
+let $form = document.createElement("form");
+$form.innerHTML = `
+  <label>
+    name: <input type="text">
+  </label>
+  <button>Save</button>
+`;
+// With Element.innerHTML we always need a single DOM element to serve as the root for any HTML that we want to put inside it. But sometimes we want to create HTML that is a list of elements and we don’t need the root node. To deal with this case, we can use the template element:
+
+let $list = document.getElementById("my-list");
+let $children = document.getElementById("template");
+$children.innerHTML = `
+  <li class="item">First item</li>
+  <li class="item">Second item</li>
+`;
+$list.append(children.content);
+
+// Note that with the template element, I appended the HTMLTemplateElement.content property,
+//  not the element itself. This element is not a normal element. It’s part of the web components
+//  spec and is used specifically to store elements that will be used later but not rendered immediately.
+//  The HTMLTemplateElement.content property represents a DocumentFragment object matching
+// the template contents.
+
+let longText = `
+HTML as DOM Node Repository
+
+Creating DOM nodes in JavaScript is neither expensive nor too complicated, but I still avoid it. I don’t avoid it because it’s not a good pattern. I avoid it because I don’t have to do it in the first place.
+
+    Work that doesn’t need to be done is the best work.
+
+When a browser loads the HTML file, it will parse it and convert all elements into DOM nodes, and put them in the DOM tree. This happens automatically and it (normally) happens before the application starts executing, so the entire DOM tree of the page is already there, ready to be used.
+
+This is an advantage that cannot be underestimated. In a typical ‘modern’ JavaScript application, the first usable DOM nodes are created after your script is loaded, parsed, and evaluated. We save a lot of time by letting the browser do all the hard work for us while our script is still loading.
+
+Another advantage of having our content in the HTML file is that we can show some static content while the JavaScript is loading, and make it interactive after the code is evaluated. Even if the bundle is a bit larger, this gives users something to look at right off the bat. (Incidentally, this is a technique that can be used with your typical framework-based builds without resorting to SSR and frameworks like NextJS.)
+
+When the JavaScript is loaded, the HTML page itself becomes a repository of DOM nodes that we will use in our application. We will add to it almost everything we will need later as the application enters various states.
+
+As an aside, I will also relate the result of experimenting with the <template> tags added directly to the HTML page. I initially thought I could use them like so:
+
+let $template = documnet.getElementById('my-template')
+let $nodes = $template.content.cloneNode(true)
+$parent.append($nodes)
+
+This method, however, is significantly slower than the other methods for creating DOM nodes listed in this article, so I’ve stopped using it.
+`;
+let anotherPiece = `
+Initially hidden elements
+
+To make the node repository useful we hide things we don’t want showing on the page immediately on the first render. We don’t need to do anything in JavaScript to achieve this. A few lines of CSS are all we need.
+
+I normally have something like this in the CSS:
+
+.hidden {
+  display: none;
+}
+
+Depending on how I want to reveal the element, I may use different ways of hiding them. For instance, this way of hiding an element is suitable for fade-in effects (e.g., for modal dialogs):
+
+.invisible {
+  opacity: 0;
+  pointer-events: none;
+}
+
+Now I can add these classes for just about any tag in the HTML.
+
+If the CSS file is large, there may be a visual glitch before the hidden class is applied. If that happens, I include a <style> tag on your page itself and have the .hidden rules in it:
+
+<head>
+  ....
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+This guarantees that the rules will be applied on the first render.
+
+Some examples of the things you will need later are:
+
+    Different mutually-exclusive states for the same UI element —I would normally have multiple versions of the same UI in the HTML and toggle between them using the hidden class.
+    Messages —This includes error messages and various notifications, toasts, etc. I would remove the hidden class from them as they are needed.
+    Pop-up dialogs and modals — I would remove the hidden class from them when they are shown, and add the hidden class when they are closed.
+
+Some examples of things you don’t need to create variations for are nodes on which you do the following manipulation:
+
+    Only changing the text content —I would simply assign the new content using Element.textContent.
+    Only changing classes — I would update the classes rather than have two versions of the node with different classes pre-applied.
+    Only changing attributes/properties —I would update the attributes instead of having varieties of nodes with different attributes.
+`;
+
+let oneMore = `
+Dynamic Code Loading
+
+DOM manipulation can also be used for dynamic code loading, not just manipulation of page elements.
+
+To load some JavaScript dynamically, we simply create a <script> tag on the page:
+`;
+let $script = document.createElement("script");
+$script.defer = true;
+$script.src = "some.js";
+document.head.append($script);
+
+// If you want to wait for the module to load, you will need to assign
+// the Element.onload event listener to the <script> tag before you append it.
+// You can dynamically load CSS, too:
+
+let $link = document.createElement("link");
+$link.rel = "stylesheet";
+$link.href = (document.body.dataset.theme || "default") + ".css";
+document.head.append($link);
+
+// You can also add <style> tags dynamically and populate the content using JavaScript:
+
+let $style = document.createElement("style");
+$style.textContent = `
+  .sidebar {
+    max-wdith: ${getSidebarMaxWidth()}px;
+  }
+`;
+document.head.append($style);
+
+
+let forLater=`
+Accessing the DOM nodes
+
+Now our JavaScript is loaded, and our page is fully parsed, we can start accessing and manipulating the nodes. The usual approach is to grab a reference to the node and then perform actions on it.
+
+The DOM API offers a multitude of ways to access DOM nodes, including the popular Element.querySelector() and Element.querySelectorAll() methods, the old-school Element.getElementById() and Element.getElementByClassName(), properties like Element.childNodes, Element.children, Element.firstElementChild, global variables, and so on.
+
+Instead of going over the advantages and disadvantages of using all the various methods, I will, instead, provide a few ground rules for you that are based on my research and benchmarks:
+
+    Ideally, you want to pinpoint the node using the id attribute and select it using document.getElementById() as this is by far the fastest method to get a reference to a single node.
+    If you want to select a particular child node by class, use Element.querySelector() with a class selector. Make sure to call the method on the parent element, not the document object.
+    If you want to access a list of child nodes for later iteration, use Element.children property, and iterate over it using a for loop. You can also convert it to an array using Array.from(), ideally as you are creating the reference.
+    If you want to select the first child element, use Element.firstElementChild. The Element.fistChild also includes text nodes, and it’s slower. You usually do not want text nodes as text can be obtained using Element.textContent.
+    If you want to keep a reference to a list of nodes sharing the same selector, use Element.querySelectorAll(). Keep in mind that this list is not dynamic so if you are targeting a collection of elements that changes over time, you will need to query as needed.
+
+This covers almost all the cases I’ve run into thus far.
+
+It’s a good idea to immediately create all the references to all the DOM nodes you will be working with before the application starts doing its thing, and keep them somewhere accessible. Keeping them in the module scope is usually the most straightforward approach, so I recommend doing that unless you have concrete (preferably non-religious) reasons to do it some other way.
+Manipulating Single DOM Nodes
+
+Although there are many methods for manipulating DOM nodes, in a real-life application, you don’t typically have that many ways in which you need to manipulate them. Here’s a list of the most typical manipulations you need to do on single nodes, roughly ordered by frequency:
+
+    Change a class (toggle/add/remove)
+    Set the text content
+    Set an attribute/property
+    Set CSS custom properties
+    Add/remove event listeners
+    Update the HTML content
+
+Sometimes you will need to perform other operations, but the ones listed are the ones that are more frequently encountered. Let’s go over them quickly.
+Changing Classes
+
+To set a class you can use one of the following methods:
+
+$node.className = 'some-class'
+$node.classList.add('some-class')
+$node.classList.remove('some-class')
+$node.classList.toggle('some-class')
+
+The Element.className property should be used when you want to replace the contents of the class attribute entirely (e.g., when we’ve just created a new element). In case we want to ensure the presence or absence of a single class, you want to use Element.classList.add() and Element.classList.remove(), respectively. For all other cases, you should prefer Element.clasList.toggle().
+
+The Element.classList.toggle() method is particularly powerful as it supports an additional argument that forces some state. I’ll get to this a bit later.
+
+I see developers new to Vanilla JS do something like this:
+
+if ($node.classList.includes('foo')) $node.classList.remove('foo')
+else $node.classList.add('foo')
+
+This is not the best approach for two reasons:
+
+    It tests the state using the DOM instead of the internal application state stored in JavaScript data structures.
+    We already have a method that achieves the same effect, which is the Element.classList.toggle().
+
+Changing the Text Content
+
+The text content of a node is set using the Element.textContent property. Unless I know I need Element.innerText, I always use Element.textContent. The latter does not consider the difference between text and non-text nodes within the DOM tree so it’s more performant, and it’s usually what I want. When setting the text content, I may sometimes have parts of the text that are not dynamic. For example:
+
+<span id="name">Your name is: Bob</span>
+
+In the above example, I want Bob to change, but not Your name is:. I can easily construct a string as 'Your name is: ' + name, and assign that:
+
+let $name = document.getElementById('name')
+$name.textContent = 'Your name is: ' + name
+
+I can also avoid doing this by wrapping the dynamic part in an element and giving it an id or a class attribute:
+
+<span>Your name is: <span id="name">Bob</span></span>
+
+Then I can set just the name:
+
+let $name = document.getElementById('name')
+$name.textContent = name
+
+I slightly prefer the latter form as it means slightly less work for my JavaScript.
+Setting Attributes and Properties
+
+Sometimes we need to set attributes like checked or disabled. We can do it either using Element.setAttribute() or by directly assigning to Element.property.
+
+Virtually all HTML attributes are mapped to DOM node properties, and updating the property will also update the attribute and vice versa. While there’s no tangible distinction between the two methods, I prefer assigning to properties for brevity and, by extension, smaller unminified payload size.
+
+Some attributes cannot be set using properties (I think I remember some ARIA-related ones can’t).
+Setting CSS Custom Properties
+
+Usually, controlling the appearance of some element involves modifying the classes on it. There are also cases where the appearance is more directly influenced by JavaScript values, such as elements that are being dragged across the screen, or some of the appearance attributes are affected by values that cannot be calculated in the CSS (e.g., position within the viewport). In such cases, we may use the Element.style property (or attribute) and add CSS rules directly to the element.
+
+For example, I may have a slider whose position I update like so:
+
+$slider.style.left = `${sliderLeftPos}%`
+
+But there’s a better way. Instead of assigning CSS rules directly, we can assign CSS custom properties (a.k.a., CSS variables).
+
+I’ve recently had a situation where I wanted to control the CSS transform-origin for a custom select list element where I would set the direction in which opens based on its relative position within the viewport and the width of the list. Initially, I tried something like this:
+
+$node.classList.toggle('open-left', !canOpenRight)
+$node.classList.toggle('open-top', !canOpenBottom)
+
+I soon realized that because the transform-origin rule does not stack, I would have to create four different classes or I would need to use compound selectors, neither of which appealed to me. Instead, I decided to use the CSS custom properties to set the horizontal and vertical values for the transform-origin rule. In the CSS, I had a declaration like this:
+
+.select-list {
+  /* Default values */
+  --origin-h: left;
+  --origin-v: top;
+  transform-origin: var(--origin-h) var(--origin-v);
+}
+
+Then in JavaScript I simply override the properties:
+
+let { style } = $node
+style.setProperty('--origin-h', canOpenRight ? 'left' : 'right')
+style.setProperty('--origin-v', canOpenBottom ? 'top' : 'bottom')
+
+For setting custom properties, you need to use the Element.style.setProperty() method. This method works for any CSS property, but for custom properties, it’s the only way that I’ve found that works.
+
+Because we’re only doing properties and not messing with how CSS will (or will not) use them, we keep a clean(er) separation between CSS and JavaScript. And because these are not entire classes, we can still apply different overrides to the rules that use the properties. For example:
+
+.select-list-always-top-left {
+  transform-origin: left top;
+}
+
+If we apply the class above, it no longer matters what values we assign to --origin-h or --origin-v.
+Add/Remove Event Listeners
+
+In a vast majority of cases, there is no need to constantly add and remove event listeners. It’s usually enough to add them once and have them active throughout the life of the application.
+
+The typical way in which event listeners are assigned is therefore this:
+
+node.oninput = ev => onEdit(ev.target.value)
+
+The Element.addEventListener() is typically used when the event listener is added globally (e.g., on the window or document.body). Another case where the Element.addEventListner() may be used is when we need to add multiple event listeners to a single element, but that’s rare and there must be a pretty good excuse for it (you can always call two different functions from a single listener, so why would you assign two separate listeners, etc., etc.). The third use case that sometimes appears is when the event listener needs to be triggered only once. In this case, we can use the options argument to specify such behavior.
+
+If we want to handle a single event over a bunch of nodes, we can either loop through the nodes and assign the same listeners to all of them, or we can resort to event delegation. Event delegation is a technique where the event is handled on one of the parent nodes and then filtered by the actual target.
+
+Event delegation is especially convenient when we update the contents of a node using Element.innerHTML as we don’t have to go over child elements to add listeners individually.
+
+I’ll suppose I have some HTML that looks like this:
+
+<ul id="list">
+  <li>
+    Item 1: <button class="open" data-id="0">open</button>
+  </li>
+  <li>
+    Item 2: <button class="open" data-id="1">open</button>
+  </li>
+</ul>
+
+There can be any number of items in the list, and I want to handle the button clicks. To use event delegation in this case, I would do something like this:
+
+let $list = document.getElementById('list')
+$list.onclick = ev => {
+  let { target } = ev
+  if (!target.matches('.open')) return
+  onOpen(Number(target.dataset.id))
+}
+
+The disadvantage of event delegation is that finding the actual child element that we are interested in can become convoluted and/or expensive, and negate the benefit of its convenience. Let’s say that my button contains additional elements inside it that can also receive clicks.
+
+<ul id="list">
+  <li>
+    Item 1: 
+    <button class="open" data-id="0">
+      <span class="icon icon-open">open</span>
+    </button>
+  </li>
+  <li>
+    Item 2: 
+    <button class="open" data-id="1">
+      <span class="icon icon-open">open</span>
+    </button>
+  </li>
+</ul>
+
+In this case, the delegation code I previously used will not work because the event target is (usually) going to be span.icon. To address this, I would need to find out of the event target’s ancestor is a button:
+
+let $list = document.getElementById('list')
+$list.onclick = ev => {
+  let { target } = ev
+  let realTarget = target.closest('button.open')
+  if (!realTarget) return
+  onOpen(Number(realTarget.dataset.id))
+}
+
+There are several more variations of the delegation depending on the likelihood that you will accidentally match the element outside the node on which the event was handled (e.g., the #list , in this case, could happen to be nested inside a button.open), but at this point, I would start considering looping over nodes instead as I don’t want to have an event listener that is too involved (or too clever).
+Updating the HTML Content
+
+The HTML content of a node can be either modified partially or replaced completely.
+
+If you come from a long history of framework abuse, you may think that modifying the HTML content of a node is the same thing as replacing it. You update the state and you re-generate the content using the same function that you originally used to generate the initial version. This is a declarative, virtual DOM, way of thinking, and it is not a good match for the actual APIs that we have available.
+
+From the standpoint of the overall cost of the operations involved, modifying the contents using targeted operations is cheaper, and since the methods used to perform these operations are imperative we need to think imperatively for maximum efficiency.
+
+Modifying the content typically means doing one of the following:
+
+    Remove a node that is no longer needed
+    Add a node to the end
+    Insert a node somewhere
+    Change the order of the nodes
+
+Before you go in to remove a node, consider whether hiding it achieves the same effect. Hiding nodes is preferred if we later want to reuse the node for the same purpose as it saves us the cost of recreating it later.
+
+As with removal, consider unhiding an existing node before you consider physically creating and adding a new one. Keeping a pool of extra nodes is a good strategy when we know how many we may need.
+
+For inserting a node, you can take a hidden extra node and move it to the correct position before revealing it.
+
+When changing the order of the nodes, please keep in mind that if you add a node to another part of the tree, it is automatically removed from its previous location. We will see how all of this works later when we talk about lists.
+
+Replacing the contents of a node can be done using the Element.innerHTML property. This is efficient as it clears existing nodes and creates new nodes in one go. I am not aware of any other method that achieves this. As Element.innerHTML is generally my preferred way of creating new nodes, replacing them using the same technique also adds a bit of consistency to the code base.
+
+Finally, there are complex algorithms that synchronize the DOM subtree to the desired state. You can lift those from any of the popular virtual DOM implementations out there. They will need some modification because DOM nodes are not array members, and they do not get copied when taken out of the tree, which improves the efficiency of the algorithms to an extent, but it’s doable. Since I’ve started doing Vanilla development, I have not yet needed this kind of firepower. Such code is neither easy to read nor is it small (at least a hundred lines for a short one). I think it’s a good idea to be aware it’s there, though.
+
+These operations are used more often when managing node lists, so we’ll get back to them with concrete examples in part 2.
+Declarative vs Imperative Manipulations
+
+I classify all DOM manipulation operations into two categories:
+
+    Declarative manipulation
+    Imperative manipulation
+
+(Please don’t confuse these terms with programming styles. I use them loosely here to describe the mental model.)
+
+For instance, when setting a class using the Element.classList.toggle() method, the second argument offers an opportunity to enforce the state that is in line with the application state:
+
+$error.classList.toggle('hidden', !state.formError)
+
+This is what I call a declarative manipulation as it is a straightforward mapping between the application state and desired state of the element. Other examples of declarative manipulations include:
+
+$node.innerHTML = someHTML
+$node.disabled = !state.isActive
+$node.toggleAttribute('data-active', sate.isActive)
+$node.setAttribute('data-id', item.id)
+
+One of the important properties of declarative manipulations is that the effect they have is always the same no matter how many times you perform them (in other words, they are idempotent). This allows us to simply update the state in various ways while performing the same declarative manipulation each time to synchronize the state and the DOM.
+
+An imperative manipulation is a manipulation where we instruct the element to perform something. Here are a few examples:
+
+$node.append($child)
+$node.play()
+$node.dispatchEvent(new Event('click'))
+
+Unlike declarative manipulations, imperative manipulations are not idempotent.
+
+While it would be nice if I could just tell you “always perform declarative manipulations” and be done with it, the case is not nearly as clear-cut. You need both. Having said that, the majority of the manipulations in your app can be declarative so don’t miss an opportunity. Declarative manipulation can make your code simpler if you use them where appropriate.
+
+Remember to always use the provided APIs as intended, though. Do not try to force a declarative manipulation where an imperative one is more appropriate or vice versa. Wherever there is a mismatch, you will be forced to write adapters between the two worlds which results in additional complexity.
+A More Complete Example
+
+To illustrate some of the techniques discussed in this article, let’s look at a somewhat complete example of how I would switch views in an application when there’s some async operation involved before the app is fully initialized.
+
+I start with some HTML that represents different states. In this case, the initial view will just be a “Loading…” message, as I need to load some data before I can show the application interface. This view is the only one that does not have the hidden class.
+
+<div id="view-loading" class="view">Loading...</div><div id="view-failure" class="view hidden">Failed to load!</div><div id="view-needs-login" class="view hidden">
+  <form> .... </form>
+</div><div id="view-ready" class="view hidden">
+  <h1>Welcome to the app</h1>
+  <p>You have <span id="message-count">0 messages</span></p>
+</div>
+
+In JavaScript, we load the data and calculate which view we want to show as we transition from one state into another.
+
+const View = {
+  LOADING: 0, 
+  OK: 1, 
+  NEEDS_AUTH: 2, 
+  ERROR: 3,
+}// Application data
+let state = {
+  loading: true,
+  authenticated: false,
+  error: false,
+  data: null,
+}
+let loadData = () => fetch('/verify')
+  .then(resp => {
+    state.authenticated = resp.ok
+    if (resp.ok) return fetch('/data/')
+  })
+  .then(resp => {
+    state.error = !resp.ok
+    if (resp && resp.ok) return resp.json()
+  })
+  .then(data => {
+    state.data = data ?? null
+    state.loading = false
+  })
+  .catch(() => {
+    state.loading = false
+    state.error = true
+    state.data = null
+  })
+let currentView = () => {
+  if (state.loading) return View.LOADING
+  if (state.error) return View.ERROR
+  if (!state.authenticated) return View.NEEDS_AUTH
+  return View.READY
+}
+let messageCount = () => sate.data && state.data.messages.length// DOM node references
+let $viewLoading = document.getElementById('view-loading')
+let $viewFailure = document.getElementByid('view-failure')
+let $viewNeedsLogin = document.getElementById('view-needs-login')
+let $viewReady = document.getElementById('view-ready')
+let $currentView = $viewLoading
+let $$viewNodes = [ // NB: indexes match View ID's
+  $viewLoading,
+  $viewReady,
+  $viewNeedsLogin,
+  $viewFailure,
+}
+let $messageCount = document.getElementById('message-count')// DOM manipulation
+let updateView = () => {
+  let $nextView = $$viewNodes[currentView()]
+  if ($nextView === $currentView) return
+  $currentView.classList.add('hidden')
+  $nextView.classList.remove('hidden')
+  $currentView = $nextView
+}
+let updateMessageCount = () => {
+  let n = messageCount() ?? 0
+  $messageCount.textContent = 
+    `${n || 'no'} message${n == 1 ? '' : 's'}`
+  $messageCount.classList.toggle('warning', n > 100)
+}
+let updateInitialView = () => {
+  updateMessageCount()
+  updateView()
+}// Initialize the app
+loadData().then(updateInitialView)
+
+To summarize, the reference to the current view is stored in a variable, $currentView. When switching views, we add the 'hidden' class to the element pointed to by the $currentView, and then remove it from the next view. We then update the $currentView reference for the next update.
+
+This approach can be used for anything that swaps one node for another based on the state.
+On Using Helper Functions
+
+As a side note, when transitioning to Vanilla, many of us initially create helper functions for the thing we find a bit too verbose (e.g., hide() instead of Element.classList.add('hidden'), toggle() to manage the currently shown element reference and swapping with some other element). As I worked through my apps, I found that I didn’t benefit from these helpers as much as I thought. It may look ‘cleaner’, but then it ends up introducing a bunch of new functions that even I would need to look up from time to time. Also, as edge cases emerge, I add more and more bells and whistles to them and end up with mini frameworks.
+
+I have decided to avoid using helpers altogether and find that the code is quite manageable without them. More importantly, it became very easy to tell what the code is doing without needing to look up (too many) functions. Not to mention the naming headache.
+
+As with anything in my articles, though, YMMV.
+`

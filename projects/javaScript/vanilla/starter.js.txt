@@ -1,0 +1,214 @@
+// https://medium.com/@hayavuk/the-basic-vanilla-js-project-setup-9290dce6403f
+// Firstly, I will wrap my entire script in a block so that variables declared within it using let and const 
+// will not leak into the global scope.
+
+{
+  'use strict'
+
+  // rest of the code
+}
+
+// In my applications, the general layout of the JavaScript code initially looks like this:
+
+    // Constants, helpers
+    // Application state
+    // State accessor functions (getters and setters)
+    // DOM node references
+    // DOM update functions
+    // Event handlers
+    // Event handler bindings
+    // Initial setup
+
+    // Constants and state are defined at the very top to allow the reader 
+    // to ease themselves into the application world.
+
+    let TODAY = Date.now()
+    let LOADING = 0, READY = 1, ERROR = 2
+
+    let state = { ... }
+
+    // Just below the variables holding the application data, I would normally have 
+    // functions for working with the data. This is not a recommendation. It’s just something I like to do.
+
+    let state = { ... }
+
+let setLoading = () => state.view = LOADING
+let setReady = () => state.view = READY
+let isLoading = () => state.view === LOADING
+let isReady = () => state.view === READY
+
+
+
+let isLoading = () => state.view === LOADING
+let isReady = () => state.view === READY
+let loadSongs = () => fetch('/api/songs/)
+  .then(res => res.json())
+  .then(data => {
+    state.songs = data.songs
+    state.view = READY
+  })
+  .catch(() => state.view = ERROR)
+
+
+  // After the data-related functions, I place everything related to DOM access and manipulation.
+
+  // I find that a special naming scheme for these variables to distinguish between DOM and non-DOM values helps.
+let D = document
+let $play = D.getElementById('play')
+let $stop = D.getElementById('stop')
+let $viewLoading = D.getElementById('view-loading')
+let $viewReady = D.getElementById('view-ready')
+let $$instruments = D.querySelectorAll('.instrument-option')
+
+
+// I’ve also used another pattern in the past which looks like this:
+let $refs = {}
+document.querySelectorAll('[id]').forEach($el => {
+  let key = $el.id.replace(/-(.)/g, (_, s) => s.toUpperCase())
+  $refs[key] = $el
+})
+
+// I’ve also seen patterns like this:
+let REFS = {
+  playback: {
+    play: document.getElementById('play'),
+    stop: document.getElementById('stop'),
+  },
+  views: {
+    [LOADING]: document.getElementById('play'),
+    [READY]: document.getElementById('loading'),
+  },
+}
+
+// If you would really want some hierarchical organization of elements, this is my recommended pattern:
+let $instrumentList = D.querySelector('#instrument-list')
+let $$instrumentListItems = []
+$instrumentList.querySelector('li').forEach($ => {
+  $.$label = $.querySelector('.label')
+  $.$icon = $.querySelector('.icon')
+  $$instrumentListItems.push($)
+})
+
+// What I did was add references to nested child elements to the common ancestor. 
+// This way I do not have to worry about dangling DOM node references.
+//  If the list item gets removed, any references to the child elements are also garbage collected along with it.
+
+// The next group is the DOM update functions. These update DOM nodes either 
+// declaratively or imperatively, depending on the type of manipulation. 
+
+let updateView = () => {
+  $viewLoading.classList.toggle('hidden', !isLoading())
+  $viewReady.classList.toggle('hidden', !isReady())
+  $viewError.classList.toggle('hidden', !isError())
+}
+let updateSongDetails = (songData, index) => {
+  let $song = $$songs[index]
+  $song.querySelector('.active')
+    .classList.toggle('hidden', !isSelected(index))
+  $song.querySelector('.title').textContent = songData.title
+  $song.querySelector('.tempo').textContent = songData.tempo + 'bpm'
+}
+let updateSongs = () => state.songs.forEach(updateSongDetails)
+
+
+// Next, we have what I call event handlers
+// These are called by event listeners that listen to DOM and other events 
+// (e.g., timers, WebSockets, etc), and update the application state and the
+//  user interface by calling the accessors and DOM updaters. The reason they 
+// are not directly registered as event listeners is modularity — by requiring 
+// plain values as arguments rather than the Event object, these functions can be 
+// called from each other, or be invoked in different event listeners using 
+// different parameters to achieve variation, and so on.
+
+// Event handlers are usually (but not necessarily) very clean-looking functions
+//  without too much logic and branching. They sometimes read like slightly more technical user stories
+
+let onPlay = () => {
+  setPlay()
+  updatePlaybackButton()
+  updateScoresheet()
+  startPlaybackTimer()
+}
+let onStop = () => {
+  stopPlaybackTimer()
+  setStop()
+  updatePlaybackButton()
+  updateScoresheet()
+}
+let onEdit = scores => {
+  onStop()
+  setScores(scores)
+  updateScoresheet()
+}
+let onSongLoaded = () => {
+  setInitialScores()
+  updateScoresheet()
+  updatePlaybackButton()
+  updateLoadError()
+}
+let onLoadSong = songId => {
+  onStop()
+  loadSong(songId).then(onSongLoaded) 
+}
+
+// They also serve as the checkpoints I can refer to when I want 
+// to debug the application: if I know the user action that lead 
+// to a bug, I know what function to start with (more often than not).
+
+// After the event handlers, I have event bindings, which is where
+//  I register event listeners with the DOM nodes. Any processing 
+// of the event object to extract the values is performed in the 
+// listeners before invoking the handler.
+
+$play.onclick = () => onPlay()
+$stop.onclick = () => onStop()
+$scoreEditor.oninput = ev => onEdit(ev.target.value)
+
+
+// Lastly, I set up some initial state. Something like this:
+setReady()
+updateView()
+
+// this layout has been an adequate starting point and the general spirit of the layout remained intact.
+
+
+// Why global mutable state
+// Now to address the elephant in the room (one of them anyway): yes, state is global and mutable.
+// For most synchronous code, this is not a big issue. 
+
+// The reason I’ve chosen to use global mutable state is that — apart from races generally not 
+// being such a big issue for me to begin with — the potential for races of the shared access
+//  is far outweighed by the benefits I get from this approach. To name a few off the top of my head:
+
+//     It removes the need for functions to pass the state values around via arguments:
+//  no need to think about how much of it you should share, what position of the argument,
+//  argument naming, etc.
+//     There is no need for any function to keep a copy of the state and similar weirdness that
+//  happens when you are passing your state around, memory leak resulting from it, etc.
+//     Simplifies the code that has to work with state.
+
+// The reason for mutable state is simple: mutating objects has 
+// always been the most natural JavaScript you can write.
+//example
+let state = {
+  tasks: [
+    { title: 'Learn Vanilla', completed: false },
+    { title: 'Write a blog post', completed: false },
+  ]
+}
+
+// Let’s write a function markCompleted which marks a task as completed. 
+// First let’s see how it could be done without mutating state:
+
+let markCompleted = (index, state) => ({
+  ...state,
+  tasks: state.tasks.map((task, i) => index === i 
+    ? { ...task, completed: true }
+    : task
+  )
+})
+
+// Now let’s see what it looks like if we mutate the global state:
+
+let markCompleted = index => state.tasks[index].completed = true
+

@@ -56,7 +56,7 @@
               -naudojamas aplanko ir failų pokyčių sekimui. Galima įsiminti
               aplanko būsenas skirtingais laikais: kokie tuo metu buvo failai
               aplanke ir kas buvo juose, o po to sugrįžti į bet kurią būseną
-              jeigų prireiktų.
+              jeigu prireiktų.
             </p>
           </li>
           <li>
@@ -68,7 +68,7 @@
           </li>
           <li>naršyklės "developer tools"</li>
           <p>
-            -leidžia neišeinant iš brauzerio derinti kodo galutinį pavydalą.
+            -leidžia neišeinant iš naršyklės derinti kodo galutinį pavidalą.
             Pasikeitimai dingsta kai langas atnaujinamas.
           </p>
         </ul>
@@ -111,9 +111,9 @@
           HTML elemento prasmė ir jo išvaizda yra labai susiję dalykai, bet
           reikia nepamiršti, kad tinklapis gali būti stebimas tiesiog tekstiniam
           režime ar jo turinys gali būti išklausomas, o ne skaitomas ir mūsų
-          styliai bus visiškai neaktualūs vartotojui, bet loginė struktūra bus
-          visiems svarbi. Paieškos varykliai indeksuoja puslapius pagal HTML
-          failo strukturą ir bando iš jos "suprasti" apie ką yra puslapis, kas
+          stiliai bus visiškai neaktualūs vartotojui, bet loginė struktūra bus
+          visiems svarbi. Paieškos varikliai indeksuoja puslapius pagal HTML
+          failo struktūrą ir bando iš jos "suprasti" apie ką yra puslapis, kas
           jame svarbiausia ir panašiai. Puslapio turinys aišku yra svarbiausia,
           bet blogai pateiktas jis nepasieks auditorijos.
         </p>
@@ -130,7 +130,7 @@
           <span class="center big">Puslapio pavadinimas</span>
 
           didesnėmis raidėmis. Failo pavadinimas turi turėti gale ".html",
-          kitaip ne visos naršyklės suprąs, kad mes norėjom parašyti butent html
+          kitaip ne visos naršyklės supras, kad mes norėjom parašyti butent html
           kodą, o ne šiaip tekstą.
         </p>
         <p>
@@ -163,14 +163,14 @@
           išskyrus "/" simbolį. Pvz.
           <code>&lt;a&gt; - yra atidaromasis tagas</code>
           <code> &lt;/a&gt; - yra uždaromasis tagas</code>
-          Bėje, kai kurie tagai užsidaro atidaromajame tage, pvz. &lt;img
+          Beje, kai kurie tagai užsidaro atidaromajame tage, pvz. &lt;img
           src="./foto.jpg" <span class="highlight">/&gt;</span>.
           <br />
           Tarp tagų (žymų) galime parašyti tekstą, kuris bus atvaizduotas mūsų
           puslapyje kaip nuoroda.
           <code>&lt;a&gt;Mano pirmoji nuoroda&lt;/a&gt;</code>
           , bet ši nuoroda dar niekur neveda, nes mes nepasakėme naršyklei kur
-          ta nuoroda turi vęsti. Tą galima padaryti per atributus, kurie rašomi
+          ta nuoroda turi vesti. Tą galima padaryti per atributus, kurie rašomi
           atidaromajame tage per tarpą nuo tago pavadinimo. Vienas tarpas
           naudojamas ar daugiau - nesvarbu.
           <code
@@ -192,7 +192,7 @@
           atributui viena iš galimų reikšmių.
         </p>
         <ol class="l2">
-          Šiuo atveju mes norėjome kad brauzeris
+          Šiuo atveju mes norėjome kad naršyklė
           <li>parašytų naršyklėje žodį "Spausk"</li>
           <li>
             nueitų į https://pigu.lt tinklapį jeigu ši nuoroda bus paspausta
@@ -205,16 +205,16 @@
         </p>
         <p>Tam yra kitas atributas, vadinamas "target"</p>
         <p>
-          jis gali turėti keletą reikšmių kontroliojančių brauzerio langų ir
-          tabų elgseną
+          jis gali turėti keletą reikšmių kontroliuojančių naršyklės langų ir
+          skilčių elgseną
         </p>
         <p>
-          mums tinka reikšmė "_blank", kuri pasakys brauzeriui kad reiktų
+          mums tinka reikšmė "_blank", kuri pasakys naršyklei kad reiktų
           atidaryti naują tabą ir pereiti į jį kai kažkas paspaus mūsų "Spausk"
           nuorodą.
         </p>
         <p>
-          Kievienas sekantis atributas rašomas per tarpą.
+          Kiekvienas sekantis atributas rašomas per tarpą.
           <code
             >&lt;a href="https://pigu.lt"
             target="_blank"&gt;Spausk&lt;/a&gt;</code
@@ -309,7 +309,7 @@
             id="apie-web-dizaina", pvz.
             <code
               >&lt;h3 id="<span class="highlight">apie-web-dizaina</span
-              >"&gt;Pakalbėkime apie tinklapių kurimą&lt;/h3&gt;</code
+              >"&gt;Pakalbėkime apie tinklapių kūrimą&lt;/h3&gt;</code
             >
           </li>
           <li id="paths-syntax">
@@ -325,14 +325,14 @@
         </p>
         <p>
           Tai daroma naudojant vieną arba du taškus ir simbolį / , pvz. mes
-          turime tokią failų strukturą:
+          turime tokią failų struktūrą:
         </p>
         <!-- 
         
         o toliau mes rašome įprastinį kelia kaip pvz. -->
         <!-- <code>
           ./public/index.html - veda iš mūsų failo (kuriame radome šią nuorodą)
-          į index.html failą, kuris yra public folderyje. Čia matome kad
+          į index.html failą, kuris yra public aplanke. Čia matome kad
           aplankas public randasi tame pačiame aplanke kaip ir mūsų failas iš
           kuriuo mes dabar rašome nuorodą</code
         >
@@ -403,9 +403,188 @@
       </section>
 
       <section>Kol kas tiek teorijos..............</section>
+      <section>
+        <h2 id="responsive">Puslapių kurimo strategija.</h2>
+        <h3>
+          Mūsų tikslas yra sukurti puslapį, kuris prisitaikytų prie bet kurio
+          ekrano, būtų tinkamas žmonėms su negaliom ir naudotų mažiau resursų.
+        </h3>
+        <p class="pamokslas">
+          Serveriai naudoja elektrą ir vandenį aušinimui. Kuo ekonomiškiau dirbs
+          serveris tuo mažesnis bus jo poveikis aplinkai. Net tokie dalykai kaip
+          vieno paveiksliuko dydžio sumažinimas gali padaryti skirtumą. Jeigu tą
+          paveiksliuką serveris nusius milijonui žmonių tai tas 1Mb vietoje
+          galimų 100kb virs papildomais giga ar tera baitais siunčiamų, laikomų,
+          perdirbamų duomenų... O kokią įtaką daro teisingo frameworko ir saito
+          architektūros pasirinkimas? Ar būtina rašyti mažą statinį puslapį
+          naudojant react?
+        </p>
+        <p>
+          Tam kad galima būtų puslapį valdyti ir keisti pagal poreikius, mums
+          reikia atskirti duomenis ir stilius, o taip pat sugebėti neįpainioti
+          tarp jų funkcionalumo (js).
+        </p>
+        <p>
+          Kuo labiau nepriklausomi tie 3 komponentai gausis - tuo lankstesnis
+          mūsų puslapis bus ir tuo maloniau bus su juo dirbti.
+        </p>
+        <p>
+          Dėl to mums visiškai netinka css frameworkai kaip bootstrap, tailwind
+          ir panašiai. Jie glaudžiai suriša html ir css kodus ir grubiai
+          pažeidžia DRY principą :). Jie skirti tik tam kad greitai parodyti
+          kažką nekantraujančiam užsakovui (MVP).
+        </p>
+        <h5>Puslapio kontentas (turinys)</h5>
+        <p>
+          Html turi būti visiškai neutralus stiliams ir ten turi buti tik
+          puslapio turinys pažymėtas semantiškai tinkamais tagais.
+        </p>
+        <ul>
+          Klientai matys puslapio turinį ne tik ekranuose, bet jį garsiai
+          skaitys per skaityklas, jį vers į brailio raštą ir panašiai... O tam
+          kad tai vyktų sklandžiai tie įrenginiai turi suprasti puslapio
+          struktūrą:
+          <li>kur pavadinimas,</li>
+          <li>kur straipsnis,</li>
+          <li>kur navigacija,</li>
+          <li>kur turinys,</li>
+          <li>kur paaiškinimai,</li>
+          <li>kur teksto dalys,</li>
+          <li>kur nuorodos ir kur jos veda,</li>
+          <li>kur mygtukai ir ką jie daro,</li>
+          <li>kur paveiksliukai ir kas ten pavaizduota...</li>
+        </ul>
+        <p>
+          Tokiems įrenginiams visiškai nusispjauti kokios spalvos yra mygtukas,
+          kokio dydžio yra šriftas, ar suapvalinti paveiksliukų kampai.
+        </p>
+        <p>
+          Mums taip pat, rašant HTML, turi būti visiškai nusispjauti į tai kaip
+          tai atrodys, nes HTML nėra skirtas tokiems dalykams.
+        </p>
+        <p>
+          Geriausia būtų tiesiog parašyti kontentą teksto redaktoriuje, o po to
+          jau jį struktūrizuoti naudojant tinkamus pagal prasmę html tagus
+        </p>
+        <h5>Stiliai</h5>
+        <p>
+          Kai html parašytas, galima pradėti galvoti apie stilius. Stiliai gali
+          ne tik estetiškai pamaloninti akį, bet ir vizualiai surišti turinio
+          blokus kurie yra susiję pagal prasmę. Teisingai naudojant tuščią
+          vietą, tarpus mes galime padėti vizualiai suprasti kas yra su kuo
+          susijęs.
+        </p>
+        <p>
+          Animacija irgi gali padėti suprasti kas vyksta, pvz paspaudžiamas
+          mygtukas ir vartotojas atsiduria kitoje puslapio vietoje ir praranda
+          kažkiek laiko kad suprasti kas čia buvo. Mes galime panaudoti pvz.
+          transition:0.5s kad būtų aiškų kad pvz. atsivėrė papildomas akordeono
+          turinys, pasikeitė paveiksliukai, iškilo naujas pranešimas ir t.t.
+        </p>
+        <p>
+          Kaip padaryti kad tekstas būtų lengviau skaitomas, girdėjau kad
+          eilutėje turėtų būti 50-80 simbolių, kitaip darosi sunku vienu
+          žvilgsniu apčiuopti visą eilutę.
+        </p>
+        <h5>Koks turi būti šrifto dydis?</h5>
+        <p>
+          Šiaip, kiekvienas žmogus gali nustatyti savo naršyklėje sau tinkamą
+          šrifto dydį - vienas norės 16px, o kitas 30px, nes blogai mato. Dėl to
+          nereikėtų daryti tokio dalyko kaip
+          <code><strike> html, body{font-size:16px}</strike> </code>
+          nes tai sugraus žmogaus nustatymus ir jis tada bandys kitais budais
+          priartinti puslapį.
+        </p>
+        <p>
+          Geriau pagerbti tą nustatytą dydį ir tiesiog dirbti su reliatyviais
+          vienetais. Tas nustatytas dydis yra 1rem.
+        </p>
+        <p>
+          Ir mes rašant stilius galime tuo naudotis. Dar galima padaryti
+
+          <code>html,body{font-size:120%}</code>
+          jeigu norime kad mūsų puslapyje būtų didesnis šriftas nei įprasta
+          klientui .
+        </p>
+        <h5>Matavimo vienetai</h5>
+        <p>
+          px vienetais geriau nesinaudoti niekada, na nebent border 1px ir
+          panašiai. Kitaip kai raidžių dydis keisis jų rėmai keisis
+          neproporcingai, pvz mygtukai taps nesimetriški, lįs už savo ribų ir
+          panašiai.
+        </p>
+        <p>
+          em vienetai atsižvelgia į tėvinio konteinerio šrifto dydį, o rem į
+          nustatytą naršyklės globalų šrifto dydį pagal nutylėjimą (kuri mes
+          galėjome pakeisti nustatę font-size visam html ar body).
+        </p>
+        <p>
+          Tai pasidaro svarbu kai yra konteinerių ar mygtukų kuriuose mes
+          nustatėme kitokį šrifto dydį ir norėtume keisti turinį proporcingai su
+          savo konteineriu, o ne globaliai.
+        </p>
+        <h5>Responsiveness</h5>
+        <p>
+          Jeigu netaikyti jokių stilių tai puslapis bus responsive pagal
+          nutylėjimą.
+        </p>
+        <p>
+          Tai reiškia, kad mes patys ji padarom savo stiliais kitokiu, o po to
+          bandome vėl padaryti responsive.
+        </p>
+        <p>
+          Tai gal geriau nelaužyti to nuo pat pradžios. Gal nereikės jokių media
+          query rašyti.
+        </p>
+        <p>Galima daryti taip: konteineriui taikyti</p>
+        <code>
+          display: flex; <br />
+          flex-wrap:wrap;
+        </code>
+        , o turiniui uždėti pvz.
+        <code>min-width: 20rem</code>
+
+        <p>
+          tada gausis kad kai daiktas neturi tų 20 rem vietos, tai jis persikels
+          į kitą eilutę. Ir viskas. Puslapis yra responsive.
+        </p>
+        <p>
+          Jeigu mūsų puslapis turi 2 arba 3 stulpelius, tai juos galima
+          patalpinti į konteinerį ir padaryti aprašytą dalyką tiems stulpeliams,
+          o juose padaryti tą patį kontentui ir taip toliau iki begalybės...
+        </p>
+        <p>Dar yra geras css atributas 'columns'.</p>
+        <p>
+          Jeigu konteineriui uždėti
+          <code>columns:3;</code>
+          tai jis pasistengs suskirstyti turinį po lygiai į 3 kolonas.
+        </p>
+        <p>
+          O jeigu parašyti kiek vietos turi užimti kolona, pvz
+          <code>columns:30rem;</code>
+          tai tada konteineris suskirstys visą kontentą į tiek kolonų po 30rem
+          kiek tilps visame plotyje. Vow! Jokių media problemų, na nebent kažkur
+          sumažinti gap, padding, pamažinti gal šriftą???
+        </p>
+        <p>
+          Vietoje screen-size mes reguliuojame responsiveness stulpelių
+          pločiais, pvz
+          <code>min-width: 20rem;</code>
+          arba dar geriau kad kai vietos mažiau už 20em, tai susitrauktų ir
+          turinys:
+          <code> min-width: min(100%, 20em); </code>
+        </p>
+        <h5>Media query</h5>
+        <p>
+          Šiaip ir media-query geriau būtų naudoti rem o ne px Pažiūrėti prie
+          kurių rem viskas lūžta ir uždėti juos savo stulpelių dydžiams, o ne
+          px. Tada mes atsižvelgiame į visus įmanomus nustatytus naršyklės
+          šrifto dydžius
+        </p>
+      </section>
 
       <section>
-        <h2 id="first-tasks">Pirmosios užduotėlės</h2>
+        <h2 id="first-tasks">Pirmosios užduotis</h2>
         <ul>
           <li>
             <a href="./projects/news/naujienos.html">Darbas su nuorodom</a>
@@ -477,7 +656,6 @@
       </section>
       <section>
         <h2>Naudojant Flex</h2>
-        <p>Dar užduotėlės naudojant flex</p>
         <a href="./projects/flex/gelato/index.html"
           ><img class="screenshots" src="./images/flex/gelato.png" alt=""
         /></a>
@@ -494,7 +672,6 @@
       </section>
       <section>
         <h2>Naudojant Grid</h2>
-        <p>Smulkūs pratimai</p>
         <a href="./projects/grid/abcd/index.html"
           ><img class="screenshots" src="./images/grid/abcd.png" alt=""
         /></a>
@@ -539,6 +716,8 @@
         <a href="https://github.com/dkunf/shop/tree/master/src/components"
           ><img class="screenshots" src="./images/react/react-shop.png" alt=""
         /></a>
+        <br />
+        <a href="https://vaisiai.netlify.app/">on Netlify</a>
       </section>
 
       <!-- wrknow -->
@@ -547,9 +726,7 @@
     <div id="contents-box">
       <button class="hide-btn" onclick="toggleTOCsection()">Paslėpti</button>
       <h1>Turinys</h1>
-      <a id="link-to-tasks" href="#figma-tasks"
-        >linkas į padarytas užduotėles</a
-      >
+      <a id="link-to-tasks" href="#figma-tasks">linkas į padarytas užduotis</a>
       <br />
       <!-- <a id="link-to-tasks" href="#work-in-progress">dabar daroma</a> -->
       <ol id="toc">
