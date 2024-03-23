@@ -262,4 +262,9 @@ main {
 
 .figma-tasks {
   text-align: center;
+}
+
+#diagramCanvas {
+  display: block;
+  margin: 20px auto;
 }/*# sourceMappingURL=styles.css.map */

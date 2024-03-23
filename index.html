@@ -690,13 +690,13 @@
       </section>
 
       <section>
-        <h2 id="work-in-progress">Atsiskaitymui</h2>
+        <h2>Atsiskaitymui</h2>
         <a href="./projects/graded-asignments/kelioniu-puslapis/index.html"
           ><img class="screenshots" src="./images/figma/kelioniu.png" alt=""
         /></a>
       </section>
       <section>
-        <h2 id="work-in-progress">DOM + Javascript</h2>
+        <h2>DOM + Javascript</h2>
         <a href="./projects/javaScript/DOM/kepyklele/index.html"
           ><img
             class="screenshots"
@@ -712,12 +712,24 @@
       </section>
 
       <section>
-        <h2 id="work-in-progress">Dabar daroma...</h2>
+        <h2>Dabar daroma...(React)</h2>
         <a href="https://github.com/dkunf/shop/tree/master/src/components"
-          ><img class="screenshots" src="./images/react/react-shop.png" alt=""
+          >github<img
+            class="screenshots"
+            src="./images/react/react-shop.png"
+            alt=""
         /></a>
         <br />
         <a href="https://vaisiai.netlify.app/">on Netlify</a>
+
+        <p>
+          Šiuo metu yra padarytas paprastas frontend naudojant React ir yra
+          daromas jam backend naudojant nodejs su mongodb (kuris patalpintas
+          internete - Mongoose Atlas).
+        </p>
+        <p>Backend bus patalpintas Vercel.</p>
+        <p>Gaunasi tokia schema:</p>
+        <canvas id="diagramCanvas" width="400" height="500"></canvas>
       </section>
 
       <!-- wrknow -->
@@ -765,6 +777,44 @@
           tocList.appendChild(li);
         });
       }
+    </script>
+    <script>
+      const canvas = document.getElementById("diagramCanvas");
+      const ctx = canvas.getContext("2d");
+
+      // Define pastel colors
+      const pastelColors = ["#F0A6CA", "#AACFCF", "#FFD8B1"];
+
+      // Draw Database
+      ctx.fillStyle = pastelColors[0];
+      ctx.fillRect(100, 100, 150, 100);
+      ctx.font = "14px Arial";
+      ctx.fillStyle = "#000";
+      ctx.fillText("Database", 130, 130);
+      ctx.fillText("Hosted on Atlas", 110, 160);
+
+      // Draw Express JS Server
+      ctx.fillStyle = pastelColors[1];
+      ctx.fillRect(100, 250, 150, 100);
+      ctx.fillStyle = "#000";
+      ctx.fillText("Express JS Server", 110, 280);
+      ctx.fillText("Hosted on Vercel", 110, 310);
+
+      // Draw Frontend (React)
+      ctx.fillStyle = pastelColors[2];
+      ctx.fillRect(100, 400, 150, 100);
+      ctx.fillStyle = "#000";
+      ctx.fillText("Frontend (React)", 120, 430);
+      ctx.fillText("Hosted on Netlify", 120, 460);
+
+      // Draw arrows
+      ctx.strokeStyle = "#000";
+      ctx.beginPath();
+      ctx.moveTo(175, 200);
+      ctx.lineTo(175, 250);
+      ctx.moveTo(175, 350);
+      ctx.lineTo(175, 400);
+      ctx.stroke();
     </script>
   </body>
 </html>
