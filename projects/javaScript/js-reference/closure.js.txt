@@ -1,0 +1,22 @@
+In JavaScript, a closure is a combination of a function and the lexical environment within which that function was declared. Lexical scoping means that a function's variables are resolved in the scope in which the function was defined, not in the scope in which the function is executed.
+
+A closure allows a function to have access to its own scope, the scope of its containing function, and the global scope. This means that a function defined inside another function has access to the outer function's variables and parameters, even after the outer function has finished executing.
+
+Here's a simple example to illustrate closures in JavaScript:
+
+
+
+function outerFunction() {
+  var outerVariable = 'I am outer';
+
+  function innerFunction() {
+    console.log(outerVariable); // Accessing outerVariable from the outer function
+  }
+
+  return innerFunction;
+}
+
+var closureExample = outerFunction();
+closureExample(); // Output: I am outer
+
+In this example, innerFunction is defined inside outerFunction. Even after outerFunction has finished executing, closureExample still has access to the outerVariable because innerFunction maintains a reference to its containing lexical scope (i.e., the scope of outerFunction). This behavior is what makes closures powerful in JavaScript for tasks like creating private variables, implementing data encapsulation, and managing asynchronous operations.
